@@ -1,0 +1,208 @@
+:root {
+  --bg-primary: #f4f2eb;
+  --bg-surface: #ffffff;
+  --bg-dark: #121214;
+  --text-main: #111111;
+  --text-muted: #555555;
+  --text-inverse: #f4f2eb;
+  --border-thick: #111111;
+  --border-muted: #cccccc;
+  --accent-red: #d92626;
+  --accent-red-hover: #b81d1d;
+  --accent-warning: #d97706;
+  --accent-success: #15803d;
+  --accent-info: #1d4ed8;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.7;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+a {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-red);
+}
+
+/* Base Industrial Border Helpers */
+.industrial-box {
+  background: var(--bg-surface);
+  border: 2px solid var(--border-thick);
+  box-shadow: 4px 4px 0px var(--border-thick);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.industrial-box-dark {
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+  border: 2px solid var(--border-thick);
+  box-shadow: 4px 4px 0px var(--accent-red);
+  padding: 1.5rem;
+}
+
+.industrial-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1.5px solid var(--border-thick);
+  background: #e5e3da;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.industrial-badge-red {
+  background: var(--accent-red);
+  color: #ffffff;
+  border-color: var(--border-thick);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-thick); padding-bottom: 0.4rem; }
+h3 { font-size: 1.35rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+
+p {
+  margin-bottom: 1.25rem;
+  color: #222;
+}
+
+ul, ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent-red);
+  background: #ebe8df;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+  font-weight: 500;
+}
+
+hr {
+  border: none;
+  border-top: 2px dashed var(--border-thick);
+  margin: 2rem 0;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Form Stamp Effect */
+.stamp-seal {
+  display: inline-block;
+  border: 3px double var(--accent-red);
+  color: var(--accent-red);
+  font-weight: 900;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  transform: rotate(-3deg);
+  user-select: none;
+  background: rgba(217, 38, 38, 0.04);
+  box-shadow: 0 0 0 1px rgba(217, 38, 38, 0.2);
+}
+
+/* Code & Tables */
+code {
+  font-family: var(--font-mono);
+  background: #e2dfd5;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
+}
+
+pre {
+  background: var(--bg-dark);
+  color: #e6e6e6;
+  padding: 1.25rem;
+  border: 2px solid var(--border-thick);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: inherit;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+th, td {
+  border: 1.5px solid var(--border-thick);
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+
+th {
+  background: #e5e2d6;
+  font-weight: 800;
+}
+
+td {
+  background: var(--bg-surface);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+  .industrial-box { padding: 1rem; }
+  table { display: block; overflow-x: auto; }
+}

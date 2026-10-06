@@ -1,0 +1,84 @@
+---
+interface Props {
+  text?: string;
+  subText?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  text = '查房了·突击取证专用章',
+  subText = '周巡查检验合格',
+  size = 'md'
+} = Astro.props;
+---
+
+<div class={`stamp-watermark-wrapper stamp-size-${size}`}>
+  <div class="stamp-outer-ring">
+    <div class="stamp-inner-ring">
+      <div class="stamp-star">★</div>
+      <div class="stamp-main-text">{text}</div>
+      <div class="stamp-sub-text">{subText}</div>
+      <div class="stamp-date">{new Date().toISOString().split('T')[0]}</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .stamp-watermark-wrapper {
+    display: inline-block;
+    user-select: none;
+    pointer-events: none;
+    transform: rotate(-7deg);
+    opacity: 0.88;
+    margin: 1rem 0;
+  }
+
+  .stamp-outer-ring {
+    border: 3px double var(--accent-red);
+    padding: 4px;
+    border-radius: 6px;
+    background: rgba(217, 38, 38, 0.03);
+  }
+
+  .stamp-inner-ring {
+    border: 1.5px dashed var(--accent-red);
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+    color: var(--accent-red);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .stamp-star {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .stamp-main-text {
+    font-weight: 900;
+    font-size: 1.05rem;
+    letter-spacing: 2px;
+    font-family: var(--font-sans);
+  }
+
+  .stamp-sub-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .stamp-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-top: 1px solid var(--accent-red);
+    padding-top: 0.1rem;
+    margin-top: 0.2rem;
+    width: 100%;
+  }
+
+  .stamp-size-sm { transform: scale(0.85) rotate(-5deg); }
+  .stamp-size-lg { transform: scale(1.1) rotate(-8deg); }
+</style>

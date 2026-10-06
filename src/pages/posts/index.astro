@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('posts');
+const sortedPosts = allPosts.sort((a, b) => {
+  if (a.data.isPinned && !b.data.isPinned) return -1;
+  if (!a.data.isPinned && b.data.isPinned) return 1;
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+});
+---
+
+<BaseLayout
+  title="全部巡楼纪要 - 查房"
+  description="查房博客全部巡楼纪要与实测卷宗归档。收录当场抓包数据、模范寝室稳定推荐与没收作案工具拉闸避坑记录。"
+>
+  <div class="container posts-index-page">
+    <div class="page-header industrial-box">
+      <span class="industrial-badge">全楼卷宗归档</span>
+      <h1 class="page-title">全部巡楼纪要 ({allPosts.length})</h1>
+      <p class="page-intro">
+        所有网络服务实测记录按时间与查房结论归档。晚高峰数据实时存照，支持查看丢包率、TCP延迟与流媒体播放测速。
+      </p>
+
+      <div class="cat-filter-tabs font-mono">
+        <a href="/posts" class="tab-link active">全部 ({allPosts.length})</a>
+        <a href="/category/zhuabao" class="tab-link">当场抓包</a>
+        <a href="/category/mofan" class="tab-link">模范寝室</a>
+        <a href="/category/meishou" class="tab-link">没收作案工具</a>
+      </div>
+    </div>
+
+    <div class="posts-grid">
+      {sortedPosts.map((post) => (
+        <ArticleCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug}
+          date={post.data.pubDate.toISOString().split('T')[0]}
+          category={post.data.category}
+          verdict={post.data.verdict}
+          isPinned={post.data.isPinned}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .posts-index-page {
+    max-width: 950px;
+  }
+
+  .page-header {
+    margin-bottom: 2rem;
+    background: #ffffff;
+  }
+
+  .page-title {
+    font-size: 2.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .page-intro {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .cat-filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    border-top: 1.5px dashed var(--border-muted);
+    padding-top: 1rem;
+  }
+
+  .tab-link {
+    background: var(--bg-primary);
+    border: 1.5px solid var(--border-thick);
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-main);
+  }
+
+  .tab-link.active,
+  .tab-link:hover {
+    background: var(--accent-red);
+    color: #ffffff;
+  }
+</style>

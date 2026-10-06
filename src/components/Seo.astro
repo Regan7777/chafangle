@@ -1,0 +1,129 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string[];
+  image?: string;
+  canonicalURL?: URL | string;
+  type?: 'website' | 'article';
+  publishDate?: Date;
+  updatedDate?: Date;
+  author?: string;
+  rating?: string;
+}
+
+const {
+  title = '查房｜每周网络服务巡检与避坑指南',
+  description = '面向机场代理与网络服务用户的公开测试与体验观察博客。以周为单位巡查，不让断流蒙混过关。提供2026最稳定的机场推荐、性价比机场对比、IEPL专线与BGP中转每周巡查报告。',
+  keywords = [
+    '机场代理',
+    '机场导航',
+    '机场推荐',
+    '性价比机场',
+    '2026最稳定的机场',
+    '每周巡检',
+    '周巡查实测',
+    '查房博客',
+    '节点稳定性测试',
+    '断流避坑指南'
+  ],
+  image = '/og-image.png',
+  canonicalURL = Astro.url,
+  type = 'website',
+  publishDate,
+  updatedDate,
+  author = '宿管大爷',
+} = Astro.props;
+
+const siteTitle = title.includes('查房') ? title : `${title} - 查房｜每周网络服务巡检与避坑指南`;
+const keywordString = keywords.join(', ');
+const siteUrl = Astro.site ? Astro.site.href : 'https://chafang.pages.dev';
+
+// JSON-LD Structured Data for Google & Bing SEO / GEO AI Search Engines
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "查房",
+  "alternateName": ["查房博客", "Chafang Weekly Network Review"],
+  "url": siteUrl,
+  "description": description,
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": `${siteUrl}/posts?q={search_term_string}`,
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const articleSchema = type === 'article' ? {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": author
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "查房巡楼处",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteUrl}/favicon.svg`
+    }
+  },
+  "datePublished": publishDate ? publishDate.toISOString() : new Date().toISOString(),
+  "dateModified": updatedDate ? updatedDate.toISOString() : (publishDate ? publishDate.toISOString() : new Date().toISOString()),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalURL.toString()
+  },
+  "inLanguage": "zh-CN",
+  "keywords": keywordString
+} : null;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{siteTitle}</title>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywordString} />
+<meta name="author" content={author} />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+<!-- GEO & Search Engine Optimization Tags -->
+<meta name="geo.region" content="CN" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="theme-color" content="#121214" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, canonicalURL)} />
+<meta property="og:site_name" content="查房" />
+<meta property="og:locale" content="zh_CN" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={siteTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, canonicalURL)} />
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title="查房 - 周巡查纪要 RSS" href="/rss.xml" />
+
+<!-- JSON-LD Structured Data Scripts -->
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+{articleSchema && <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />}

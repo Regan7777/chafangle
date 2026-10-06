@@ -1,0 +1,190 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InspectionBadge from '../../components/InspectionBadge.astro';
+import TestMetaGrid from '../../components/TestMetaGrid.astro';
+import StampWatermark from '../../components/StampWatermark.astro';
+import SponsorBatteryModal from '../../components/SponsorBatteryModal.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+const { data } = post;
+
+const formattedDate = data.pubDate.toISOString().split('T')[0];
+---
+
+<BaseLayout
+  title={`${data.title} - 查房实测卷宗`}
+  description={data.description}
+  keywords={data.keywords}
+  type="article"
+  publishDate={data.pubDate}
+  updatedDate={data.updatedDate}
+  author={data.author}
+>
+  <article class="container article-page">
+    <!-- Breadcrumb Nav -->
+    <nav class="breadcrumb-nav font-mono" aria-label="面包屑导航">
+      <a href="/">首页</a> <span>/</span> 
+      <a href="/posts">巡楼纪要</a> <span>/</span> 
+      <span class="active-crumb">{data.title}</span>
+    </nav>
+
+    <!-- Post Header Header Block -->
+    <header class="post-header industrial-box">
+      <div class="post-meta-top">
+        {data.isPinned && <span class="badge-pinned">📌 宿管置顶通报</span>}
+        <span class="badge-cat font-mono">卷宗分类: {data.category}</span>
+        <time class="post-time font-mono" datetime={formattedDate}>归档日期: {formattedDate}</time>
+      </div>
+
+      <h1 class="article-heading">{data.title}</h1>
+      <p class="article-desc-lead">{data.description}</p>
+
+      <div class="header-stamp-corner">
+        <StampWatermark text="查房了·突击取证专用章" subText="宿管巡楼签发" size="sm" />
+      </div>
+    </header>
+
+    <!-- Test Meta Grid (if review metrics present) -->
+    {data.metrics && data.metrics.length > 0 && (
+      <TestMetaGrid
+        testDate={formattedDate}
+        location={data.testLocation}
+        isp={data.testIsp}
+        peakHours={data.testPeakHours}
+        metrics={data.metrics}
+      />
+    )}
+
+    <!-- Room Inspection Conclusion Component -->
+    {data.verdict && (
+      <InspectionBadge
+        verdict={data.verdict}
+        customNote={data.verdictNote}
+      />
+    )}
+
+    <!-- Main Post Content -->
+    <div class="post-prose-content industrial-box">
+      <Content />
+    </div>
+
+    <!-- Interactive Sponsor Battery & Comments Notice Component -->
+    <SponsorBatteryModal />
+  </article>
+</BaseLayout>
+
+<style>
+  .article-page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb-nav {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .breadcrumb-nav a:hover {
+    color: var(--accent-red);
+  }
+
+  .active-crumb {
+    color: var(--text-main);
+    font-weight: 700;
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+    position: relative;
+    background: #ffffff;
+  }
+
+  .post-meta-top {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .badge-pinned {
+    background: var(--accent-red);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .badge-cat {
+    background: #e2dfd5;
+    border: 1px solid var(--border-thick);
+    padding: 0.15rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .post-time {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .article-heading {
+    font-size: 2.2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .article-desc-lead {
+    font-size: 1.05rem;
+    color: #444444;
+    border-left: 3px solid var(--accent-red);
+    padding-left: 0.8rem;
+    margin-bottom: 0;
+  }
+
+  .header-stamp-corner {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .post-prose-content {
+    background: #ffffff;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .header-stamp-corner {
+      display: none;
+    }
+    .article-heading {
+      font-size: 1.6rem;
+    }
+  }
+</style>

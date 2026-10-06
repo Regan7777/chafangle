@@ -1,0 +1,87 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  badge: string;
+  badgeType?: 'red' | 'gold' | 'dark';
+}
+
+const { title, description, href, badge, badgeType = 'dark' } = Astro.props;
+---
+
+<a href={href} class="category-card-link">
+  <div class="category-card industrial-box">
+    <div class="card-top">
+      <span class={`industrial-badge ${badgeType === 'red' ? 'industrial-badge-red' : ''}`}>{badge}</span>
+      <span class="arrow-icon">➔</span>
+    </div>
+    <h3 class="category-title">{title}</h3>
+    <p class="category-desc">{description}</p>
+    <div class="card-bottom">
+      <span class="enter-btn">查看周巡卷宗 ➔</span>
+    </div>
+  </div>
+</a>
+
+<style>
+  .category-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+  }
+
+  .category-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .category-card-link:hover .category-card {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0px var(--border-thick);
+    border-color: var(--accent-red);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .arrow-icon {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--text-muted);
+  }
+
+  .category-title {
+    font-size: 1.35rem;
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    color: var(--text-main);
+  }
+
+  .category-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .card-bottom {
+    margin-top: auto;
+    border-top: 1.5px dashed var(--border-muted);
+    padding-top: 0.8rem;
+  }
+
+  .enter-btn {
+    font-size: 0.85rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    color: var(--accent-red);
+  }
+</style>

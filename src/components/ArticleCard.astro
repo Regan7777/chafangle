@@ -1,0 +1,165 @@
+---
+import type { VerdictType } from './InspectionBadge.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  date: string;
+  category: string;
+  verdict?: VerdictType;
+  isPinned?: boolean;
+}
+
+const { title, description, slug, date, category, verdict, isPinned = false } = Astro.props;
+
+const categoryLabels: Record<string, { name: string; tagClass: string }> = {
+  'zhuabao': { name: '当场抓包', tagClass: 'badge-zhuabao' },
+  'mofan': { name: '模范寝室', tagClass: 'badge-mofan' },
+  'meishou': { name: '没收作案工具', tagClass: 'badge-meishou' },
+  'tongbao': { name: '宿管通报', tagClass: 'badge-tongbao' },
+};
+
+const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-default' };
+---
+
+<article class={`article-card industrial-box ${isPinned ? 'is-pinned-card' : ''}`}>
+  <div class="card-meta-bar">
+    <div class="meta-left">
+      {isPinned && <span class="pinned-tag">📌 宿管置顶</span>}
+      <span class={`category-tag ${catInfo.tagClass}`}>{catInfo.name}</span>
+      <time datetime={date} class="post-date font-mono">{date}</time>
+    </div>
+    {verdict === 'five-star' && <span class="verdict-mini gold">🏆 5星免检</span>}
+    {verdict === 'warning' && <span class="verdict-mini amber">⚠️ 留校察看</span>}
+    {verdict === 'confiscated' && <span class="verdict-mini red">🚨 直接拉闸</span>}
+    {verdict === 'ghost' && <span class="verdict-mini gray">👻 已提桶</span>}
+  </div>
+
+  <h3 class="post-title">
+    <a href={`/posts/${slug}`}>
+      {title}
+    </a>
+  </h3>
+
+  <p class="post-excerpt">
+    {description}
+  </p>
+
+  <div class="card-footer-action">
+    <a href={`/posts/${slug}`} class="read-more-link">
+      阅读巡楼纪要全文 ➔
+    </a>
+  </div>
+</article>
+
+<style>
+  .article-card {
+    margin-bottom: 1.5rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .article-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-thick);
+  }
+
+  .is-pinned-card {
+    border-left: 6px solid var(--accent-red);
+    background: #ffffff;
+  }
+
+  .card-meta-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .meta-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .pinned-tag {
+    background: var(--accent-red);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.1rem 0.4rem;
+  }
+
+  .category-tag {
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid var(--border-thick);
+    font-family: var(--font-mono);
+  }
+
+  .badge-zhuabao { background: #e0f2fe; color: #0369a1; }
+  .badge-mofan { background: #dcfce7; color: #15803d; }
+  .badge-meishou { background: #fee2e2; color: #b91c1c; }
+  .badge-tongbao { background: #fef3c7; color: #b45309; }
+
+  .post-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .verdict-mini {
+    font-size: 0.8rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--border-thick);
+  }
+
+  .verdict-mini.gold { background: #fef08a; color: #854d0e; }
+  .verdict-mini.amber { background: #fde68a; color: #92400e; }
+  .verdict-mini.red { background: #fca5a5; color: #991b1b; }
+  .verdict-mini.gray { background: #e5e7eb; color: #374151; }
+
+  .post-title {
+    font-size: 1.35rem;
+    margin: 0.4rem 0 0.6rem 0;
+  }
+
+  .post-title a {
+    text-decoration: none;
+    color: var(--text-main);
+  }
+
+  .post-title a:hover {
+    color: var(--accent-red);
+  }
+
+  .post-excerpt {
+    font-size: 0.95rem;
+    color: #333333;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .card-footer-action {
+    border-top: 1px dashed var(--border-muted);
+    padding-top: 0.6rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .read-more-link {
+    font-size: 0.85rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    color: var(--accent-red);
+    text-decoration: none;
+  }
+
+  .read-more-link:hover {
+    text-decoration: underline;
+  }
+</style>

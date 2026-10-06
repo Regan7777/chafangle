@@ -1,0 +1,208 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, '');
+
+const navItems = [
+  { name: '查房', href: '/' },
+  { name: '当场抓包', href: '/category/zhuabao' },
+  { name: '模范寝室', href: '/category/mofan' },
+  { name: '没收作案工具', href: '/category/meishou' },
+  { name: '查房手册', href: '/handbook' },
+  { name: '关于', href: '/about' },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- Brand Logo -->
+    <a href="/" class="brand-logo" aria-label="查房 首页">
+      <span class="brand-stamp">查房</span>
+      <span class="brand-tagline">每周例行巡检</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="主导航">
+      <ul>
+        {navItems.map((item) => {
+          const isActive = item.href === '/' 
+            ? currentPath === '' || currentPath === '/' 
+            : currentPath.startsWith(item.href);
+          return (
+            <li>
+              <a href={item.href} class={isActive ? 'active' : ''}>
+                {item.name}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    <!-- Mobile Navigation Toggle Button -->
+    <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="打开/关闭菜单" aria-expanded="false">
+      <span class="menu-icon">☰ 菜单</span>
+    </button>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="mobile-menu-drawer hidden">
+    <nav aria-label="移动端导航">
+      <ul>
+        {navItems.map((item) => {
+          const isActive = item.href === '/' 
+            ? currentPath === '' || currentPath === '/' 
+            : currentPath.startsWith(item.href);
+          return (
+            <li>
+              <a href={item.href} class={isActive ? 'active' : ''}>
+                {item.name}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const menuDrawer = document.getElementById('mobile-menu');
+
+  if (toggleBtn && menuDrawer) {
+    toggleBtn.addEventListener('click', () => {
+      const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+      toggleBtn.setAttribute('aria-expanded', (!expanded).toString());
+      menuDrawer.classList.toggle('hidden');
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    background: var(--bg-primary);
+    border-bottom: 2px solid var(--border-thick);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    background-color: rgba(244, 242, 235, 0.95);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--text-main);
+  }
+
+  .brand-stamp {
+    background: var(--border-thick);
+    color: var(--bg-primary);
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 0.2rem 0.6rem;
+    letter-spacing: 2px;
+    border: 2px solid var(--border-thick);
+    box-shadow: 2px 2px 0px var(--accent-red);
+  }
+
+  .brand-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    border: 1px solid var(--accent-red);
+    padding: 0.1rem 0.4rem;
+    font-family: var(--font-mono);
+  }
+
+  .desktop-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-nav a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border: 1.5px solid transparent;
+    color: var(--text-main);
+    transition: all 0.15s ease;
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a.active {
+    background: #e2dfd5;
+    border-color: var(--border-thick);
+    box-shadow: 2px 2px 0px var(--border-thick);
+    color: var(--accent-red);
+  }
+
+  .mobile-toggle {
+    display: none;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-thick);
+    padding: 0.4rem 0.7rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--border-thick);
+  }
+
+  .mobile-menu-drawer {
+    background: var(--bg-surface);
+    border-bottom: 2px solid var(--border-thick);
+    padding: 1rem 1.25rem;
+  }
+
+  .mobile-menu-drawer.hidden {
+    display: none;
+  }
+
+  .mobile-menu-drawer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-menu-drawer a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1.5px solid var(--border-thick);
+    background: var(--bg-primary);
+  }
+
+  .mobile-menu-drawer a.active {
+    background: var(--accent-red);
+    color: #ffffff;
+  }
+
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+    .brand-tagline {
+      display: none;
+    }
+    .mobile-toggle {
+      display: block;
+    }
+  }
+</style>
