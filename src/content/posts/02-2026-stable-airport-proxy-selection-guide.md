@@ -3,24 +3,6 @@ title: "【模范寝室】2026最稳定的机场推荐与每周巡检选购指�
 description: "面向机场代理用户从小白到大神的深度实测总结。详解BGP中转、IEPL内网专线与直连节点的每周例行巡检表现，教你如何避开虚标带宽与随时提桶的劣质机场。"
 pubDate: 2026-07-27
 category: "mofan"
-verdict: "five-star"
-verdictNote: "在2026年第40周例行巡查周期内，IEPL专线节点持续保持零丢包，4K视频加载开播耗时均小于1秒。"
-testLocation: "华东/华南多地测速站"
-testIsp: "电信 1000M / 联通 500M / 移动 1000M"
-testPeakHours: "2026年第40周 (全周 7×24h 随机抽样)"
-metrics:
-  - name: "BGP 中转节点 TCP 延迟"
-    result: "38 ms - 45 ms"
-    status: "good"
-  - name: "IEPL 专线全周平均丢包率"
-    result: "0.0%"
-    status: "good"
-  - name: "8K 视频 Peak 跑分带宽"
-    result: "320 Mbps"
-    status: "good"
-  - name: "周巡查 SLA 连通性考核"
-    result: "99.95%"
-    status: "good"
 keywords: ["2026最稳定的机场", "机场推荐", "机场代理", "性价比机场", "IEPL专线", "每周巡查防断流"]
 ---
 
