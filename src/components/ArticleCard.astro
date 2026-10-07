@@ -30,7 +30,7 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
       <span class={`category-tag ${catInfo.tagClass}`}>{catInfo.name}</span>
       <time datetime={date} class="post-date font-mono">{date}</time>
     </div>
-    {verdict === 'five-star' && <span class="verdict-mini gold">🏆 5星免检</span>}
+    {verdict === 'five-star' && <span class="verdict-mini gold">🏆 五星免检</span>}
     {verdict === 'warning' && <span class="verdict-mini amber">⚠️ 留校察看</span>}
     {verdict === 'confiscated' && <span class="verdict-mini red">🚨 直接拉闸</span>}
     {verdict === 'ghost' && <span class="verdict-mini gray">👻 已提桶</span>}
@@ -57,6 +57,7 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
   .article-card {
     margin-bottom: 1.5rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
+    background: #ffffff;
   }
 
   .article-card:hover {
@@ -89,7 +90,8 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
     color: #ffffff;
     font-size: 0.8rem;
     font-weight: 800;
-    padding: 0.1rem 0.4rem;
+    padding: 0.15rem 0.5rem;
+    line-height: 1.2;
   }
 
   .category-tag {
@@ -98,6 +100,7 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
     padding: 0.15rem 0.5rem;
     border: 1px solid var(--border-thick);
     font-family: var(--font-mono);
+    line-height: 1.2;
   }
 
   .badge-zhuabao { background: #e0f2fe; color: #0369a1; }
@@ -111,16 +114,21 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
   }
 
   .verdict-mini {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 800;
     font-family: var(--font-mono);
-    padding: 0.1rem 0.4rem;
-    border: 1px solid var(--border-thick);
+    padding: 0.2rem 0.55rem;
+    border: 1.5px solid var(--border-thick);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .verdict-mini.gold { background: #fef08a; color: #854d0e; }
   .verdict-mini.amber { background: #fde68a; color: #92400e; }
-  .verdict-mini.red { background: #fca5a5; color: #991b1b; }
+  .verdict-mini.red { background: #fee2e2; color: #991b1b; border-color: #dc2626; }
   .verdict-mini.gray { background: #e5e7eb; color: #374151; }
 
   .post-title {
