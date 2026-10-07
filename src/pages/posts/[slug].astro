@@ -42,7 +42,7 @@ const formattedDate = data.pubDate.toISOString().split('T')[0];
       <span class="active-crumb">{data.title}</span>
     </nav>
 
-    <!-- Post Header Header Block -->
+    <!-- Post Header Block -->
     <header class="post-header industrial-box">
       <div class="post-meta-top">
         {data.isPinned && <span class="badge-pinned">📌 宿管置顶通报</span>}
@@ -52,6 +52,19 @@ const formattedDate = data.pubDate.toISOString().split('T')[0];
 
       <h1 class="article-heading">{data.title}</h1>
       <p class="article-desc-lead">{data.description}</p>
+
+      <!-- Prominent Official Affiliate Link & Coupon Box (if officialUrl provided) -->
+      {data.officialUrl && (
+        <div class="official-access-banner">
+          <div class="access-info font-mono">
+            {data.pricePlan && <div class="access-item"><strong>套餐价格：</strong><span>{data.pricePlan}</span></div>}
+            {data.promoCode && <div class="access-item"><strong>专属优惠码：</strong><code class="promo-code">{data.promoCode}</code></div>}
+          </div>
+          <a href={data.officialUrl} target="_blank" rel="noopener noreferrer" class="btn-official-direct">
+            🚀 官网直达通道 / 领取专属优惠 ➔
+          </a>
+        </div>
+      )}
 
       <div class="header-stamp-corner">
         <StampWatermark text="查房了·突击取证专用章" subText="宿管巡楼签发" size="sm" />
@@ -80,6 +93,17 @@ const formattedDate = data.pubDate.toISOString().split('T')[0];
     <!-- Main Post Content -->
     <div class="post-prose-content industrial-box">
       <Content />
+
+      <!-- Bottom Direct Link Button -->
+      {data.officialUrl && (
+        <div class="bottom-direct-link-box">
+          <h3>⚡ 专属官方入口与特惠通道</h3>
+          <p>点击下方按钮直接跳转至官方注册页面，结账时填入优惠码 <code>{data.promoCode || '专属折扣'}</code> 即可享限时特惠：</p>
+          <a href={data.officialUrl} target="_blank" rel="noopener noreferrer" class="btn-official-direct-large">
+            👉 前往 {data.title.replace(/【.*?】/, '')} 官方网站 ➔
+          </a>
+        </div>
+      )}
     </div>
 
     <!-- Interactive Sponsor Battery & Comments Notice Component -->
@@ -164,7 +188,96 @@ const formattedDate = data.pubDate.toISOString().split('T')[0];
     color: #444444;
     border-left: 3px solid var(--accent-red);
     padding-left: 0.8rem;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+  }
+
+  /* Official Direct Link Banner Styling */
+  .official-access-banner {
+    background: #18181b;
+    color: #ffffff;
+    border: 2px solid var(--border-thick);
+    box-shadow: 4px 4px 0px var(--accent-red);
+    padding: 1.2rem 1.4rem;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .access-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .access-item strong {
+    color: #ffffff;
+  }
+
+  .promo-code {
+    background: var(--accent-red);
+    color: #ffffff;
+    font-weight: 900;
+    padding: 0.15rem 0.5rem;
+    border: 1px fill #ffffff;
+    font-size: 0.95rem;
+  }
+
+  .btn-official-direct {
+    background: var(--accent-red);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.05rem;
+    padding: 0.75rem 1.4rem;
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    box-shadow: 3px 3px 0px #000000;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .btn-official-direct:hover {
+    background: #b81d1d;
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #000000;
+    color: #ffffff;
+  }
+
+  .bottom-direct-link-box {
+    background: #f8f7f2;
+    border: 2.5px dashed var(--accent-red);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .bottom-direct-link-box h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+  }
+
+  .btn-official-direct-large {
+    display: inline-block;
+    background: var(--accent-red);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.15rem;
+    padding: 0.85rem 1.8rem;
+    text-decoration: none;
+    border: 2.5px solid var(--border-thick);
+    box-shadow: 4px 4px 0px var(--border-thick);
+    margin-top: 1rem;
+    transition: all 0.15s ease;
+  }
+
+  .btn-official-direct-large:hover {
+    background: #b81d1d;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--border-thick);
+    color: #ffffff;
   }
 
   .header-stamp-corner {
@@ -185,6 +298,14 @@ const formattedDate = data.pubDate.toISOString().split('T')[0];
     }
     .article-heading {
       font-size: 1.6rem;
+    }
+    .official-access-banner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .btn-official-direct {
+      width: 100%;
+      text-align: center;
     }
   }
 </style>
