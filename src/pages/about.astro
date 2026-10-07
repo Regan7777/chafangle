@@ -5,7 +5,7 @@ import StampWatermark from '../components/StampWatermark.astro';
 
 <BaseLayout
   title="关于本站与宿管 - 查房"
-  description="了解‘查房’博客的建立初衷、评测标准与免责原则。以周为单位巡查，不让断流蒙混过关。"
+  description="了解‘查房’博客的建立初衷、评测标准、联系宿管 Telegram 方式与免责原则。以周为单位巡查，不让断流蒙混过关。"
 >
   <div class="container about-page">
     <div class="page-header industrial-box">
@@ -68,6 +68,21 @@ import StampWatermark from '../components/StampWatermark.astro';
       <div class="disclaimer-callout">
         <strong>页脚免责声明：</strong>本站内容为每周例行测试记录与观点，仅反映测试周期的环境与结果，不保证后续服务状态。涉及长期订阅或预付费时，请理性决策、量力而行，并保留退款与售后凭证。
       </div>
+
+      <h2>五、联系宿管与 Telegram 交流群</h2>
+      <div class="contact-tg-box font-mono">
+        <p>欢迎各位租客与机长加入宿管例行巡查交流群，据实提交节点测试反馈或投稿异常断流线索：</p>
+        <ul class="tg-list">
+          <li>
+            <span class="tg-label">👤 宿管个人 Telegram：</span>
+            <a href="https://t.me/wanfengzn" target="_blank" rel="noopener" class="tg-link">@wanfengzn</a>
+          </li>
+          <li>
+            <span class="tg-label">📢 宿管查房 Telegram 交流群：</span>
+            <a href="https://t.me/wanfengjc" target="_blank" rel="noopener" class="tg-link">t.me/wanfengjc</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </BaseLayout>
@@ -107,8 +122,10 @@ import StampWatermark from '../components/StampWatermark.astro';
 
   .about-content h2 {
     font-size: 1.4rem;
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
     margin-bottom: 0.8rem;
+    border-bottom: 2px solid var(--border-thick);
+    padding-bottom: 0.3rem;
   }
 
   .about-table {
@@ -121,6 +138,56 @@ import StampWatermark from '../components/StampWatermark.astro';
     padding: 1rem 1.25rem;
     margin-top: 1rem;
     font-size: 0.95rem;
+  }
+
+  .contact-tg-box {
+    background: #18181b;
+    color: #ffffff;
+    border: 2px solid var(--border-thick);
+    box-shadow: 4px 4px 0px var(--accent-red);
+    padding: 1.25rem;
+    margin-top: 1rem;
+  }
+
+  .contact-tg-box p {
+    color: #dddddd;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .tg-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .tg-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 1.05rem;
+  }
+
+  .tg-label {
+    font-weight: 700;
+  }
+
+  .tg-link {
+    background: var(--accent-red);
+    color: #ffffff;
+    padding: 0.2rem 0.6rem;
+    text-decoration: none;
+    font-weight: 800;
+    border: 1px solid #ffffff;
+  }
+
+  .tg-link:hover {
+    background: #b81d1d;
+    color: #ffffff;
   }
 
   @media (max-width: 768px) {

@@ -35,16 +35,21 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <div class="link-group">
-        <h3>SEO 关键词索引</h3>
-        <p class="seo-tags">
-          <code>机场代理</code> <code>机场导航</code> <code>机场推荐</code> <code>性价比机场</code> <code>2026最稳定的机场</code> <code>周巡查测速</code>
-        </p>
+        <h3>宿管 Telegram 频道与联系</h3>
+        <ul class="tg-footer-list font-mono">
+          <li>
+            👤 个人 TG: <a href="https://t.me/wanfengzn" target="_blank" rel="noopener">@wanfengzn</a>
+          </li>
+          <li>
+            📢 交流群: <a href="https://t.me/wanfengjc" target="_blank" rel="noopener">t.me/wanfengjc</a>
+          </li>
+        </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
       <p>&copy; 2026 查房 (Chafang Blog) - 以周为单位巡查，不让断流蒙混过关。</p>
-      <p class="inspection-seal">周巡查印鉴 · 突击取证核对无误</p>
+      <p class="inspection-seal">周巡查印鉴 · 宿管 @wanfengzn 签发</p>
     </div>
   </div>
 </footer>
@@ -139,17 +144,14 @@ const currentYear = new Date().getFullYear();
     color: var(--accent-red);
   }
 
-  .seo-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+  .tg-footer-list a {
+    color: #facc15;
+    font-weight: 700;
+    text-decoration: underline;
   }
 
-  .seo-tags code {
-    background: #282830;
-    color: #dddddd;
-    border-color: #444;
-    font-size: 0.8rem;
+  .tg-footer-list a:hover {
+    color: #ffffff;
   }
 
   .footer-bottom {
