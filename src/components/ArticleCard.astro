@@ -8,10 +8,13 @@ interface Props {
   date: string;
   category: string;
   verdict?: VerdictType;
+  badge?: string;
   isPinned?: boolean;
 }
 
-const { title, description, slug, date, category, verdict, isPinned = false } = Astro.props;
+const { title, description, slug, date, category, verdict, badge, isPinned = false } = Astro.props;
+
+const effectiveVerdict = verdict || (badge === '五星免检' || badge?.includes('五星') || badge?.includes('免检') ? 'five-star' : undefined);
 
 const categoryLabels: Record<string, { name: string; tagClass: string }> = {
   'zhuabao': { name: '当场抓包', tagClass: 'badge-zhuabao' },
@@ -30,10 +33,10 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
       <span class={`category-tag ${catInfo.tagClass}`}>{catInfo.name}</span>
       <time datetime={date} class="post-date font-mono">{date}</time>
     </div>
-    {verdict === 'five-star' && <span class="verdict-mini gold">🏆 五星免检</span>}
-    {verdict === 'warning' && <span class="verdict-mini amber">⚠️ 留校察看</span>}
-    {verdict === 'confiscated' && <span class="verdict-mini red">🚨 直接拉闸</span>}
-    {verdict === 'ghost' && <span class="verdict-mini gray">👻 已提桶</span>}
+    {effectiveVerdict === 'five-star' && <span class="verdict-mini gold">🏆 五星免检</span>}
+    {effectiveVerdict === 'warning' && <span class="verdict-mini amber">⚠️ 留校察看</span>}
+    {effectiveVerdict === 'confiscated' && <span class="verdict-mini red">🚨 直接拉闸</span>}
+    {effectiveVerdict === 'ghost' && <span class="verdict-mini gray">👻 已提桶</span>}
   </div>
 
   <h3 class="post-title">
