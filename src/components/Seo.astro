@@ -13,17 +13,19 @@ interface Props {
 }
 
 const {
-  title = '查房｜每周网络服务巡检与避坑指南',
-  description = '面向机场代理与网络服务用户的公开测试与体验观察博客。以周为单位巡查，不让断流蒙混过关。提供2026最稳定的机场推荐、性价比机场对比、IEPL专线与BGP中转每周巡查报告。',
+  title = 'VPN查房｜每周网络服务巡检与避坑指南',
+  description = '面向 VPN、机场代理与网络服务用户的公开测试与体验观察博客。以周为单位巡查，不让断流蒙混过关。提供2026最稳定的 VPN / 机场推荐、性价比服务对比、IEPL专线与BGP中转每周巡查报告。',
   keywords = [
+    'VPN查房',
+    'VPN推荐',
     '机场代理',
     '机场导航',
     '机场推荐',
-    '性价比机场',
-    '2026最稳定的机场',
+    '性价比VPN',
+    '2026最稳定的VPN',
     '每周巡检',
     '周巡查实测',
-    '查房博客',
+    'VPN查房博客',
     '节点稳定性测试',
     '断流避坑指南'
   ],
@@ -35,7 +37,7 @@ const {
   author = '宿管大爷',
 } = Astro.props;
 
-const siteTitle = title.includes('查房') ? title : `${title} - 查房｜每周网络服务巡检与避坑指南`;
+const siteTitle = title.includes('VPN查房') ? title : `${title} - VPN查房｜每周网络服务巡检与避坑指南`;
 const keywordString = keywords.join(', ');
 const siteUrl = Astro.site ? Astro.site.href : 'https://chafang.pages.dev';
 
@@ -43,8 +45,8 @@ const siteUrl = Astro.site ? Astro.site.href : 'https://chafang.pages.dev';
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "查房",
-  "alternateName": ["查房博客", "Chafang Weekly Network Review"],
+  "name": "VPN查房",
+  "alternateName": ["VPN查房博客", "VPN Chafang Weekly Network Review"],
   "url": siteUrl,
   "description": description,
   "inLanguage": "zh-CN",

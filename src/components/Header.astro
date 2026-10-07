@@ -3,7 +3,7 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\/$/, '');
 
 const navItems = [
-  { name: '查房', href: '/' },
+  { name: 'VPN查房', href: '/' },
   { name: '当场抓包', href: '/category/zhuabao' },
   { name: '模范寝室', href: '/category/mofan' },
   { name: '没收作案工具', href: '/category/meishou' },
@@ -15,8 +15,8 @@ const navItems = [
 <header class="site-header">
   <div class="container header-inner">
     <!-- Brand Logo -->
-    <a href="/" class="brand-logo" aria-label="查房 首页">
-      <span class="brand-stamp">查房</span>
+    <a href="/" class="brand-logo" aria-label="VPN查房 首页">
+      <span class="brand-stamp">VPN查房</span>
       <span class="brand-tagline">每周例行巡检</span>
     </a>
 
