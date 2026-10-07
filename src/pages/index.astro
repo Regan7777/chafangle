@@ -57,108 +57,88 @@ const latestPosts = sortedPosts.slice(0, 6);
     </div>
   </section>
 
-  <!-- Main Content Body Grid -->
-  <div class="container">
-    <div class="index-content-layout">
-      <!-- Left Main Column -->
-      <div class="index-main-column">
-        <!-- Section: Three Category Cards -->
-        <section class="category-cards-section">
-          <h2 class="section-title">
-            <span class="title-icon">📂</span> 巡楼分类卷宗
-          </h2>
-          <div class="category-grid">
-            <CategoryCard
-              title="当场抓包"
-              description="每周例行巡查，数据不说谎。"
-              href="/category/zhuabao"
-              badge="突击抓包"
-              badgeType="red"
-            />
-            <CategoryCard
-              title="模范寝室"
-              description="长期稳定、表现优异的服务记录。"
-              href="/category/mofan"
-              badge="免检通报"
-              badgeType="dark"
-            />
-            <CategoryCard
-              title="没收作案工具"
-              description="异常断流、夸大宣传与避坑档案。"
-              href="/category/meishou"
-              badge="拉闸避坑"
-              badgeType="red"
-            />
-          </div>
-        </section>
-
-        <!-- Section: Latest Patrol Posts -->
-        <section id="patrol-posts" class="posts-section">
-          <div class="section-header">
-            <h2 class="section-title">
-              <span class="title-icon">📝</span> 最新巡楼纪要
-            </h2>
-            <a href="/posts" class="view-all-link">查看全部卷宗 ({allPosts.length}) ➔</a>
-          </div>
-
-          <div class="posts-list">
-            {latestPosts.map((post) => (
-              <ArticleCard
-                title={post.data.title}
-                description={post.data.description}
-                slug={post.slug}
-                date={post.data.pubDate.toISOString().split('T')[0]}
-                category={post.data.category}
-                verdict={post.data.verdict}
-                isPinned={post.data.isPinned}
-              />
-            ))}
-          </div>
-        </section>
-
-        <!-- Section: SEO / GEO Keyword Guide Banner -->
-        <section class="seo-guide-banner industrial-box">
-          <h3>🔍 宿管避坑指南与关键词检索</h3>
-          <p>
-            查找 <strong>2026最稳定的机场</strong>、<strong>性价比机场推荐</strong>、<strong>机场代理选购</strong> 或是解决周巡断流卡顿？宿管已为你分类归档：
-          </p>
-          <div class="keyword-pill-group">
-            <a href="/posts" class="kw-pill">机场代理实测</a>
-            <a href="/category/mofan" class="kw-pill">2026最稳定的机场</a>
-            <a href="/handbook" class="kw-pill">性价比机场避坑指南</a>
-            <a href="/category/zhuabao" class="kw-pill">每周巡查丢包抓包</a>
-            <a href="/about" class="kw-pill">查房博客评测标准</a>
-          </div>
-        </section>
+  <!-- Main Content Body -->
+  <div class="container index-body-grid">
+    <!-- Section: Three Category Cards (Full Width Layout Restored) -->
+    <section class="category-cards-section">
+      <h2 class="section-title">
+        <span class="title-icon">📂</span> 巡楼分类卷宗
+      </h2>
+      <div class="category-grid">
+        <CategoryCard
+          title="当场抓包"
+          description="每周例行巡查，数据不说谎。"
+          href="/category/zhuabao"
+          badge="突击抓包"
+          badgeType="red"
+        />
+        <CategoryCard
+          title="模范寝室"
+          description="长期稳定、表现优异的服务记录。"
+          href="/category/mofan"
+          badge="免检通报"
+          badgeType="dark"
+        />
+        <CategoryCard
+          title="没收作案工具"
+          description="异常断流、夸大宣传与避坑档案。"
+          href="/category/meishou"
+          badge="拉闸避坑"
+          badgeType="red"
+        />
       </div>
+    </section>
 
-      <!-- Right Sidebar Column -->
-      <aside class="index-sidebar-column">
+    <!-- Two-Column Section: Latest Patrol Posts (Left) + Right Navigation Sidebar (Right) -->
+    <div class="index-two-column-layout">
+      <!-- Left Main Column: Latest Posts -->
+      <section id="patrol-posts" class="posts-section">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">📝</span> 最新巡楼纪要
+          </h2>
+          <a href="/posts" class="view-all-link">查看全部卷宗 ({allPosts.length}) ➔</a>
+        </div>
+
+        <div class="posts-list">
+          {latestPosts.map((post) => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              date={post.data.pubDate.toISOString().split('T')[0]}
+              category={post.data.category}
+              verdict={post.data.verdict}
+              isPinned={post.data.isPinned}
+            />
+          ))}
+        </div>
+      </section>
+
+      <!-- Right Sidebar Column: Structured Right Navigation -->
+      <aside class="right-sidebar-column">
         <RightNav activeId="01" title="⚡ 热门机场速览" />
       </aside>
     </div>
+
+    <!-- Section: SEO / GEO Keyword Guide Banner (Full Width Layout Restored) -->
+    <section class="seo-guide-banner industrial-box">
+      <h3>🔍 宿管避坑指南与关键词检索</h3>
+      <p>
+        查找 <strong>2026最稳定的机场</strong>、<strong>性价比机场推荐</strong>、<strong>机场代理选购</strong> 或是解决周巡断流卡顿？宿管已为你分类归档：
+      </p>
+      <div class="keyword-pill-group">
+        <a href="/posts" class="kw-pill">机场代理实测</a>
+        <a href="/category/mofan" class="kw-pill">2026最稳定的机场</a>
+        <a href="/handbook" class="kw-pill">性价比机场避坑指南</a>
+        <a href="/category/zhuabao" class="kw-pill">每周巡查丢包抓包</a>
+        <a href="/about" class="kw-pill">查房博客评测标准</a>
+      </div>
+    </section>
   </div>
 </BaseLayout>
 
 <style>
-  .index-content-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-
-  @media (min-width: 992px) {
-    .index-content-layout {
-      grid-template-columns: 1fr 320px;
-    }
-  }
-
-  .index-sidebar-column {
-    position: sticky;
-    top: 5rem;
-  }
-
   .hero-section {
     margin-bottom: 2.5rem;
   }
@@ -242,41 +222,40 @@ const latestPosts = sortedPosts.slice(0, 6);
     flex-wrap: wrap;
   }
 
-  .btn-primary {
-    background: var(--accent-red);
-    color: #ffffff;
-    font-weight: 900;
-    font-size: 1.05rem;
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.75rem 1.5rem;
+    font-weight: 800;
+    font-size: 1rem;
     text-decoration: none;
-    border: 2px solid #ffffff;
-    box-shadow: 4px 4px 0px #000000;
     transition: all 0.15s ease;
   }
 
+  .btn-primary {
+    background: var(--accent-red);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 3px 3px 0px #ffffff;
+  }
+
   .btn-primary:hover {
-    background: #b81d1d;
+    background: var(--accent-red-hover);
     transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #000000;
+    box-shadow: 5px 5px 0px #ffffff;
     color: #ffffff;
   }
 
   .btn-secondary {
-    background: var(--bg-surface);
-    color: var(--text-main);
-    font-weight: 800;
-    font-size: 1.05rem;
-    padding: 0.75rem 1.5rem;
-    text-decoration: none;
+    background: transparent;
+    color: #ffffff;
     border: 2px solid #ffffff;
-    box-shadow: 4px 4px 0px #000000;
-    transition: all 0.15s ease;
   }
 
   .btn-secondary:hover {
-    background: #e5e3da;
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px #000000;
+    background: #ffffff;
+    color: var(--text-main);
   }
 
   .index-body-grid {
@@ -286,71 +265,108 @@ const latestPosts = sortedPosts.slice(0, 6);
   }
 
   .section-title {
-    margin-top: 0;
-    margin-bottom: 1.25rem;
-    font-size: 1.6rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border-thick);
+    padding-bottom: 0.4rem;
   }
 
   .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  /* Two-column Layout: Posts on Left, RightNav on Right */
+  .index-two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .index-two-column-layout {
+      grid-template-columns: 1fr 340px;
+    }
+  }
+
+  .right-sidebar-column {
+    position: sticky;
+    top: 5rem;
   }
 
   .section-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border-thick);
+    padding-bottom: 0.4rem;
+  }
+
+  .section-header .section-title {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   .view-all-link {
     font-family: var(--font-mono);
-    font-weight: 800;
-    font-size: 0.95rem;
+    font-weight: 700;
+    font-size: 0.9rem;
     color: var(--accent-red);
+    text-decoration: none;
+  }
+
+  .view-all-link:hover {
+    text-decoration: underline;
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
   }
 
   .seo-guide-banner {
-    background: #e8e5db;
-    margin-top: 1rem;
+    background: #eef2ff;
+    border-color: #1d4ed8;
+    box-shadow: 4px 4px 0px #1d4ed8;
   }
 
   .seo-guide-banner h3 {
     margin-top: 0;
-    font-size: 1.2rem;
+    color: #1e3a8a;
+  }
+
+  .seo-guide-banner p {
+    color: #334155;
+    margin-bottom: 1rem;
   }
 
   .keyword-pill-group {
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-top: 1rem;
   }
 
   .kw-pill {
-    background: var(--bg-surface);
-    color: var(--text-main);
-    border: 1.5px solid var(--border-thick);
-    padding: 0.3rem 0.7rem;
+    background: #ffffff;
+    border: 1.5px solid #1d4ed8;
+    color: #1d4ed8;
+    padding: 0.3rem 0.8rem;
     font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
-    font-family: var(--font-mono);
+    transition: all 0.15s ease;
   }
 
   .kw-pill:hover {
-    background: var(--accent-red);
+    background: #1d4ed8;
     color: #ffffff;
-  }
-
-  @media (max-width: 768px) {
-    .hero-title { font-size: 2.2rem; }
-    .hero-subtitle { font-size: 1.1rem; }
-    .hero-stamp-wrapper { display: none; }
   }
 </style>
