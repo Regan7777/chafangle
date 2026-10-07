@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】神行加速：广深 IEPL 顶级专线与全流媒体极速巡查实测"
 description: "深度测评神行加速（ShenXing Speed）。主打广深专线与全节点 IPLC 物理专线，支持 4K/8K 零卡顿无缝播放与 ChatGPT / Netflix 稳定解锁。"
-pubDate: 2026-10-07
+pubDate: 2026-10-07T12:00:00Z
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"

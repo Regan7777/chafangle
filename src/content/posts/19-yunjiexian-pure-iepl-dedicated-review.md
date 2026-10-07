@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】云界线：纯血 IPLC 物理专线与全天候零丢包巡查实测"
 description: "深度测评云界线（Yunjiexian）。全线采用纯血物理 IPLC 独立专线，单节点最高 2.5Gbps 带宽，全天候零丢包无缝出海。"
-pubDate: 2026-10-07
+pubDate: 2026-10-07T08:00:00Z
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"

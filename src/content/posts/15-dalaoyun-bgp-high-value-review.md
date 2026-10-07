@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】大佬云：BGP 智能多入口与高性价比出海连接实测"
 description: "深度测评大佬云（Dalao Cloud）。凭借多入口 BGP 智能路由与灵活均衡调度，提供极佳的性价比与高可用网络出海体验。"
-pubDate: 2026-10-07
+pubDate: 2026-10-07T11:00:00Z
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"

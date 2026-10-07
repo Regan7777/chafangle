@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】榴莲云：原生 IP 全流媒体解锁与高清播放巡查实测"
 description: "深度测评榴莲云（Durian Cloud）。“吃着榴莲翻着墙”，主打全节点原生 IP 智能解锁，完美支持 Netflix, ChatGPT 及 Disney+。"
-pubDate: 2026-10-07
+pubDate: 2026-10-07T10:00:00Z
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"
