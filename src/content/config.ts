@@ -7,7 +7,7 @@ const postsCollection = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    category: z.enum(['zhuabao', 'mofan', 'meishou', 'tongbao']),
+    category: z.enum(['zhuabao', 'mofan', 'meishou', 'tongbao', 'jiaocheng']),
     verdict: z.enum(['five-star', 'warning', 'confiscated', 'ghost']).optional(),
     verdictNote: z.string().optional(),
     isPinned: z.boolean().default(false),

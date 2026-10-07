@@ -9,6 +9,7 @@ export async function getStaticPaths() {
     { cat: 'zhuabao', title: '当场抓包', desc: '每周例行巡查，数据不说谎。实抓连通率、丢包率与网络抖动。' },
     { cat: 'mofan', title: '模范寝室', desc: '长期稳定、表现优异的服务记录。免检通报，推荐关注。' },
     { cat: 'meishou', title: '没收作案工具', desc: '异常断流、夸大宣传与避坑档案。直接拉闸，严防踩坑。' },
+    { cat: 'jiaocheng', title: '入住教程', desc: '新手租客必读教程与客户端配置全攻略。包含 Clash、Shadowrocket、Sing-box 等配置使用教程。' },
   ];
 
   return categoryMap.map((item) => ({
@@ -40,6 +41,7 @@ const counts = {
   zhuabao: allPosts.filter(p => p.data.category === 'zhuabao').length,
   mofan: allPosts.filter(p => p.data.category === 'mofan').length,
   meishou: allPosts.filter(p => p.data.category === 'meishou').length,
+  jiaocheng: allPosts.filter(p => p.data.category === 'jiaocheng').length,
 };
 ---
 
@@ -59,6 +61,7 @@ const counts = {
         <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>当场抓包 ({counts.zhuabao})</a>
         <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>模范寝室 ({counts.mofan})</a>
         <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>没收作案工具 ({counts.meishou})</a>
+        <a href="/category/jiaocheng" class={`tab-link ${cat === 'jiaocheng' ? 'active' : ''}`}>入住教程 ({counts.jiaocheng})</a>
       </div>
     </div>
 

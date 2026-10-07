@@ -21,6 +21,7 @@ const categoryLabels: Record<string, { name: string; tagClass: string }> = {
   'mofan': { name: '模范寝室', tagClass: 'badge-mofan' },
   'meishou': { name: '没收作案工具', tagClass: 'badge-meishou' },
   'tongbao': { name: '宿管通报', tagClass: 'badge-tongbao' },
+  'jiaocheng': { name: '入住教程', tagClass: 'badge-jiaocheng' },
 };
 
 const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-default' };
@@ -110,6 +111,7 @@ const catInfo = categoryLabels[category] || { name: category, tagClass: 'badge-d
   .badge-mofan { background: #dcfce7; color: #15803d; }
   .badge-meishou { background: #fee2e2; color: #b91c1c; }
   .badge-tongbao { background: #fef3c7; color: #b45309; }
+  .badge-jiaocheng { background: #f3e8ff; color: #7e22ce; }
 
   .post-date {
     font-size: 0.85rem;
