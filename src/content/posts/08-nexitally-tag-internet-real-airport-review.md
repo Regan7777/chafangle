@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】Nexitally 与 TAG Internet：老牌标杆 IEPL 专线周巡查实测"
 description: "本周周巡查重点抽查网络圈口碑标杆 Nexitally (奶昔) 与 TAG Internet。采样全周 7×24 小时数据，自研面板与专属 IEPL 物理专线在高峰期表现极为强悍，全周零丢包，ChatGPT 与 Netflix 全流媒体稳定解锁。"
-pubDate: 2026-10-07
+pubDate: 2025-11-16
 category: "mofan"
 verdict: "five-star"
 verdictNote: "Nexitally 与 TAG Internet 在全周 7×24 小时例行抽测中展现了顶级 IEPL 专线的硬实力，握手延迟与抖动极低，ChatGPT / Claude 等 AI 工具风控通过率 100%。"

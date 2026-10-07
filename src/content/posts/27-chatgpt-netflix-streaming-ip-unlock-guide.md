@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】ChatGPT 与 Netflix / Disney+ 全流媒体解锁全攻略：解决人机验证与 IP 风控"
 description: "深度剖析 AI 助手（ChatGPT / Claude / Gemini）与海外高清流媒体对代理节点的风控校验规则，教你如何利用机场解锁节点轻松绕过人机验证。"
-pubDate: 2026-10-07T17:00:00Z
+pubDate: 2025-12-21
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】搬瓦工官方 Just My Socks：CN2 GIA 与 CMIN2 线路周巡查档案"
 description: "针对搬瓦工出品的 Just My Socks 官方服务进行全周 7×24 小时跟踪抽查。包含美国 LA CN2 GIA、日本东京 9929 与香港 CMIN2 优化线路，IP 自动漂移切换机制保证极高可用性。"
-pubDate: 2026-10-06
+pubDate: 2026-03-13
 category: "mofan"
 verdict: "five-star"
 verdictNote: "搬瓦工官方出品的 Just My Socks 在 IP 自动漂移修复与 CN2 GIA / CMIN2 高级线路保障上优势独一无二，被封即自动更换 IP，全周 SLA 达 99.96%。"

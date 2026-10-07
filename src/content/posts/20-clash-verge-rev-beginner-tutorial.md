@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】Clash Verge Rev 零基础上手指南：从一键订阅配置到智能规则分流"
 description: "针对 Windows / macOS / Linux 平台的主流代理客户端 Clash Verge Rev，提供从安装、节点订阅导入、TUN 模式开启到规则分流的完整图文新手教程。"
-pubDate: 2026-10-07T15:00:00Z
+pubDate: 2026-03-25
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

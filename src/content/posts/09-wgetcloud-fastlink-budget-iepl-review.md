@@ -1,7 +1,7 @@
 ---
 title: "【当场抓包】WgetCloud 与 Fastlink：主流性价比 IEPL 专线周巡查对比"
 description: "宿管手操测速仪！对 WgetCloud (微客云) 与 Fastlink 两大热门性价比专线机场进行周度高压抽查。测定 BGP 优化入口与出口节点连通率，分析高峰期抖动表现与流媒体解锁细节。"
-pubDate: 2026-10-07
+pubDate: 2025-07-29
 category: "zhuabao"
 verdict: "five-star"
 verdictNote: "WgetCloud 与 Fastlink 在性价比区间表现非常出色，全周平均丢包率低于 0.8%，在晚高峰期依然能稳定维持 180Mbps+ 视频码率。"

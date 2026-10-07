@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】Sing-box 新一代通用代理客户端入门全攻略"
 description: "全平台通用兼高效无损的 Sing-box 客户端使用指南。从配置导入、内核模式设置到多环境节点防泄露优化。"
-pubDate: 2026-10-07T14:00:00Z
+pubDate: 2025-10-11
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

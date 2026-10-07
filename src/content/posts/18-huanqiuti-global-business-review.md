@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】环球梯：商务出海与企业级高可用连接巡查实测"
 description: "深度测评环球梯（Global Ladder）。专注于商务出海、跨境办公与全地域节点冗余覆盖，提供高可用专线与全流媒体支持。"
-pubDate: 2026-10-07T09:00:00Z
+pubDate: 2026-01-19
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"

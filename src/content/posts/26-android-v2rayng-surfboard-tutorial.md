@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】Android 安卓端翻墙配置指南：v2rayNG 与 Surfboard 快速使用教程"
 description: "适用于 Android 智能手机与安卓平板的节点加速指南。从 v2rayNG 节点粘贴导入、分流应用设置到 Surfboard 精品面板订阅更新。"
-pubDate: 2026-10-07T16:45:00Z
+pubDate: 2025-10-06
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

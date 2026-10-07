@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】如何挑选高性价比与极致稳定的机场？机长参数与避坑防跑路硬核解析"
 description: "教你从线路上游（BGP中转、广深IEPL专线）、节点倍率、SLA连通率以及机场防跑路口碑等硬核指标，快速选出称心如意的出海加速服务。"
-pubDate: 2026-10-07T16:30:00Z
+pubDate: 2026-10-01
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

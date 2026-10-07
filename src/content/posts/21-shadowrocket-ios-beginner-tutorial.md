@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】Shadowrocket (小火箭) iOS 入门教程：Apple ID 转换与节点一键导入"
 description: "专为 iOS / iPhone / iPad 用户打造的 Shadowrocket 快速配置指南。涵盖海外 Apple ID 获取、扫码一键导入、规则配置与常驻网络连通避坑技巧。"
-pubDate: 2026-10-07T14:30:00Z
+pubDate: 2025-09-04
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

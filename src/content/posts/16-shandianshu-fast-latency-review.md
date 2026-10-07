@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】闪电鼠：低延迟电竞级 IEPL 专线巡查实测"
 description: "深度测评闪电鼠（Lightning Mouse）。主打低延迟 IEPL 专线与跨境游戏/即时通讯优化，全节点秒开与高稳定连通。"
-pubDate: 2026-10-07T07:00:00Z
+pubDate: 2026-01-08
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"

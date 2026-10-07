@@ -1,7 +1,7 @@
 ---
 title: "【模范寝室】快连 VPN (LetsVPN)：全自动双通道打洞与极速连接周巡查实测"
 description: "本周周巡查重点抽查知名客户端 VPN 服务——快连 VPN (LetsVPN)。全周 7×24 小时实测智能化节点匹配、独家双通道抗封锁协议与全流媒体无感解锁。"
-pubDate: 2026-10-07
+pubDate: 2025-12-11
 category: "mofan"
 categoryName: "模范寝室"
 author: "晚风"

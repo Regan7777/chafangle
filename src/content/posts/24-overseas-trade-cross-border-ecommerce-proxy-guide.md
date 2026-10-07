@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】海外贸易与跨境电商专线搭建：IP 纯净度与防关联出海避坑指南"
 description: "专为外贸出口、跨境电商（Amazon、Shopee、Shopify）及海外社交媒体运营团队打造的网络方案指南。详解原生 IP、家宽 IP 选购及多账号防关联出海配置。"
-pubDate: 2026-10-07T16:15:00Z
+pubDate: 2026-06-18
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"

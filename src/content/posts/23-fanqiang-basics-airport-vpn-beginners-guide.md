@@ -1,7 +1,7 @@
 ---
 title: "【入住教程】零基础科学翻墙科普：什么是机场、VPN与节点代理？"
 description: "针对新手小白的科学翻墙入门全景指南。深入浅出科普科学上网原理、机场代理与传统 VPN 的本质区别，以及如何根据个人需求挑选合适的高速节点。"
-pubDate: 2026-10-07T16:00:00Z
+pubDate: 2026-07-10
 category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
