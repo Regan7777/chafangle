@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://chafang.pages.dev',
+  site: 'https://chafangle.com',
   outDir: './dist',
   integrations: [sitemap()],
 });
