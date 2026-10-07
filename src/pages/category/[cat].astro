@@ -34,15 +34,7 @@ const filteredPosts = allPosts
   .filter((post) => post.data.category === cat)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-// Counts for each category tab
-const counts = {
-  all: allPosts.length,
-  tongbao: allPosts.filter(p => p.data.category === 'tongbao').length,
-  zhuabao: allPosts.filter(p => p.data.category === 'zhuabao').length,
-  mofan: allPosts.filter(p => p.data.category === 'mofan').length,
-  meishou: allPosts.filter(p => p.data.category === 'meishou').length,
-  jiaocheng: allPosts.filter(p => p.data.category === 'jiaocheng').length,
-};
+// Category map
 ---
 
 <BaseLayout
@@ -52,16 +44,16 @@ const counts = {
   <div class="container category-page">
     <div class="page-header industrial-box">
       <span class="industrial-badge industrial-badge-red font-mono">卷宗分类</span>
-      <h1 class="page-title">{catInfo.title} ({filteredPosts.length})</h1>
+      <h1 class="page-title">{catInfo.title}</h1>
       <p class="page-intro">{catInfo.desc}</p>
 
       <div class="cat-filter-tabs font-mono">
-        <a href="/posts" class="tab-link">全部 ({counts.all})</a>
-        <a href="/category/tongbao" class={`tab-link ${cat === 'tongbao' ? 'active' : ''}`}>宿管通报 ({counts.tongbao})</a>
-        <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>当场抓包 ({counts.zhuabao})</a>
-        <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>模范寝室 ({counts.mofan})</a>
-        <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>没收作案工具 ({counts.meishou})</a>
-        <a href="/category/jiaocheng" class={`tab-link ${cat === 'jiaocheng' ? 'active' : ''}`}>入住教程 ({counts.jiaocheng})</a>
+        <a href="/posts" class="tab-link">全部</a>
+        <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>模范寝室</a>
+        <a href="/category/tongbao" class={`tab-link ${cat === 'tongbao' ? 'active' : ''}`}>宿管通报</a>
+        <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>当场抓包</a>
+        <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>没收作案工具</a>
+        <a href="/category/jiaocheng" class={`tab-link ${cat === 'jiaocheng' ? 'active' : ''}`}>入住教程</a>
       </div>
     </div>
 

@@ -10,13 +10,6 @@ const sortedPosts = allPosts.sort((a, b) => {
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
 });
 
-const counts = {
-  all: allPosts.length,
-  tongbao: allPosts.filter(p => p.data.category === 'tongbao').length,
-  zhuabao: allPosts.filter(p => p.data.category === 'zhuabao').length,
-  mofan: allPosts.filter(p => p.data.category === 'mofan').length,
-  meishou: allPosts.filter(p => p.data.category === 'meishou').length,
-};
 ---
 
 <BaseLayout
@@ -26,17 +19,18 @@ const counts = {
   <div class="container posts-index-page">
     <div class="page-header industrial-box">
       <span class="industrial-badge">全楼卷宗归档</span>
-      <h1 class="page-title">全部巡楼纪要 ({counts.all})</h1>
+      <h1 class="page-title">全部巡楼纪要</h1>
       <p class="page-intro">
         所有网络服务实测记录按时间与查房结论归档。周巡查数据实时存照，支持查看丢包率、TCP延迟与流媒体播放测速。
       </p>
 
       <div class="cat-filter-tabs font-mono">
-        <a href="/posts" class="tab-link active">全部 ({counts.all})</a>
-        <a href="/category/tongbao" class="tab-link">宿管通报 ({counts.tongbao})</a>
-        <a href="/category/zhuabao" class="tab-link">当场抓包 ({counts.zhuabao})</a>
-        <a href="/category/mofan" class="tab-link">模范寝室 ({counts.mofan})</a>
-        <a href="/category/meishou" class="tab-link">没收作案工具 ({counts.meishou})</a>
+        <a href="/posts" class="tab-link active">全部</a>
+        <a href="/category/mofan" class="tab-link">模范寝室</a>
+        <a href="/category/tongbao" class="tab-link">宿管通报</a>
+        <a href="/category/zhuabao" class="tab-link">当场抓包</a>
+        <a href="/category/meishou" class="tab-link">没收作案工具</a>
+        <a href="/category/jiaocheng" class="tab-link">入住教程</a>
       </div>
     </div>
 
