@@ -89,90 +89,92 @@ const latestPosts = [
 
   <!-- Main Content Body -->
   <div class="container index-body-grid">
-    <!-- Section: Three Category Cards (Full Width Layout Restored) -->
-    <section class="category-cards-section">
-      <h2 class="section-title">
-        <span class="title-icon">📂</span> 巡楼分类卷宗
-      </h2>
-      <div class="category-grid">
-        <CategoryCard
-          title="当场抓包"
-          description="每周例行巡查，数据不说谎。"
-          href="/category/zhuabao"
-          badge="突击抓包"
-          badgeType="red"
-        />
-        <CategoryCard
-          title="模范寝室"
-          description="长期稳定、表现优异的服务记录。"
-          href="/category/mofan"
-          badge="免检通报"
-          badgeType="dark"
-        />
-        <CategoryCard
-          title="没收作案工具"
-          description="异常断流、夸大宣传与避坑档案。"
-          href="/category/meishou"
-          badge="拉闸避坑"
-          badgeType="red"
-        />
-        <CategoryCard
-          title="入住教程"
-          description="零基础小白教程，Clash与小火箭全攻略。"
-          href="/category/jiaocheng"
-          badge="新手指南"
-          badgeType="dark"
-        />
-      </div>
-    </section>
-
-    <!-- Two-Column Section: Latest Patrol Posts (Left) + Right Navigation Sidebar (Right) -->
-    <div class="index-two-column-layout">
-      <!-- Left Main Column: Latest Posts -->
-      <section id="patrol-posts" class="posts-section">
-        <div class="section-header">
+    <div class="page-layout-grid">
+      <!-- Left Main Column -->
+      <div class="main-column">
+        <!-- Section: Four Category Cards -->
+        <section class="category-cards-section">
           <h2 class="section-title">
-            <span class="title-icon">📝</span> 最新巡楼纪要
+            <span class="title-icon">📂</span> 巡楼分类卷宗
           </h2>
-          <a href="/posts" class="view-all-link">查看全部卷宗 ({allPosts.length}) ➔</a>
-        </div>
-
-        <div class="posts-list">
-          {latestPosts.map((post) => (
-            <ArticleCard
-              title={post.data.title}
-              description={post.data.description}
-              slug={post.slug}
-              date={post.data.pubDate.toISOString().split('T')[0]}
-              category={post.data.category}
-              verdict={post.data.verdict}
-              badge={post.data.badge}
-              isPinned={post.data.isPinned}
+          <div class="category-grid">
+            <CategoryCard
+              title="当场抓包"
+              description="每周例行巡查，数据不说谎。"
+              href="/category/zhuabao"
+              badge="突击抓包"
+              badgeType="red"
             />
-          ))}
-        </div>
-      </section>
+            <CategoryCard
+              title="模范寝室"
+              description="长期稳定、表现优异的服务记录。"
+              href="/category/mofan"
+              badge="免检通报"
+              badgeType="dark"
+            />
+            <CategoryCard
+              title="没收作案工具"
+              description="异常断流、夸大宣传与避坑档案。"
+              href="/category/meishou"
+              badge="拉闸避坑"
+              badgeType="red"
+            />
+            <CategoryCard
+              title="入住教程"
+              description="零基础小白教程，Clash与小火箭全攻略。"
+              href="/category/jiaocheng"
+              badge="新手指南"
+              badgeType="dark"
+            />
+          </div>
+        </section>
+
+        <!-- Section: Latest Patrol Posts -->
+        <section id="patrol-posts" class="posts-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span class="title-icon">📝</span> 最新巡楼纪要
+            </h2>
+            <a href="/posts" class="view-all-link">查看全部卷宗 ({allPosts.length}) ➔</a>
+          </div>
+
+          <div class="posts-list">
+            {latestPosts.map((post) => (
+              <ArticleCard
+                title={post.data.title}
+                description={post.data.description}
+                slug={post.slug}
+                date={post.data.pubDate.toISOString().split('T')[0]}
+                category={post.data.category}
+                verdict={post.data.verdict}
+                badge={post.data.badge}
+                isPinned={post.data.isPinned}
+              />
+            ))}
+          </div>
+        </section>
+
+        <!-- Section: SEO / GEO Keyword Guide Banner -->
+        <section class="seo-guide-banner industrial-box">
+          <h3>🔍 宿管避坑指南与关键词检索</h3>
+          <p>
+            查找 <strong>2026最稳定的机场</strong>、<strong>性价比机场推荐</strong>、<strong>机场代理选购</strong> 或是解决周巡断流卡顿？宿管已为你分类归档：
+          </p>
+          <div class="keyword-pill-group">
+            <a href="/posts" class="kw-pill">机场代理实测</a>
+            <a href="/category/mofan" class="kw-pill">2026最稳定的机场</a>
+            <a href="/handbook" class="kw-pill">性价比机场避坑指南</a>
+            <a href="/category/zhuabao" class="kw-pill">每周巡查丢包抓包</a>
+            <a href="/about" class="kw-pill">查房博客评测标准</a>
+          </div>
+        </section>
+      </div>
 
       <!-- Right Sidebar Column: Structured Right Navigation -->
       <aside class="right-sidebar-column">
         <RightNav activeId="01" title="⚡ 热门机场速览" />
       </aside>
     </div>
-
-    <!-- Section: SEO / GEO Keyword Guide Banner (Full Width Layout Restored) -->
-    <section class="seo-guide-banner industrial-box">
-      <h3>🔍 宿管避坑指南与关键词检索</h3>
-      <p>
-        查找 <strong>2026最稳定的机场</strong>、<strong>性价比机场推荐</strong>、<strong>机场代理选购</strong> 或是解决周巡断流卡顿？宿管已为你分类归档：
-      </p>
-      <div class="keyword-pill-group">
-        <a href="/posts" class="kw-pill">机场代理实测</a>
-        <a href="/category/mofan" class="kw-pill">2026最稳定的机场</a>
-        <a href="/handbook" class="kw-pill">性价比机场避坑指南</a>
-        <a href="/category/zhuabao" class="kw-pill">每周巡查丢包抓包</a>
-        <a href="/about" class="kw-pill">查房博客评测标准</a>
-      </div>
-    </section>
   </div>
 </BaseLayout>
 
@@ -318,8 +320,8 @@ const latestPosts = [
     gap: 1.5rem;
   }
 
-  /* Two-column Layout: Posts on Left, RightNav on Right */
-  .index-two-column-layout {
+  /* Two-column Layout: Main on Left, RightNav on Right */
+  .page-layout-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -327,20 +329,14 @@ const latestPosts = [
   }
 
   @media (min-width: 992px) {
-    .index-two-column-layout {
-      grid-template-columns: 1fr 340px;
+    .page-layout-grid {
+      grid-template-columns: 1fr 320px;
       gap: 3rem;
     }
-  }
-
-  .right-sidebar-column {
-    position: sticky;
-    top: 5rem;
-  }
-
-  @media (min-width: 992px) {
     .right-sidebar-column {
       margin-left: 1.5rem;
+      position: sticky;
+      top: 5rem;
     }
   }
 
