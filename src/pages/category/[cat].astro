@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
+import RightNav from '../../components/RightNav.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -42,47 +43,69 @@ const filteredPosts = allPosts
   description={catInfo.desc}
 >
   <div class="container category-page">
-    <div class="page-header industrial-box">
-      <span class="industrial-badge industrial-badge-red font-mono">卷宗分类</span>
-      <h1 class="page-title">{catInfo.title}</h1>
-      <p class="page-intro">{catInfo.desc}</p>
+    <div class="page-layout-grid">
+      <div class="main-column">
+        <div class="page-header industrial-box">
+          <span class="industrial-badge industrial-badge-red font-mono">卷宗分类</span>
+          <h1 class="page-title">{catInfo.title}</h1>
+          <p class="page-intro">{catInfo.desc}</p>
 
-      <div class="cat-filter-tabs font-mono">
-        <a href="/posts" class="tab-link">全部</a>
-        <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>模范寝室</a>
-        <a href="/category/tongbao" class={`tab-link ${cat === 'tongbao' ? 'active' : ''}`}>宿管通报</a>
-        <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>当场抓包</a>
-        <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>没收作案工具</a>
-        <a href="/category/jiaocheng" class={`tab-link ${cat === 'jiaocheng' ? 'active' : ''}`}>入住教程</a>
+          <div class="cat-filter-tabs font-mono">
+            <a href="/posts" class="tab-link">全部</a>
+            <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>模范寝室</a>
+            <a href="/category/tongbao" class={`tab-link ${cat === 'tongbao' ? 'active' : ''}`}>宿管通报</a>
+            <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>当场抓包</a>
+            <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>没收作案工具</a>
+            <a href="/category/jiaocheng" class={`tab-link ${cat === 'jiaocheng' ? 'active' : ''}`}>入住教程</a>
+          </div>
+        </div>
+
+        {filteredPosts.length > 0 ? (
+          <div class="posts-grid">
+            {filteredPosts.map((post) => (
+              <ArticleCard
+                title={post.data.title}
+                description={post.data.description}
+                slug={post.slug}
+                date={post.data.pubDate.toISOString().split('T')[0]}
+                category={post.data.category}
+                verdict={post.data.verdict}
+                badge={post.data.badge}
+                isPinned={post.data.isPinned}
+              />
+            ))}
+          </div>
+        ) : (
+          <div class="empty-box industrial-box font-mono">
+            宿管巡查提示：该卷宗分类暂未归档新纪要。
+          </div>
+        )}
       </div>
+
+      <!-- Right Sidebar Navigation -->
+      <aside class="right-sidebar-column">
+        <RightNav activeId="01" title="⚡ 热门机场速览" />
+      </aside>
     </div>
-
-    {filteredPosts.length > 0 ? (
-      <div class="posts-grid">
-        {filteredPosts.map((post) => (
-          <ArticleCard
-            title={post.data.title}
-            description={post.data.description}
-            slug={post.slug}
-            date={post.data.pubDate.toISOString().split('T')[0]}
-            category={post.data.category}
-            verdict={post.data.verdict}
-            badge={post.data.badge}
-            isPinned={post.data.isPinned}
-          />
-        ))}
-      </div>
-    ) : (
-      <div class="empty-box industrial-box font-mono">
-        宿管巡查提示：该卷宗分类暂未归档新纪要。
-      </div>
-    )}
   </div>
 </BaseLayout>
 
 <style>
   .category-page {
-    max-width: 950px;
+    max-width: 1100px;
+  }
+
+  .page-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .page-layout-grid {
+      grid-template-columns: 1fr 320px;
+    }
   }
 
   .page-header {

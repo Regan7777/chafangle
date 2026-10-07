@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ArticleCard from '../../components/ArticleCard.astro';
+import RightNav from '../../components/RightNav.astro';
 import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts');
@@ -17,43 +18,65 @@ const sortedPosts = allPosts.sort((a, b) => {
   description="VPN查房博客全部巡楼纪要与实测卷宗归档。收录宿管通报、当场抓包数据、模范寝室稳定推荐与没收作案工具拉闸避坑记录。"
 >
   <div class="container posts-index-page">
-    <div class="page-header industrial-box">
-      <span class="industrial-badge">全楼卷宗归档</span>
-      <h1 class="page-title">全部巡楼纪要</h1>
-      <p class="page-intro">
-        所有网络服务实测记录按时间与查房结论归档。周巡查数据实时存照，支持查看丢包率、TCP延迟与流媒体播放测速。
-      </p>
+    <div class="page-layout-grid">
+      <div class="main-column">
+        <div class="page-header industrial-box">
+          <span class="industrial-badge">全楼卷宗归档</span>
+          <h1 class="page-title">全部巡楼纪要</h1>
+          <p class="page-intro">
+            所有网络服务实测记录按时间与查房结论归档。周巡查数据实时存照，支持查看丢包率、TCP延迟与流媒体播放测速。
+          </p>
 
-      <div class="cat-filter-tabs font-mono">
-        <a href="/posts" class="tab-link active">全部</a>
-        <a href="/category/mofan" class="tab-link">模范寝室</a>
-        <a href="/category/tongbao" class="tab-link">宿管通报</a>
-        <a href="/category/zhuabao" class="tab-link">当场抓包</a>
-        <a href="/category/meishou" class="tab-link">没收作案工具</a>
-        <a href="/category/jiaocheng" class="tab-link">入住教程</a>
+          <div class="cat-filter-tabs font-mono">
+            <a href="/posts" class="tab-link active">全部</a>
+            <a href="/category/mofan" class="tab-link">模范寝室</a>
+            <a href="/category/tongbao" class="tab-link">宿管通报</a>
+            <a href="/category/zhuabao" class="tab-link">当场抓包</a>
+            <a href="/category/meishou" class="tab-link">没收作案工具</a>
+            <a href="/category/jiaocheng" class="tab-link">入住教程</a>
+          </div>
+        </div>
+
+        <div class="posts-grid">
+          {sortedPosts.map((post) => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              date={post.data.pubDate.toISOString().split('T')[0]}
+              category={post.data.category}
+              verdict={post.data.verdict}
+              badge={post.data.badge}
+              isPinned={post.data.isPinned}
+            />
+          ))}
+        </div>
       </div>
-    </div>
 
-    <div class="posts-grid">
-      {sortedPosts.map((post) => (
-        <ArticleCard
-          title={post.data.title}
-          description={post.data.description}
-          slug={post.slug}
-          date={post.data.pubDate.toISOString().split('T')[0]}
-          category={post.data.category}
-          verdict={post.data.verdict}
-          badge={post.data.badge}
-          isPinned={post.data.isPinned}
-        />
-      ))}
+      <!-- Right Sidebar Navigation -->
+      <aside class="right-sidebar-column">
+        <RightNav activeId="01" title="⚡ 热门机场速览" />
+      </aside>
     </div>
   </div>
 </BaseLayout>
 
 <style>
   .posts-index-page {
-    max-width: 950px;
+    max-width: 1100px;
+  }
+
+  .page-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .page-layout-grid {
+      grid-template-columns: 1fr 320px;
+    }
   }
 
   .page-header {

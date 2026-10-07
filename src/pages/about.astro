@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StampWatermark from '../components/StampWatermark.astro';
+import RightNav from '../components/RightNav.astro';
 ---
 
 <BaseLayout
@@ -8,88 +9,110 @@ import StampWatermark from '../components/StampWatermark.astro';
   description="了解‘VPN查房’博客的建立初衷、评测标准、联系宿管 Telegram 方式与免责原则。以周为单位巡查，不让断流蒙混过关。"
 >
   <div class="container about-page">
-    <div class="page-header industrial-box">
-      <span class="industrial-badge">宿管档案</span>
-      <h1 class="page-title">关于「VPN查房」博客</h1>
-      <p class="page-intro">
-        <strong>Slogan：</strong>以周为单位巡查，不让断流蒙混过关。
-      </p>
+    <div class="page-layout-grid">
+      <div class="main-column">
+        <div class="page-header industrial-box">
+          <span class="industrial-badge">宿管档案</span>
+          <h1 class="page-title">关于「VPN查房」博客</h1>
+          <p class="page-intro">
+            <strong>Slogan：</strong>以周为单位巡查，不让断流蒙混过关。
+          </p>
 
-      <div class="stamp-position">
-        <StampWatermark text="VPN查房了·突击取证专用章" size="sm" />
+          <div class="stamp-position">
+            <StampWatermark text="VPN查房了·突击取证专用章" size="sm" />
+          </div>
+        </div>
+
+        <div class="about-content industrial-box">
+          <h2>一、本站建立初衷</h2>
+          <p>
+            在如今的网络服务市场中，白天看着个个都是千兆专线、岁月静好；一到例行巡查抽检时，整栋楼除了哀嚎就是工单。
+          </p>
+          <p>
+            <strong>「VPN查房」</strong> 博客旨在建立一个面向 VPN、机场代理与网络服务用户的公开测试与体验观察记录站。我们以周为单位巡查，记录每周真实环境下的服务表现，记录异常丢包与断流，评选长期表现稳定优异的模范服务，曝光夸大宣传与失联拉闸的避坑档案。
+          </p>
+
+          <h2>二、宿管评测三大原则</h2>
+          <ul>
+            <li><strong>不接赞助、不恰饭：</strong>保持测试独立性，拒绝任何付费软文或虚假宣传。</li>
+            <li><strong>数据不说谎：</strong>用 MTR 路由追踪、连续 TCPing 握手与实际 4K/8K 码率加载数据说话。</li>
+            <li><strong>以周为单位巡查：</strong>短时间全绿不算数，一周7×24小时连轴转扛得住才算数。</li>
+          </ul>
+
+          <h2>三、查房结论四档评级</h2>
+          <table class="about-table">
+            <thead>
+              <tr>
+                <th>评级档位</th>
+                <th>判定标准说明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>🏆 五星寝室（免检通报）</strong></td>
+                <td>全周巡查周期内播放、加载与连接表现稳定，低丢包。</td>
+              </tr>
+              <tr>
+                <td><strong>⚠️ 通报批评（留校察看）</strong></td>
+                <td>平峰表现良好，周巡查期间偶有波动，建议谨慎观察。</td>
+              </tr>
+              <tr>
+                <td><strong>🚨 没收违规电器（直接拉闸）</strong></td>
+                <td>周巡查周期内延迟明显升高、稳定性差或售后响应不佳。</td>
+              </tr>
+              <tr>
+                <td><strong>👻 失联空房（已提桶）</strong></td>
+                <td>服务域名、公告或支持渠道长期无法访问。</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2>四、免责声明</h2>
+          <div class="disclaimer-callout">
+            <strong>页脚免责声明：</strong>本站内容为每周例行测试记录与观点，仅反映测试周期的环境与结果，不保证后续服务状态。涉及长期订阅或预付费时，请理性决策、量力而行，并保留退款与售后凭证。
+          </div>
+
+          <h2>五、联系宿管与 Telegram 交流群</h2>
+          <div class="contact-tg-box font-mono">
+            <p>欢迎各位租客与机长加入宿管例行巡查交流群，据实提交节点测试反馈或投稿异常断流线索：</p>
+            <ul class="tg-list">
+              <li>
+                <span class="tg-label">👤 宿管个人 Telegram：</span>
+                <a href="https://t.me/wanfengzn" target="_blank" rel="noopener" class="tg-link">@wanfengzn</a>
+              </li>
+              <li>
+                <span class="tg-label">📢 宿管查房 Telegram 交流群：</span>
+                <a href="https://t.me/wanfengjc" target="_blank" rel="noopener" class="tg-link">t.me/wanfengjc</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="about-content industrial-box">
-      <h2>一、本站建立初衷</h2>
-      <p>
-        在如今的网络服务市场中，白天看着个个都是千兆专线、岁月静好；一到例行巡查抽检时，整栋楼除了哀嚎就是工单。
-      </p>
-      <p>
-        <strong>「VPN查房」</strong> 博客旨在建立一个面向 VPN、机场代理与网络服务用户的公开测试与体验观察记录站。我们以周为单位巡查，记录每周真实环境下的服务表现，记录异常丢包与断流，评选长期表现稳定优异的模范服务，曝光夸大宣传与失联拉闸的避坑档案。
-      </p>
-
-      <h2>二、宿管评测三大原则</h2>
-      <ul>
-        <li><strong>不接赞助、不恰饭：</strong>保持测试独立性，拒绝任何付费软文或虚假宣传。</li>
-        <li><strong>数据不说谎：</strong>用 MTR 路由追踪、连续 TCPing 握手与实际 4K/8K 码率加载数据说话。</li>
-        <li><strong>以周为单位巡查：</strong>短时间全绿不算数，一周7×24小时连轴转扛得住才算数。</li>
-      </ul>
-
-      <h2>三、查房结论四档评级</h2>
-      <table class="about-table">
-        <thead>
-          <tr>
-            <th>评级档位</th>
-            <th>判定标准说明</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>🏆 五星寝室（免检通报）</strong></td>
-            <td>全周巡查周期内播放、加载与连接表现稳定，低丢包。</td>
-          </tr>
-          <tr>
-            <td><strong>⚠️ 通报批评（留校察看）</strong></td>
-            <td>平峰表现良好，周巡查期间偶有波动，建议谨慎观察。</td>
-          </tr>
-          <tr>
-            <td><strong>🚨 没收违规电器（直接拉闸）</strong></td>
-            <td>周巡查周期内延迟明显升高、稳定性差或售后响应不佳。</td>
-          </tr>
-          <tr>
-            <td><strong>👻 失联空房（已提桶）</strong></td>
-            <td>服务域名、公告或支持渠道长期无法访问。</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>四、免责声明</h2>
-      <div class="disclaimer-callout">
-        <strong>页脚免责声明：</strong>本站内容为每周例行测试记录与观点，仅反映测试周期的环境与结果，不保证后续服务状态。涉及长期订阅或预付费时，请理性决策、量力而行，并保留退款与售后凭证。
-      </div>
-
-      <h2>五、联系宿管与 Telegram 交流群</h2>
-      <div class="contact-tg-box font-mono">
-        <p>欢迎各位租客与机长加入宿管例行巡查交流群，据实提交节点测试反馈或投稿异常断流线索：</p>
-        <ul class="tg-list">
-          <li>
-            <span class="tg-label">👤 宿管个人 Telegram：</span>
-            <a href="https://t.me/wanfengzn" target="_blank" rel="noopener" class="tg-link">@wanfengzn</a>
-          </li>
-          <li>
-            <span class="tg-label">📢 宿管查房 Telegram 交流群：</span>
-            <a href="https://t.me/wanfengjc" target="_blank" rel="noopener" class="tg-link">t.me/wanfengjc</a>
-          </li>
-        </ul>
-      </div>
+      <!-- Right Sidebar Navigation -->
+      <aside class="right-sidebar-column">
+        <RightNav activeId="01" title="⚡ 热门机场速览" />
+      </aside>
     </div>
   </div>
 </BaseLayout>
 
 <style>
   .about-page {
-    max-width: 900px;
+    max-width: 1100px;
+  }
+
+  .page-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .page-layout-grid {
+      grid-template-columns: 1fr 320px;
+    }
   }
 
   .page-header {

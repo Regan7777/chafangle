@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StampWatermark from '../components/StampWatermark.astro';
+import RightNav from '../components/RightNav.astro';
 ---
 
 <BaseLayout
@@ -8,34 +9,55 @@ import StampWatermark from '../components/StampWatermark.astro';
   description="敲了半天门没人应——该页面疑似已失联。"
 >
   <div class="container error-page-wrapper">
-    <div class="error-card industrial-box-dark">
-      <div class="error-code font-mono">404 ERROR</div>
-      <h1 class="error-headline">敲了半天门没人应——该页面疑似已失联。</h1>
-      <p class="error-sub">
-        宿管拿着手电筒在门口等了五分钟，房间里黑灯瞎火，该链接可能已被删除、更名或提桶跑路。
-      </p>
+    <div class="page-layout-grid">
+      <div class="main-column">
+        <div class="error-card industrial-box-dark">
+          <div class="error-code font-mono">404 ERROR</div>
+          <h1 class="error-headline">敲了半天门没人应——该页面疑似已失联。</h1>
+          <p class="error-sub">
+            宿管拿着手电筒在门口等了五分钟，房间里黑灯瞎火，该链接可能已被删除、更名或提桶跑路。
+          </p>
 
-      <div class="stamp-404-wrapper">
-        <StampWatermark text="失联空房·VPN查房记录" subText="页面 404 已拉闸" size="lg" />
+          <div class="stamp-404-wrapper">
+            <StampWatermark text="失联空房·VPN查房记录" subText="页面 404 已拉闸" size="lg" />
+          </div>
+
+          <div class="error-actions">
+            <a href="/" class="btn-home">
+              🚪 返回VPN查房首页
+            </a>
+            <a href="/posts" class="btn-all">
+              📑 翻阅其它卷宗
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div class="error-actions">
-        <a href="/" class="btn-home">
-          🚪 返回VPN查房首页
-        </a>
-        <a href="/posts" class="btn-all">
-          📑 翻阅其它卷宗
-        </a>
-      </div>
+      <!-- Right Sidebar Navigation -->
+      <aside class="right-sidebar-column">
+        <RightNav activeId="01" title="⚡ 热门机场速览" />
+      </aside>
     </div>
   </div>
 </BaseLayout>
 
 <style>
   .error-page-wrapper {
-    max-width: 750px;
-    margin: 3rem auto;
-    text-align: center;
+    max-width: 1100px;
+    margin: 2rem auto;
+  }
+
+  .page-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .page-layout-grid {
+      grid-template-columns: 1fr 320px;
+    }
   }
 
   .error-card {
