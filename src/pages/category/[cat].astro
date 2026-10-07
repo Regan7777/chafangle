@@ -92,7 +92,7 @@ const filteredPosts = allPosts
 
 <style>
   .category-page {
-    max-width: 1100px;
+    max-width: 1200px;
   }
 
   .page-layout-grid {
@@ -105,6 +105,12 @@ const filteredPosts = allPosts
   @media (min-width: 992px) {
     .page-layout-grid {
       grid-template-columns: 1fr 320px;
+      gap: 3rem;
+    }
+    .right-sidebar-column {
+      margin-left: 1.5rem;
+      position: sticky;
+      top: 5rem;
     }
   }
 

@@ -145,6 +145,10 @@ const currentActiveId = navIdMap[post.slug] || '01';
   @media (min-width: 992px) {
     .article-layout-grid {
       grid-template-columns: 1fr 320px;
+      gap: 3rem;
+    }
+    .article-sidebar-column {
+      margin-left: 1.5rem;
     }
   }
 
@@ -152,8 +156,9 @@ const currentActiveId = navIdMap[post.slug] || '01';
     position: sticky;
     top: 5rem;
   }
+
   .article-page {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 

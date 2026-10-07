@@ -329,12 +329,19 @@ const latestPosts = [
   @media (min-width: 992px) {
     .index-two-column-layout {
       grid-template-columns: 1fr 340px;
+      gap: 3rem;
     }
   }
 
   .right-sidebar-column {
     position: sticky;
     top: 5rem;
+  }
+
+  @media (min-width: 992px) {
+    .right-sidebar-column {
+      margin-left: 1.5rem;
+    }
   }
 
   .section-header {

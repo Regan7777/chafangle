@@ -43,7 +43,7 @@ import RightNav from '../components/RightNav.astro';
 
 <style>
   .error-page-wrapper {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 2rem auto;
   }
 
@@ -57,6 +57,12 @@ import RightNav from '../components/RightNav.astro';
   @media (min-width: 992px) {
     .page-layout-grid {
       grid-template-columns: 1fr 320px;
+      gap: 3rem;
+    }
+    .right-sidebar-column {
+      margin-left: 1.5rem;
+      position: sticky;
+      top: 5rem;
     }
   }
 
