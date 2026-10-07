@@ -15,10 +15,14 @@ const navItems = [
 
 <header class="site-header">
   <div class="container header-inner">
-    <!-- Brand Logo -->
+    <!-- Brand Logo with Funny Meme Elements -->
     <a href="/" class="brand-logo" aria-label="VPN查房 首页">
       <span class="brand-stamp">VPN查房</span>
-      <span class="brand-tagline">每周例行巡检</span>
+      <span id="header-brand-tagline" class="brand-tagline font-mono" title="点击切换宿管梗句！">
+        <span class="tagline-siren">🚨</span>
+        <span class="tagline-text">每周例行巡检</span>
+        <span class="tagline-meme-badge font-mono">梗</span>
+      </span>
     </a>
 
     <!-- Desktop Navigation -->
@@ -67,6 +71,7 @@ const navItems = [
 </header>
 
 <script>
+  // Mobile drawer toggle
   const toggleBtn = document.getElementById('mobile-menu-toggle');
   const menuDrawer = document.getElementById('mobile-menu');
 
@@ -75,6 +80,36 @@ const navItems = [
       const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
       toggleBtn.setAttribute('aria-expanded', (!expanded).toString());
       menuDrawer.classList.toggle('hidden');
+    });
+  }
+
+  // Funny Dorm Patrol Memes for Logo Tagline
+  const funnyTaglines = [
+    "🔦 宿管手电强光搜查",
+    "🚨 抓包! 谁又在偷偷断流?",
+    "🔑 咔哒! 802寝室开门!",
+    "⚡ 白天全绿? 晚上突击!",
+    "💥 提桶跑路预警系统",
+    "🍵 宿管大爷正在看戏",
+    "🛡️ 绝无虚标·强效防坑",
+    "💮 啪! 盖个免检大印",
+    "👻 404号房黑灯瞎火"
+  ];
+
+  const taglineEl = document.getElementById('header-brand-tagline');
+  const taglineText = taglineEl?.querySelector('.tagline-text');
+  let taglineIndex = 0;
+
+  if (taglineEl && taglineText) {
+    taglineEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      taglineIndex = (taglineIndex + 1) % funnyTaglines.length;
+      taglineText.textContent = funnyTaglines[taglineIndex];
+
+      // Shake visual effect on click
+      taglineEl.classList.add('tagline-bounce');
+      setTimeout(() => taglineEl.classList.remove('tagline-bounce'), 400);
     });
   }
 </script>
@@ -114,15 +149,72 @@ const navItems = [
     letter-spacing: 2px;
     border: 2px solid var(--border-thick);
     box-shadow: 2px 2px 0px var(--accent-red);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
+  .brand-logo:hover .brand-stamp {
+    transform: rotate(-3deg) scale(1.05);
+  }
+
+  /* Funny Meme Tagline Style */
   .brand-tagline {
-    font-size: 0.85rem;
-    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 800;
     color: var(--accent-red);
-    border: 1px solid var(--accent-red);
-    padding: 0.1rem 0.4rem;
-    font-family: var(--font-mono);
+    background: #fee2e2;
+    border: 1.5px solid var(--accent-red);
+    box-shadow: 2px 2px 0px var(--border-thick);
+    padding: 0.15rem 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .brand-tagline:hover {
+    background: var(--accent-red);
+    color: #ffffff;
+    border-color: var(--border-thick);
+    transform: translateY(-2px) rotate(1.5deg);
+  }
+
+  .tagline-siren {
+    font-size: 0.9rem;
+    animation: sirenBlink 1.2s infinite ease-in-out alternate;
+  }
+
+  @keyframes sirenBlink {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.25) rotate(-10deg); opacity: 0.8; }
+    100% { transform: scale(1) rotate(10deg); opacity: 1; }
+  }
+
+  .tagline-meme-badge {
+    background: var(--border-thick);
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 900;
+    padding: 0 0.25rem;
+    border-radius: 2px;
+    letter-spacing: 0;
+  }
+
+  .brand-tagline:hover .tagline-meme-badge {
+    background: #ffffff;
+    color: var(--accent-red);
+  }
+
+  .tagline-bounce {
+    animation: taglineBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes taglineBounce {
+    0% { transform: scale(0.85) rotate(-6deg); }
+    50% { transform: scale(1.15) rotate(4deg); }
+    100% { transform: scale(1) rotate(0deg); }
   }
 
   .desktop-nav ul {
