@@ -1,25 +1,25 @@
 ---
 ---
 
-<div id="patrol-uncle-widget" class="patrol-uncle-container" role="button" tabindex="0" aria-label="宿管大爷 3D 可拖拽返回顶点按键">
+<div id="patrol-uncle-widget" class="patrol-uncle-container" role="button" tabindex="0" aria-label="宿管大爷 3D 周巡查抓包按钮">
   <!-- 3D Speech Bubble & Stamp Dialog -->
   <div id="uncle-dialog" class="uncle-speech-bubble hidden font-mono">
     <div class="bubble-3d-header">
       <div class="header-tag">
         <span class="status-dot-green"></span>
-        <span class="role-title">【宿管直达电梯】</span>
+        <span class="role-title">【宿管周巡查通报】</span>
       </div>
       <button id="close-dialog-btn" class="bubble-close" aria-label="关闭">&times;</button>
     </div>
 
     <!-- Speech Text Body -->
     <div id="uncle-speech-text" class="speech-text">
-      🚀 宿管大爷已搭乘直达电梯把您送回顶楼！白天全绿不算数，全周7×24小时扛得住才算数！
+      【咔哒】手电筒强光开启！本周例行巡检开始，白天全绿不算数，全周7×24小时扛得住才算数！
     </div>
 
     <!-- Dynamic 3D Stamp Seal Effect -->
     <div class="dialog-stamp-seal">
-      顶楼巡查归位印
+      查房了·周巡查印
     </div>
 
     <div class="bubble-arrow-3d"></div>
@@ -32,7 +32,7 @@
 
     <!-- Floating 3D Badge -->
     <div class="stage-badge-3d">
-      <span class="pulse-red-light"></span> 周巡查中 · ⬆ 点击回顶
+      <span class="pulse-red-light"></span> 周巡查进行中
     </div>
 
     <!-- 3D Uncle Vector Character with Depth Shading -->
@@ -151,13 +151,16 @@
 <script>
   // Richer, Immersive Chinese Weekly Dorm Patrol Quotes
   const uncleQuotes = [
-    "🚀【宿管速报】搭乘直达电梯成功返回楼顶！802寝室本周测试丢包率正常，继续巡楼！",
-    "🔦【咔哒·强光开启】已直达顶楼！白天全绿不算数，全周 7×24 小时扛得住才算数！",
-    "🔑【钥匙串叮当响】手电筒与测速仪准备就绪！一键送您回顶楼，随时查看最新卷宗！",
-    "🔋【电量满格】周巡查电梯提速升空！周巡查模式开启，谁也别想开小差！",
-    "🚨【通报拉闸】走廊里不许大声喧哗！已被宿管搭乘电梯送回最上方视察！",
-    "🏆【免检通报】已送达顶楼导航处！模范寝室全周 SLA 连通率稳定 99.98%！",
-    "📢【巡楼喊话】宿管大爷随时待命！拖拽可更换位置，点击即刻直达楼顶！"
+    "🔦【咔哒·强光开启】本周例行巡查开始！802寝室本周测试怎么丢包率升高了？是不是中转线路带宽不足？",
+    "🔑【钥匙串叮当响】白天看着一个个岁月静好，一周连轴转测试下来数据原形毕露！",
+    "🔋【电量满格】宿管手电筒已开周巡模式！本周突击抽查 IEPL 内网专线，谁也别想开小差！",
+    "🚨【通报拉闸】走廊里不许大声喧哗！那家 9.9 元包年的本周丢包率破40%，已被宿管当场没收拉闸！",
+    "📋【周度抓包】白天千兆专线，周巡查数据挂水！宿管手持测速仪抓了个现行！",
+    "🏆【免检通报】隔壁 501 表现不错，全周7×24小时连通稳定，记入【模范寝室】通报表扬！",
+    "👻【敲门无人应】敲了半天 404 的门没人应，本周复查发现该服务域名已经提桶跑路了！",
+    "⚡【照妖镜模式】以周为单位巡查，手电筒照一照，虚标倍率和假专线当场无所遁形！",
+    "⚠️【宿管纪律】宿舍纪律第一条：理性消费，支持月付，切勿一次性充值长期大额！",
+    "📢【巡楼喊话】本周例行巡查纪要已归档，宿管大爷在此，不让断流蒙混过关！"
   ];
 
   const widget = document.getElementById('patrol-uncle-widget');
@@ -166,11 +169,6 @@
   const closeBtn = document.getElementById('close-dialog-btn');
 
   let lastIndex = -1;
-  let isDragging = false;
-  let startX = 0, startY = 0;
-  let initialLeft = 24, initialBottom = 24;
-  let currentLeft = 24, currentBottom = 24;
-  let hasMoved = false;
 
   function getRandomQuote() {
     let nextIndex;
@@ -182,95 +180,27 @@
   }
 
   function triggerUncleResponse() {
-    // 1. Scroll to top smooth
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    // 2. Speech bubble dialog response
     if (!dialog || !speechText) return;
+    
     speechText.textContent = getRandomQuote();
     dialog.classList.remove('hidden');
 
-    // 3. Flashlight Spotlight animation
+    // Trigger 3D Flash Spotlight & Key Jingling Visual Effect
     widget?.classList.add('flashlight-super-spotlight');
     setTimeout(() => {
       widget?.classList.remove('flashlight-super-spotlight');
     }, 600);
   }
 
-  // --- DRAGGABLE & CLICK HANDLING ---
   if (widget) {
-    // Pointer / Mouse Down
-    const onStart = (e: MouseEvent | TouchEvent) => {
-      if ((e.target as HTMLElement).closest('#close-dialog-btn')) return;
-
-      isDragging = true;
-      hasMoved = false;
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-
-      startX = clientX;
-      startY = clientY;
-
-      const rect = widget.getBoundingClientRect();
-      // Calculate current position relative to viewport
-      initialLeft = rect.left;
-      initialBottom = window.innerHeight - rect.bottom;
-
-      widget.style.transition = 'none';
-    };
-
-    const onMove = (e: MouseEvent | TouchEvent) => {
-      if (!isDragging) return;
-
-      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
-      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
-
-      const deltaX = clientX - startX;
-      const deltaY = clientY - startY;
-
-      if (Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4) {
-        hasMoved = true;
+    widget.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('#close-dialog-btn')) {
+        dialog?.classList.add('hidden');
+        return;
       }
+      triggerUncleResponse();
+    });
 
-      if (hasMoved) {
-        let newLeft = initialLeft + deltaX;
-        let newBottom = initialBottom - deltaY;
-
-        // Boundary restriction
-        const maxLeft = window.innerWidth - widget.offsetWidth - 10;
-        const maxBottom = window.innerHeight - widget.offsetHeight - 10;
-
-        newLeft = Math.max(10, Math.min(newLeft, maxLeft));
-        newBottom = Math.max(10, Math.min(newBottom, maxBottom));
-
-        widget.style.left = `${newLeft}px`;
-        widget.style.bottom = `${newBottom}px`;
-        widget.style.top = 'auto';
-        widget.style.right = 'auto';
-      }
-    };
-
-    const onEnd = () => {
-      if (!isDragging) return;
-      isDragging = false;
-      widget.style.transition = 'transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)';
-
-      if (!hasMoved) {
-        // Pure click tap (not drag) -> trigger Back To Top & Response
-        triggerUncleResponse();
-      }
-    };
-
-    // Event Listeners
-    widget.addEventListener('mousedown', onStart);
-    document.addEventListener('mousemove', onMove);
-    document.addEventListener('mouseup', onEnd);
-
-    widget.addEventListener('touchstart', onStart, { passive: true });
-    document.addEventListener('touchmove', onMove, { passive: true });
-    document.addEventListener('touchend', onEnd);
-
-    // Keyboard accessibility
     widget.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -293,17 +223,12 @@
     bottom: 24px;
     left: 24px;
     z-index: 9999;
-    cursor: grab;
+    cursor: pointer;
     user-select: none;
-    touch-action: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     perspective: 800px;
-  }
-
-  .patrol-uncle-container:active {
-    cursor: grabbing;
   }
 
   /* 3D Stage Platform Wrapper */
