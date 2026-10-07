@@ -1,8 +1,8 @@
 ---
-title: "【模范寝室】搬瓦工官方 Just My Socks：CN2 GIA 与 CMIN2 线路周巡查档案"
+title: "【当场抓包】搬瓦工官方 Just My Socks：CN2 GIA 与 CMIN2 线路周巡查档案"
 description: "针对搬瓦工出品的 Just My Socks 官方服务进行全周 7×24 小时跟踪抽查。包含美国 LA CN2 GIA、日本东京 9929 与香港 CMIN2 优化线路，IP 自动漂移切换机制保证极高可用性。"
 pubDate: 2026-03-13
-category: "mofan"
+category: "zhuabao"
 verdict: "five-star"
 verdictNote: "搬瓦工官方出品的 Just My Socks 在 IP 自动漂移修复与 CN2 GIA / CMIN2 高级线路保障上优势独一无二，被封即自动更换 IP，全周 SLA 达 99.96%。"
 testLocation: "宿管例行测速终端"
@@ -21,14 +21,14 @@ metrics:
   - name: "全周 SLA 连通保障"
     result: "99.96%"
     status: "good"
-keywords: ["Just My Socks", "搬瓦工", "CN2 GIA", "CMIN2", "2026最稳定的机场", "模范寝室", "机场代理"]
+keywords: ["Just My Socks", "搬瓦工", "CN2 GIA", "CMIN2", "2026最稳定的机场", "当场抓包", "机场代理"]
 ---
 
 在众多网络服务商中，由著名主机商**搬瓦工（BandwagonHost）**官方运营的代理服务 **Just My Socks (JMS)** 拥有着独树一帜的地位。
 
 它的最大杀手锏在于：**官方自带 IP 自动漂移机制**——即便遇到网络波动或 IP 被封锁，系统会自动在后台完成 IP 切换与域名解析更新，用户完全无需手动干预。
 
-本期**【模范寝室】**，宿管大爷对 Just My Socks 旗下多条核心线路进行了全周跟踪抽查。
+本期**【当场抓包】**，宿管大爷对 Just My Socks 旗下多条核心线路进行了全周跟踪抽查。
 
 ---
 
@@ -70,4 +70,4 @@ JMS HK CMIN2        移动 CMIN2       38.4       0.0%      自动替换
 
 全周连通性极强，大厂出品保障充分。
 
-**查房结论：🏆 五星寝室（免检通报）**。记入【模范寝室】档案。
+**查房结论：📊 实测抓包归档**。记入【当场抓包】卷宗。
