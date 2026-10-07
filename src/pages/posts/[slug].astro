@@ -4,6 +4,7 @@ import InspectionBadge from '../../components/InspectionBadge.astro';
 import TestMetaGrid from '../../components/TestMetaGrid.astro';
 import StampWatermark from '../../components/StampWatermark.astro';
 import SponsorBatteryModal from '../../components/SponsorBatteryModal.astro';
+import RightNav from '../../components/RightNav.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -23,6 +24,18 @@ const { Content } = await post.render();
 const { data } = post;
 
 const formattedDate = data.pubDate.toISOString().split('T')[0];
+
+const navIdMap: Record<string, string> = {
+  '14-shenxing-jiasu-iepl-premium-review': '01',
+  '15-dalaoyun-bgp-high-value-review': '02',
+  '16-shandianshu-fast-latency-review': '03',
+  '17-liulianyun-native-ip-unlock-review': '04',
+  '18-huanqiuti-global-business-review': '05',
+  '19-yunjiexian-pure-iepl-dedicated-review': '06',
+  '05-custom-bgp-iepl-hybrid-airport-review': '07',
+};
+
+const currentActiveId = navIdMap[post.slug] || '01';
 ---
 
 <BaseLayout
@@ -34,84 +47,111 @@ const formattedDate = data.pubDate.toISOString().split('T')[0];
   updatedDate={data.updatedDate}
   author={data.author}
 >
-  <article class="container article-page">
-    <!-- Breadcrumb Nav -->
-    <nav class="breadcrumb-nav font-mono" aria-label="面包屑导航">
-      <a href="/">首页</a> <span>/</span> 
-      <a href="/posts">巡楼纪要</a> <span>/</span> 
-      <span class="active-crumb">{data.title}</span>
-    </nav>
+  <div class="container article-page-container">
+    <div class="article-layout-grid">
+      <!-- Main Article Column -->
+      <article class="article-main-column">
+        <!-- Breadcrumb Nav -->
+        <nav class="breadcrumb-nav font-mono" aria-label="面包屑导航">
+          <a href="/">首页</a> <span>/</span> 
+          <a href="/posts">巡楼纪要</a> <span>/</span> 
+          <span class="active-crumb">{data.title}</span>
+        </nav>
 
-    <!-- Post Header Block -->
-    <header class="post-header industrial-box">
-      <div class="post-meta-top">
-        {data.isPinned && <span class="badge-pinned">📌 宿管置顶通报</span>}
-        <span class="badge-cat font-mono">卷宗分类: {data.category}</span>
-        <time class="post-time font-mono" datetime={formattedDate}>归档日期: {formattedDate}</time>
-      </div>
-
-      <h1 class="article-heading">{data.title}</h1>
-      <p class="article-desc-lead">{data.description}</p>
-
-      <!-- Prominent Official Affiliate Link & Coupon Box (if officialUrl provided) -->
-      {data.officialUrl && (
-        <div class="official-access-banner">
-          <div class="access-info font-mono">
-            {data.pricePlan && <div class="access-item"><strong>套餐价格：</strong><span>{data.pricePlan}</span></div>}
-            {data.promoCode && <div class="access-item"><strong>专属优惠码：</strong><code class="promo-code">{data.promoCode}</code></div>}
+        <!-- Post Header Block -->
+        <header class="post-header industrial-box">
+          <div class="post-meta-top">
+            {data.isPinned && <span class="badge-pinned">📌 宿管置顶通报</span>}
+            <span class="badge-cat font-mono">卷宗分类: {data.category}</span>
+            <time class="post-time font-mono" datetime={formattedDate}>归档日期: {formattedDate}</time>
           </div>
-          <a href={data.officialUrl} target="_blank" rel="noopener noreferrer" class="btn-official-direct">
-            🚀 官网直达通道 / 领取专属优惠 ➔
-          </a>
+
+          <h1 class="article-heading">{data.title}</h1>
+          <p class="article-desc-lead">{data.description}</p>
+
+          <!-- Prominent Official Affiliate Link & Coupon Box (if officialUrl provided) -->
+          {data.officialUrl && (
+            <div class="official-access-banner">
+              <div class="access-info font-mono">
+                {data.pricePlan && <div class="access-item"><strong>套餐价格：</strong><span>{data.pricePlan}</span></div>}
+                {data.promoCode && <div class="access-item"><strong>专属优惠码：</strong><code class="promo-code">{data.promoCode}</code></div>}
+              </div>
+              <a href={data.officialUrl} target="_blank" rel="noopener noreferrer" class="btn-official-direct">
+                🚀 官网直达通道 / 领取专属优惠 ➔
+              </a>
+            </div>
+          )}
+
+          <div class="header-stamp-corner">
+            <StampWatermark text="查房了·突击取证专用章" subText="宿管巡楼签发" size="sm" />
+          </div>
+        </header>
+
+        <!-- Test Meta Grid (if review metrics present) -->
+        {data.metrics && data.metrics.length > 0 && (
+          <TestMetaGrid
+            testDate={formattedDate}
+            location={data.testLocation}
+            isp={data.testIsp}
+            peakHours={data.testPeakHours}
+            metrics={data.metrics}
+          />
+        )}
+
+        <!-- Room Inspection Conclusion Component -->
+        {data.verdict && (
+          <InspectionBadge
+            verdict={data.verdict}
+            customNote={data.verdictNote}
+          />
+        )}
+
+        <!-- Main Post Content -->
+        <div class="post-prose-content industrial-box">
+          <Content />
+
+          <!-- Bottom Direct Link Button -->
+          {data.officialUrl && (
+            <div class="bottom-direct-link-box">
+              <h3>⚡ 专属官方入口与特惠通道</h3>
+              <p>点击下方按钮直接跳转至官方注册页面，结账时填入优惠码 <code>{data.promoCode || '专属折扣'}</code> 即可享限时特惠：</p>
+              <a href={data.officialUrl} target="_blank" rel="noopener noreferrer" class="btn-official-direct-large">
+                👉 前往 {data.title.replace(/【.*?】/, '')} 官方网站 ➔
+              </a>
+            </div>
+          )}
         </div>
-      )}
 
-      <div class="header-stamp-corner">
-        <StampWatermark text="查房了·突击取证专用章" subText="宿管巡楼签发" size="sm" />
-      </div>
-    </header>
+        <!-- Interactive Sponsor Battery & Comments Notice Component -->
+        <SponsorBatteryModal />
+      </article>
 
-    <!-- Test Meta Grid (if review metrics present) -->
-    {data.metrics && data.metrics.length > 0 && (
-      <TestMetaGrid
-        testDate={formattedDate}
-        location={data.testLocation}
-        isp={data.testIsp}
-        peakHours={data.testPeakHours}
-        metrics={data.metrics}
-      />
-    )}
-
-    <!-- Room Inspection Conclusion Component -->
-    {data.verdict && (
-      <InspectionBadge
-        verdict={data.verdict}
-        customNote={data.verdictNote}
-      />
-    )}
-
-    <!-- Main Post Content -->
-    <div class="post-prose-content industrial-box">
-      <Content />
-
-      <!-- Bottom Direct Link Button -->
-      {data.officialUrl && (
-        <div class="bottom-direct-link-box">
-          <h3>⚡ 专属官方入口与特惠通道</h3>
-          <p>点击下方按钮直接跳转至官方注册页面，结账时填入优惠码 <code>{data.promoCode || '专属折扣'}</code> 即可享限时特惠：</p>
-          <a href={data.officialUrl} target="_blank" rel="noopener noreferrer" class="btn-official-direct-large">
-            👉 前往 {data.title.replace(/【.*?】/, '')} 官方网站 ➔
-          </a>
-        </div>
-      )}
+      <!-- Right Sidebar Navigation -->
+      <aside class="article-sidebar-column">
+        <RightNav activeId={currentActiveId} title="⚡ 巡楼全景导航" />
+      </aside>
     </div>
-
-    <!-- Interactive Sponsor Battery & Comments Notice Component -->
-    <SponsorBatteryModal />
-  </article>
+  </div>
 </BaseLayout>
 
 <style>
+  .article-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .article-layout-grid {
+      grid-template-columns: 1fr 320px;
+    }
+  }
+
+  .article-sidebar-column {
+    position: sticky;
+    top: 5rem;
+  }
   .article-page {
     max-width: 900px;
     margin: 0 auto;

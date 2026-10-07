@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CategoryCard from '../components/CategoryCard.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import StampWatermark from '../components/StampWatermark.astro';
+import RightNav from '../components/RightNav.astro';
 import { getCollection } from 'astro:content';
 
 // Fetch posts and sort by pubDate desc, with pinned posts first
@@ -56,80 +57,108 @@ const latestPosts = sortedPosts.slice(0, 6);
     </div>
   </section>
 
-  <!-- Main Content Body -->
-  <div class="container index-body-grid">
-    <!-- Section: Three Category Cards -->
-    <section class="category-cards-section">
-      <h2 class="section-title">
-        <span class="title-icon">📂</span> 巡楼分类卷宗
-      </h2>
-      <div class="category-grid">
-        <CategoryCard
-          title="当场抓包"
-          description="每周例行巡查，数据不说谎。"
-          href="/category/zhuabao"
-          badge="突击抓包"
-          badgeType="red"
-        />
-        <CategoryCard
-          title="模范寝室"
-          description="长期稳定、表现优异的服务记录。"
-          href="/category/mofan"
-          badge="免检通报"
-          badgeType="dark"
-        />
-        <CategoryCard
-          title="没收作案工具"
-          description="异常断流、夸大宣传与避坑档案。"
-          href="/category/meishou"
-          badge="拉闸避坑"
-          badgeType="red"
-        />
-      </div>
-    </section>
+  <!-- Main Content Body Grid -->
+  <div class="container">
+    <div class="index-content-layout">
+      <!-- Left Main Column -->
+      <div class="index-main-column">
+        <!-- Section: Three Category Cards -->
+        <section class="category-cards-section">
+          <h2 class="section-title">
+            <span class="title-icon">📂</span> 巡楼分类卷宗
+          </h2>
+          <div class="category-grid">
+            <CategoryCard
+              title="当场抓包"
+              description="每周例行巡查，数据不说谎。"
+              href="/category/zhuabao"
+              badge="突击抓包"
+              badgeType="red"
+            />
+            <CategoryCard
+              title="模范寝室"
+              description="长期稳定、表现优异的服务记录。"
+              href="/category/mofan"
+              badge="免检通报"
+              badgeType="dark"
+            />
+            <CategoryCard
+              title="没收作案工具"
+              description="异常断流、夸大宣传与避坑档案。"
+              href="/category/meishou"
+              badge="拉闸避坑"
+              badgeType="red"
+            />
+          </div>
+        </section>
 
-    <!-- Section: Latest Patrol Posts -->
-    <section id="patrol-posts" class="posts-section">
-      <div class="section-header">
-        <h2 class="section-title">
-          <span class="title-icon">📝</span> 最新巡楼纪要
-        </h2>
-        <a href="/posts" class="view-all-link">查看全部卷宗 ({allPosts.length}) ➔</a>
+        <!-- Section: Latest Patrol Posts -->
+        <section id="patrol-posts" class="posts-section">
+          <div class="section-header">
+            <h2 class="section-title">
+              <span class="title-icon">📝</span> 最新巡楼纪要
+            </h2>
+            <a href="/posts" class="view-all-link">查看全部卷宗 ({allPosts.length}) ➔</a>
+          </div>
+
+          <div class="posts-list">
+            {latestPosts.map((post) => (
+              <ArticleCard
+                title={post.data.title}
+                description={post.data.description}
+                slug={post.slug}
+                date={post.data.pubDate.toISOString().split('T')[0]}
+                category={post.data.category}
+                verdict={post.data.verdict}
+                isPinned={post.data.isPinned}
+              />
+            ))}
+          </div>
+        </section>
+
+        <!-- Section: SEO / GEO Keyword Guide Banner -->
+        <section class="seo-guide-banner industrial-box">
+          <h3>🔍 宿管避坑指南与关键词检索</h3>
+          <p>
+            查找 <strong>2026最稳定的机场</strong>、<strong>性价比机场推荐</strong>、<strong>机场代理选购</strong> 或是解决周巡断流卡顿？宿管已为你分类归档：
+          </p>
+          <div class="keyword-pill-group">
+            <a href="/posts" class="kw-pill">机场代理实测</a>
+            <a href="/category/mofan" class="kw-pill">2026最稳定的机场</a>
+            <a href="/handbook" class="kw-pill">性价比机场避坑指南</a>
+            <a href="/category/zhuabao" class="kw-pill">每周巡查丢包抓包</a>
+            <a href="/about" class="kw-pill">查房博客评测标准</a>
+          </div>
+        </section>
       </div>
 
-      <div class="posts-list">
-        {latestPosts.map((post) => (
-          <ArticleCard
-            title={post.data.title}
-            description={post.data.description}
-            slug={post.slug}
-            date={post.data.pubDate.toISOString().split('T')[0]}
-            category={post.data.category}
-            verdict={post.data.verdict}
-            isPinned={post.data.isPinned}
-          />
-        ))}
-      </div>
-    </section>
-
-    <!-- Section: SEO / GEO Keyword Guide Banner -->
-    <section class="seo-guide-banner industrial-box">
-      <h3>🔍 宿管避坑指南与关键词检索</h3>
-      <p>
-        查找 <strong>2026最稳定的机场</strong>、<strong>性价比机场推荐</strong>、<strong>机场代理选购</strong> 或是解决周巡断流卡顿？宿管已为你分类归档：
-      </p>
-      <div class="keyword-pill-group">
-        <a href="/posts" class="kw-pill">机场代理实测</a>
-        <a href="/category/mofan" class="kw-pill">2026最稳定的机场</a>
-        <a href="/handbook" class="kw-pill">性价比机场避坑指南</a>
-        <a href="/category/zhuabao" class="kw-pill">每周巡查丢包抓包</a>
-        <a href="/about" class="kw-pill">查房博客评测标准</a>
-      </div>
-    </section>
+      <!-- Right Sidebar Column -->
+      <aside class="index-sidebar-column">
+        <RightNav activeId="01" title="⚡ 热门机场速览" />
+      </aside>
+    </div>
   </div>
 </BaseLayout>
 
 <style>
+  .index-content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (min-width: 992px) {
+    .index-content-layout {
+      grid-template-columns: 1fr 320px;
+    }
+  }
+
+  .index-sidebar-column {
+    position: sticky;
+    top: 5rem;
+  }
+
   .hero-section {
     margin-bottom: 2.5rem;
   }
