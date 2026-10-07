@@ -35,109 +35,124 @@
       <span class="pulse-red-light"></span> 周巡查进行中
     </div>
 
-    <!-- 3D Uncle Vector Character with Depth Shading -->
+    <!-- 3D Uncle Vector Character with Depth Shading (Ultra Q-Version / Chibi Style) -->
     <div class="uncle-character-box-3d">
-      <svg class="uncle-svg-3d" viewBox="0 0 120 140" width="85" height="100" aria-hidden="true">
+      <svg class="uncle-svg-3d" viewBox="0 0 120 140" width="90" height="105" aria-hidden="true">
         <defs>
-          <!-- 3D Shading Gradients -->
+          <!-- Flashlight Cone & Shading Gradients -->
           <radialGradient id="flashlightGlow" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
-            <stop offset="40%" stop-color="#fef08a" stop-opacity="0.8" />
+            <stop offset="50%" stop-color="#fef08a" stop-opacity="0.8" />
             <stop offset="100%" stop-color="#facc15" stop-opacity="0" />
           </radialGradient>
           
           <linearGradient id="body3D" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#3f3f46" />
+            <stop offset="50%" stop-color="#27272a" />
+            <stop offset="100%" stop-color="#18181b" />
+          </linearGradient>
+
+          <linearGradient id="hatGradient" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stop-color="#27272a" />
-            <stop offset="50%" stop-color="#18181b" />
+            <stop offset="70%" stop-color="#18181b" />
             <stop offset="100%" stop-color="#09090b" />
           </linearGradient>
 
-          <linearGradient id="hat3D" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#3f3f46" />
-            <stop offset="70%" stop-color="#18181b" />
-            <stop offset="100%" stop-color="#000000" />
-          </linearGradient>
-
           <linearGradient id="belt3D" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#b91c1c" />
-            <stop offset="50%" stop-color="#ef4444" />
+            <stop offset="0%" stop-color="#ef4444" />
+            <stop offset="50%" stop-color="#dc2626" />
             <stop offset="100%" stop-color="#991b1b" />
           </linearGradient>
-          
-          <linearGradient id="metalKey" x1="0%" y1="0%" x2="100%" y2="100%">
+
+          <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#fef08a" />
             <stop offset="50%" stop-color="#eab308" />
-            <stop offset="100%" stop-color="#854d0e" />
+            <stop offset="100%" stop-color="#ca8a04" />
           </linearGradient>
 
-          <filter id="shadow3D" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="3" dy="4" stdDeviation="2" flood-color="#000000" flood-opacity="0.6"/>
+          <filter id="chibiShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.4"/>
           </filter>
         </defs>
 
-        <!-- 3D Platform Ground Shadow -->
-        <ellipse cx="60" cy="132" rx="42" ry="7" fill="rgba(0,0,0,0.45)" filter="blur(1px)"/>
+        <!-- Soft Chibi Ground Shadow -->
+        <ellipse cx="60" cy="133" rx="36" ry="6" fill="rgba(0,0,0,0.35)" filter="blur(1px)"/>
 
-        <!-- Heavy Inspector Boots (防滑大皮靴) -->
-        <g class="uncle-boots">
-          <!-- Left Boot -->
-          <path d="M 38 112 L 48 112 L 50 126 L 34 126 Z" fill="#09090b" stroke="#ffffff" stroke-width="1.5" />
-          <!-- Right Boot -->
-          <path d="M 68 112 L 78 112 L 84 126 L 66 126 Z" fill="#09090b" stroke="#ffffff" stroke-width="1.5" />
+        <!-- Chubby Mini Boots (Q版圆滚滚小皮靴) -->
+        <g class="chibi-boots">
+          <rect x="36" y="116" width="18" height="13" rx="6" fill="#18181b" stroke="#ffffff" stroke-width="1.8" />
+          <rect x="66" y="116" width="18" height="13" rx="6" fill="#18181b" stroke="#ffffff" stroke-width="1.8" />
+          <ellipse cx="45" cy="120" rx="5" ry="2" fill="#52525b" />
+          <ellipse cx="75" cy="120" rx="5" ry="2" fill="#52525b" />
         </g>
 
-        <!-- Overalls Body with 3D Depth & Straps -->
-        <rect x="36" y="62" width="46" height="52" rx="6" fill="url(#body3D)" stroke="#ffffff" stroke-width="2.5" filter="url(#shadow3D)" />
+        <!-- Compact Chubby Torso (Q版圆嘟嘟身体) -->
+        <rect x="34" y="74" width="52" height="44" rx="14" fill="url(#body3D)" stroke="#ffffff" stroke-width="2.5" filter="url(#chibiShadow)" />
         
-        <!-- Chest Pocket & Badge -->
-        <rect x="42" y="70" width="14" height="14" rx="2" fill="#18181b" stroke="#52525b" stroke-width="1.5" />
-        <rect x="44" y="72" width="10" height="4" fill="#d92626" />
-        <text x="49" y="82" font-size="6" fill="#ffffff" font-weight="900" text-anchor="middle">宿管</text>
+        <!-- Chest Pocket & Mini Badge -->
+        <rect x="40" y="82" width="14" height="12" rx="3" fill="#18181b" stroke="#52525b" stroke-width="1.2" />
+        <rect x="42" y="84" width="10" height="3" fill="#ef4444" rx="1" />
+        <text x="47" y="92" font-size="5.5" fill="#ffffff" font-weight="900" text-anchor="middle">宿管</text>
 
-        <!-- 3D Red Inspector Belt -->
-        <rect x="34" y="90" width="50" height="9" fill="url(#belt3D)" stroke="#ffffff" stroke-width="1.5" />
-        <!-- Belt Buckle -->
-        <rect x="53" y="88" width="12" height="13" rx="2" fill="#facc15" stroke="#111111" stroke-width="1.5" />
-        <rect x="56" y="91" width="6" height="7" fill="#854d0e" />
+        <!-- Red Chibi Belt & Golden Buckle -->
+        <rect x="32" y="98" width="56" height="9" fill="url(#belt3D)" stroke="#ffffff" stroke-width="1.5" rx="3" />
+        <rect x="53" y="96" width="14" height="13" rx="3" fill="url(#goldGlow)" stroke="#111111" stroke-width="1.5" />
+        <rect x="57" y="99" width="6" height="7" rx="1" fill="#854d0e" />
 
-        <!-- 3D Jingling Key Ring (金属钥匙串) -->
+        <!-- Jingling Key Ring (Q版晃动钥匙) -->
         <g class="jingle-keys">
-          <circle cx="78" cy="98" r="6" fill="none" stroke="url(#metalKey)" stroke-width="2.5" />
-          <path d="M 78 104 L 78 122 M 74 104 L 71 118 M 82 104 L 86 120" stroke="url(#metalKey)" stroke-width="2" stroke-linecap="round" />
-          <circle cx="78" cy="122" r="1.5" fill="#facc15" />
+          <circle cx="82" cy="104" r="5" fill="none" stroke="url(#goldGlow)" stroke-width="2" />
+          <path d="M 82 109 L 80 121 M 84 109 L 88 120" stroke="url(#goldGlow)" stroke-width="2" stroke-linecap="round" />
+          <circle cx="80" cy="121" r="1.5" fill="#fef08a" />
         </g>
 
-        <!-- Head & Face -->
-        <rect x="42" y="28" width="34" height="36" rx="8" fill="#fed7aa" stroke="#18181b" stroke-width="2.5" />
-        <!-- Ears -->
-        <circle cx="39" cy="46" r="4" fill="#fdba74" stroke="#18181b" stroke-width="1.5" />
-        <circle cx="79" cy="46" r="4" fill="#fdba74" stroke="#18181b" stroke-width="1.5" />
+        <!-- Left Arm Holding Keys -->
+        <path d="M 82 82 Q 92 88 84 102" stroke="#27272a" stroke-width="7" stroke-linecap="round" fill="none" />
+        <circle cx="84" cy="102" r="4" fill="#fed7aa" stroke="#18181b" stroke-width="1.5" />
 
-        <!-- Glasses & Eyes -->
-        <circle cx="51" cy="44" r="5" fill="rgba(255,255,255,0.3)" stroke="#111" stroke-width="2" />
-        <circle cx="67" cy="44" r="5" fill="rgba(255,255,255,0.3)" stroke="#111" stroke-width="2" />
-        <line x1="56" y1="44" x2="62" y2="44" stroke="#111" stroke-width="2" />
-        <circle cx="52" cy="44" r="1.5" fill="#111" />
-        <circle cx="68" cy="44" r="1.5" fill="#111" />
+        <!-- Right Arm Holding Flashlight -->
+        <path d="M 38 82 Q 22 84 12 78" stroke="#27272a" stroke-width="7" stroke-linecap="round" fill="none" />
+        <!-- Cute Flashlight Body -->
+        <rect x="-2" y="70" width="18" height="12" rx="3" fill="#3f3f46" stroke="#ffffff" stroke-width="1.8" />
+        <rect x="-8" y="67" width="7" height="18" rx="2" fill="url(#goldGlow)" stroke="#111111" stroke-width="1.5" />
+        <ellipse cx="-8" cy="76" rx="2" ry="7" fill="url(#flashlightGlow)" />
 
-        <!-- Mustache (胡须) -->
-        <path d="M 48 53 Q 59 58 70 53" stroke="#27272a" stroke-width="3.5" fill="none" stroke-linecap="round" />
+        <!-- Oversized Q-Version Head (超萌大头) -->
+        <rect x="30" y="24" width="60" height="52" rx="22" fill="#fed7aa" stroke="#18181b" stroke-width="2.5" filter="url(#chibiShadow)" />
 
-        <!-- 3D Dorm Inspector Cap (宿管大檐帽) -->
-        <path d="M 32 30 Q 59 10 86 30 L 92 35 L 26 35 Z" fill="url(#hat3D)" stroke="#ffffff" stroke-width="2" filter="url(#shadow3D)" />
-        <rect x="26" y="32" width="66" height="5" rx="2" fill="#d92626" />
-        <!-- Gold Cap Emblem (帽徽) -->
-        <polygon points="59,18 63,26 55,26" fill="#facc15" stroke="#111111" stroke-width="1" />
+        <!-- Q-Version Ears -->
+        <circle cx="27" cy="50" r="5.5" fill="#fdbf6f" stroke="#18181b" stroke-width="1.8" />
+        <circle cx="93" cy="50" r="5.5" fill="#fdbf6f" stroke="#18181b" stroke-width="1.8" />
+        <circle cx="27" cy="50" r="2.5" fill="#fed7aa" />
+        <circle cx="93" cy="50" r="2.5" fill="#fed7aa" />
 
-        <!-- 3D Tactical Flashlight Arm (手电筒抓包臂) -->
-        <g class="flashlight-arm-3d">
-          <path d="M 38 68 L 18 78 L 8 72" stroke="#27272a" stroke-width="9" stroke-linecap="round" fill="none" />
-          <!-- Heavy Duty Flashlight Casing -->
-          <rect x="-4" y="64" width="22" height="13" rx="2" fill="#3f3f46" stroke="#ffffff" stroke-width="2" />
-          <rect x="-10" y="60" width="8" height="21" rx="2" fill="#facc15" stroke="#111111" stroke-width="2" />
-          <!-- Flashlight Lens Glow -->
-          <ellipse cx="-10" cy="70.5" rx="2" ry="8" fill="url(#flashlightGlow)" />
-        </g>
+        <!-- Cute Rosy Cheeks (粉嫩腮红) -->
+        <ellipse cx="41" cy="56" rx="6" ry="3.5" fill="#f43f5e" opacity="0.45" />
+        <ellipse cx="79" cy="56" rx="6" ry="3.5" fill="#f43f5e" opacity="0.45" />
+
+        <!-- Huge Kawaii Glasses (萌系大圆眼镜) -->
+        <circle cx="47" cy="48" r="10" fill="rgba(255,255,255,0.4)" stroke="#18181b" stroke-width="2.2" />
+        <circle cx="73" cy="48" r="10" fill="rgba(255,255,255,0.4)" stroke="#18181b" stroke-width="2.2" />
+        <line x1="57" y1="48" x2="63" y2="48" stroke="#18181b" stroke-width="2.2" />
+
+        <!-- Big Sparkling Anime Eyes (水汪汪大眼睛) -->
+        <circle cx="47" cy="48" r="4.5" fill="#18181b" />
+        <circle cx="73" cy="48" r="4.5" fill="#18181b" />
+        <!-- Eye Highlights (眼睛高光) -->
+        <circle cx="45" cy="46" r="1.8" fill="#ffffff" />
+        <circle cx="71" cy="46" r="1.8" fill="#ffffff" />
+        <circle cx="49" cy="50" r="0.9" fill="#ffffff" />
+        <circle cx="75" cy="50" r="0.9" fill="#ffffff" />
+
+        <!-- Cute Smiling Mouth & Small Mustache (可爱开心笑嘴与小胡渣) -->
+        <path d="M 54 60 Q 60 66 66 60" stroke="#881337" stroke-width="2" fill="#ef4444" stroke-linecap="round" />
+        <path d="M 48 58 Q 60 62 72 58" stroke="#27272a" stroke-width="2.5" fill="none" stroke-linecap="round" />
+
+        <!-- Oversized Chibi Cap (超萌大帽檐宿管帽) -->
+        <path d="M 20 30 Q 60 4 100 30 L 106 36 L 14 36 Z" fill="url(#hatGradient)" stroke="#ffffff" stroke-width="2.2" filter="url(#chibiShadow)" />
+        <path d="M 16 33 L 104 33" stroke="#ef4444" stroke-width="4" stroke-linecap="round" />
+        <!-- Golden Star Emblem (金色萌萌帽徽) -->
+        <polygon points="60,16 63,24 54,20 66,20 57,24" fill="url(#goldGlow)" stroke="#111111" stroke-width="0.8" />
       </svg>
     </div>
 
