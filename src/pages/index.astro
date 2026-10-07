@@ -6,15 +6,45 @@ import StampWatermark from '../components/StampWatermark.astro';
 import RightNav from '../components/RightNav.astro';
 import { getCollection } from 'astro:content';
 
-// Fetch posts and sort by pubDate desc, with pinned posts first
+// Fetch all posts
 const allPosts = await getCollection('posts');
-const sortedPosts = allPosts.sort((a, b) => {
-  if (a.data.isPinned && !b.data.isPinned) return -1;
-  if (!a.data.isPinned && b.data.isPinned) return 1;
-  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+
+// 1. Pinned posts first
+const pinnedPosts = allPosts.filter(p => p.data.isPinned);
+
+// 2. ShenXing Speed post (神行加速) as #1 non-pinned post
+const shenxingPost = allPosts.find(p => p.slug === '14-shenxing-jiasu-iepl-premium-review');
+
+// Pool of remaining candidates excluding pinned and Shenxing
+const pool = allPosts.filter(p => !p.data.isPinned && p.slug !== '14-shenxing-jiasu-iepl-premium-review');
+
+// Ensure EVERY category (zhuabao, meishou, mofan, tongbao) has representation
+const categories = ['zhuabao', 'meishou', 'mofan', 'tongbao'];
+const guaranteedPosts: typeof pool = [];
+
+categories.forEach(cat => {
+  const isCoveredInTop = pinnedPosts.some(p => p.data.category === cat) || (shenxingPost && shenxingPost.data.category === cat);
+  if (!isCoveredInTop) {
+    const catCandidates = pool.filter(p => p.data.category === cat && !guaranteedPosts.includes(p));
+    if (catCandidates.length > 0) {
+      // Pick one randomly
+      const picked = catCandidates[Math.floor(Math.random() * catCandidates.length)];
+      guaranteedPosts.push(picked);
+    }
+  }
 });
 
-const latestPosts = sortedPosts.slice(0, 6);
+// Randomly shuffle remaining candidates
+const remainingPool = pool.filter(p => !guaranteedPosts.includes(p));
+const shuffledRemaining = [...remainingPool].sort(() => 0.5 - Math.random());
+
+// Assemble final homepage list: [Pinned...] -> [ShenXing Speed] -> [Category Guaranteed...] -> [Shuffled Rest]
+const latestPosts = [
+  ...pinnedPosts,
+  ...(shenxingPost ? [shenxingPost] : []),
+  ...guaranteedPosts,
+  ...shuffledRemaining
+].slice(0, 8);
 ---
 
 <BaseLayout
