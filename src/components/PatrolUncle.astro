@@ -1,386 +1,345 @@
 ---
 ---
 
-<div id="patrol-uncle-widget" class="patrol-uncle-container" role="button" tabindex="0" aria-label="宿管猫 3D 周巡查抓包按钮">
-  <!-- 3D Speech Bubble & Stamp Dialog -->
-  <div id="uncle-dialog" class="uncle-speech-bubble hidden font-mono">
-    <div class="bubble-3d-header">
-      <div class="header-tag">
-        <span class="status-dot-green"></span>
-        <span class="role-title">【宿管猫巡查通报】</span>
-      </div>
-      <button id="close-dialog-btn" class="bubble-close" aria-label="关闭">&times;</button>
-    </div>
-
-    <!-- Speech Text Body -->
-    <div id="uncle-speech-text" class="speech-text">
-      🐾【喵呜·强光开启】宿管猫猫上线！今晚例行查房，白天全绿不算数，全周7×24小时扛得住才算数！
-    </div>
-
-    <!-- Dynamic 3D Stamp Seal Effect -->
-    <div class="dialog-stamp-seal">
-      查房了·宿管猫印
-    </div>
-
-    <div class="bubble-arrow-3d"></div>
+<!-- Desktop Pet Cat: Pure CSS animated walking cat, fixed bottom-right, click to meow -->
+<div id="desktop-pet-cat" aria-label="宿管巡查猫 - 点击互动" role="button" tabindex="0">
+  <!-- Speech bubble (click to show) -->
+  <div id="cat-bubble" class="cat-bubble hidden">
+    <span id="cat-bubble-text">喵～今晚查房！白天全绿不算数 🔦</span>
   </div>
 
-  <!-- 3D Patrol Stage Container -->
-  <div class="patrol-stage-3d">
-    <!-- Volumetric 3D Light Cone -->
-    <div class="volumetric-light-cone"></div>
+  <!-- The cat (pure SVG animation, crisp at any DPI) -->
+  <div id="cat-scene" class="cat-scene">
+    <svg
+      id="cat-svg"
+      class="cat-svg"
+      viewBox="0 0 80 90"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <!-- ── TAIL ── -->
+      <g class="tail-group">
+        <path
+          d="M 46 72 Q 62 56 66 44 Q 70 32 58 28"
+          stroke="#E8894A"
+          stroke-width="5"
+          stroke-linecap="round"
+          fill="none"
+          class="tail-path"
+        />
+        <!-- tail tip -->
+        <circle cx="58" cy="28" r="4.5" fill="#CC5500"/>
+      </g>
 
-    <!-- Floating 3D Badge -->
-    <div class="stage-badge-3d">
-      <span class="pulse-red-light"></span> 周巡查进行中
-    </div>
+      <!-- ── BODY ── -->
+      <ellipse cx="36" cy="64" rx="22" ry="18" fill="#F5A55A"/>
+      <!-- tummy -->
+      <ellipse cx="34" cy="67" rx="12" ry="11" fill="#FDDBA8"/>
 
-    <!-- 3D Security Cat Mascot Character (宿管巡查猫模型) -->
-    <div class="uncle-character-box-3d">
-      <img 
-        src="/images/cat-mascot-hd-transparent.png" 
-        alt="宿管巡查猫模型" 
-        class="cat-mascot-img-3d" 
-        width="90" 
-        height="105" 
-      />
-    </div>
+      <!-- ── HEAD ── -->
+      <circle cx="35" cy="38" r="22" fill="#F5A55A"/>
 
-    <!-- 3D Stage Platform Base Deck with Hazard Stripes -->
-    <div class="stage-platform-base">
-      <div class="hazard-stripes"></div>
-    </div>
+      <!-- ── EARS ── -->
+      <polygon points="18,22 12,5 28,16" fill="#F5A55A"/>
+      <polygon points="20,20 14,8 26,17" fill="#E87070"/>
+      <polygon points="52,22 58,5 42,16" fill="#F5A55A"/>
+      <polygon points="50,20 56,8 44,17" fill="#E87070"/>
+
+      <!-- ── FACE ── -->
+      <!-- eyes -->
+      <ellipse cx="27" cy="37" rx="5" ry="5.5" fill="#1a1a2e" class="eye-left"/>
+      <ellipse cx="43" cy="37" rx="5" ry="5.5" fill="#1a1a2e" class="eye-right"/>
+      <!-- eye shine -->
+      <circle cx="29" cy="35" r="1.8" fill="white"/>
+      <circle cx="45" cy="35" r="1.8" fill="white"/>
+      <!-- blink overlay -->
+      <rect id="blink-left"  x="22" y="34" width="10" height="6" rx="3" fill="#F5A55A" class="blink-lid"/>
+      <rect id="blink-right" x="38" y="34" width="10" height="6" rx="3" fill="#F5A55A" class="blink-lid"/>
+      <!-- nose -->
+      <ellipse cx="35" cy="44" rx="3" ry="2" fill="#E87070"/>
+      <!-- mouth -->
+      <path d="M 32 46 Q 35 50 38 46" stroke="#CC4444" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <!-- whiskers left -->
+      <line x1="8"  y1="42" x2="27" y2="44" stroke="#555" stroke-width="1.2" opacity="0.7"/>
+      <line x1="6"  y1="46" x2="27" y2="46" stroke="#555" stroke-width="1.2" opacity="0.7"/>
+      <line x1="8"  y1="50" x2="27" y2="48" stroke="#555" stroke-width="1.2" opacity="0.7"/>
+      <!-- whiskers right -->
+      <line x1="62" y1="42" x2="43" y2="44" stroke="#555" stroke-width="1.2" opacity="0.7"/>
+      <line x1="64" y1="46" x2="43" y2="46" stroke="#555" stroke-width="1.2" opacity="0.7"/>
+      <line x1="62" y1="50" x2="43" y2="48" stroke="#555" stroke-width="1.2" opacity="0.7"/>
+
+      <!-- ── PATROL CAP ── -->
+      <ellipse cx="35" cy="20" rx="20" ry="5" fill="#1a2340"/>
+      <rect x="16" y="12" width="38" height="10" rx="5" fill="#1a2340"/>
+      <!-- cap badge -->
+      <rect x="30" y="9" width="10" height="6" rx="2" fill="#D92626"/>
+      <text x="35" y="15" text-anchor="middle" font-size="4" fill="white" font-weight="bold">查</text>
+      <!-- cap peak brim -->
+      <ellipse cx="35" cy="22" rx="22" ry="4" fill="#0f1628"/>
+
+      <!-- ── VEST / BADGE ── -->
+      <!-- red armband on left arm -->
+      <rect x="12" y="62" width="9" height="6" rx="2" fill="#D92626"/>
+      <text x="16.5" y="67" text-anchor="middle" font-size="3.5" fill="white" font-weight="bold">查</text>
+
+      <!-- ── LEGS (animated) ── -->
+      <!-- front-left leg -->
+      <g class="leg-fl">
+        <rect x="20" y="78" width="9" height="11" rx="4" fill="#E8894A"/>
+        <ellipse cx="24.5" cy="89" rx="6" ry="3" fill="#CC5500"/>
+      </g>
+      <!-- front-right leg -->
+      <g class="leg-fr">
+        <rect x="32" y="78" width="9" height="11" rx="4" fill="#E8894A"/>
+        <ellipse cx="36.5" cy="89" rx="6" ry="3" fill="#CC5500"/>
+      </g>
+    </svg>
   </div>
+
+  <!-- Shadow -->
+  <div class="cat-shadow"></div>
 </div>
 
 <script>
-  // Immersive Security Cat Weekly Dorm Patrol Quotes
-  const uncleQuotes = [
-    "🐾【喵呜·强光开启】宿管猫猫上线！今晚例行查房，白天全绿不算数，全周7×24小时扛得住才算数！",
-    "🔦【肉垫手电筒】本周例行巡查开始！手电筒一照，虚标倍率和假专线当场现原形！",
-    "🔑【钥匙串叮当响】走廊不许喧哗！拿着宿管猫钥匙串，6大推荐机场随便连，全线不限设备数量！",
-    "🚨【猫爪抓包】本周突击抽查！抓到丢包率飙到40%的劣质机场，当场没收通报！",
-    "🏆【盖章通过】核心6大专线机场表现优异，延迟稳定不丢包，本猫亲自盖章认证！",
-    "⚡【猫耳雷达】白天千兆、晚上挂水？宿管猫24小时雷达监测，谁也别想蒙混过关！",
-    "📋【查房通报】防坑手册必须看！理性消费支持月付，切勿一次性充值长期大额！",
-    "🐱【巡楼完毕】打卡巡查完毕！有问题随时戳我，宿管猫为你严守网络大门！"
-  ];
+  (function () {
+    const pet       = document.getElementById('desktop-pet-cat') as HTMLElement;
+    const catSvg    = document.getElementById('cat-svg') as SVGSVGElement;
+    const bubble    = document.getElementById('cat-bubble') as HTMLElement;
+    const bubbleText = document.getElementById('cat-bubble-text') as HTMLElement;
+    const blinkLeft  = document.getElementById('blink-left')  as SVGRectElement;
+    const blinkRight = document.getElementById('blink-right') as SVGRectElement;
 
-  const widget = document.getElementById('patrol-uncle-widget');
-  const dialog = document.getElementById('uncle-dialog');
-  const speechText = document.getElementById('uncle-speech-text');
-  const closeBtn = document.getElementById('close-dialog-btn');
+    if (!pet || !catSvg) return;
 
-  let lastIndex = -1;
+    /* ── MEOW QUOTES ── */
+    const meows = [
+      '喵～今晚查房！白天全绿不算数 🔦',
+      '🐾 抓包现场！谁在偷懒断流？',
+      '🔑 叮当～钥匙串来了，开门！',
+      '喵！发现劣质线路，当场没收！',
+      '🚨 突击抽查！延迟跑到300ms？',
+      '😼 宿管猫盖章：本周全线合格！',
+      '🐱 防坑手册必看，月付最安全！',
+    ];
+    let lastMeow = -1;
 
-  function getRandomQuote() {
-    let nextIndex;
-    do {
-      nextIndex = Math.floor(Math.random() * uncleQuotes.length);
-    } while (nextIndex === lastIndex && uncleQuotes.length > 1);
-    lastIndex = nextIndex;
-    return uncleQuotes[nextIndex];
-  }
+    function randomMeow() {
+      let i;
+      do { i = Math.floor(Math.random() * meows.length); } while (i === lastMeow);
+      lastMeow = i;
+      return meows[i];
+    }
 
-  function triggerUncleResponse() {
-    if (!dialog || !speechText) return;
-    
-    speechText.textContent = getRandomQuote();
-    dialog.classList.remove('hidden');
+    /* ── WALK ANIMATION ── */
+    const walkZoneRight = window.innerWidth - 120;
+    const walkZoneLeft  = 20;
+    let posX     = walkZoneRight;       // start right
+    let targetX  = walkZoneLeft;
+    let speed    = 0.55;                // px per frame
+    let facing   = -1;                  // -1 = left, 1 = right
+    let bouncing = 0;                   // vertical bob counter
+    let bubbleTimer: ReturnType<typeof setTimeout> | null = null;
 
-    // Trigger 3D Flash Spotlight & Key Jingling Visual Effect
-    widget?.classList.add('flashlight-super-spotlight');
-    setTimeout(() => {
-      widget?.classList.remove('flashlight-super-spotlight');
-    }, 600);
-  }
+    pet.style.right  = '24px';
+    pet.style.bottom = '24px';
+    pet.style.left   = 'auto';
+    pet.style.transform = 'translateX(0)';
 
-  if (widget) {
-    widget.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).closest('#close-dialog-btn')) {
-        dialog?.classList.add('hidden');
-        return;
+    // Disable CSS classes that move the element - we control position via JS
+    pet.style.position = 'fixed';
+    pet.style.zIndex   = '9999';
+
+    function applyPos() {
+      pet.style.right = (window.innerWidth - posX - 80) + 'px';
+    }
+
+    function reverseDir() {
+      facing   = facing === -1 ? 1 : -1;
+      targetX  = facing === 1 ? walkZoneRight : walkZoneLeft;
+      catSvg.style.transform = facing === 1 ? 'scaleX(-1)' : 'scaleX(1)';
+    }
+
+    function tick() {
+      bouncing++;
+      const bob = Math.sin(bouncing * 0.25) * 1.8;
+      pet.style.bottom = (24 + bob) + 'px';
+
+      if (facing === -1) {
+        posX -= speed;
+        if (posX <= walkZoneLeft) reverseDir();
+      } else {
+        posX += speed;
+        if (posX >= walkZoneRight) reverseDir();
       }
-      triggerUncleResponse();
+      applyPos();
+      requestAnimationFrame(tick);
+    }
+
+    applyPos();
+    catSvg.style.transform = 'scaleX(1)'; // facing left initially
+    requestAnimationFrame(tick);
+
+    /* ── BLINK ── */
+    function doBlink() {
+      if (!blinkLeft || !blinkRight) return;
+      blinkLeft.setAttribute('height', '7');
+      blinkRight.setAttribute('height', '7');
+      setTimeout(() => {
+        blinkLeft.setAttribute('height', '6');
+        blinkRight.setAttribute('height', '6');
+      }, 120);
+      // schedule next blink
+      const next = 2500 + Math.random() * 3500;
+      setTimeout(doBlink, next);
+    }
+    setTimeout(doBlink, 2000);
+
+    /* ── CLICK: SHOW BUBBLE ── */
+    function showBubble() {
+      if (!bubble || !bubbleText) return;
+      bubbleText.textContent = randomMeow();
+      bubble.classList.remove('hidden');
+      bubble.classList.add('pop-in');
+      if (bubbleTimer) clearTimeout(bubbleTimer);
+      bubbleTimer = setTimeout(() => {
+        bubble.classList.add('hidden');
+        bubble.classList.remove('pop-in');
+      }, 3500);
+    }
+
+    pet.addEventListener('click', showBubble);
+    pet.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showBubble(); }
     });
 
-    widget.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        triggerUncleResponse();
-      }
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dialog?.classList.add('hidden');
-    });
-  }
+    // Occasional random meow
+    function randomMeowTrigger() {
+      showBubble();
+      setTimeout(randomMeowTrigger, 18000 + Math.random() * 22000);
+    }
+    setTimeout(randomMeowTrigger, 12000);
+  })();
 </script>
 
 <style>
-  .patrol-uncle-container {
+  #desktop-pet-cat {
     position: fixed;
     bottom: 24px;
-    left: 24px;
+    right: 24px;
     z-index: 9999;
     cursor: pointer;
     user-select: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    perspective: 800px;
+    align-items: center;
+    width: 80px;
   }
 
-  /* 3D Stage Platform Wrapper */
-  .patrol-stage-3d {
+  /* ── CAT SVG ── */
+  .cat-scene {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform-style: preserve-3d;
-    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .patrol-uncle-container:hover .patrol-stage-3d {
-    transform: translateY(-6px) rotateX(6deg) scale(1.06);
-  }
-
-  /* 3D Floating Badge */
-  .stage-badge-3d {
-    position: absolute;
-    top: -24px;
-    background: #18181b;
-    color: #ffffff;
-    border: 1.5px solid var(--accent-red);
-    box-shadow: 2px 2px 0px #000000;
-    padding: 0.15rem 0.5rem;
-    font-size: 0.72rem;
-    font-weight: 900;
-    font-family: var(--font-mono);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    white-space: nowrap;
-    z-index: 10;
-  }
-
-  .pulse-red-light {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent-red);
-    box-shadow: 0 0 6px var(--accent-red);
-    animation: pulseGlow 1.2s infinite ease-in-out;
-  }
-
-  @keyframes pulseGlow {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(0.7); }
-  }
-
-  /* Volumetric 3D Light Cone Beam */
-  .volumetric-light-cone {
-    position: absolute;
-    left: -140px;
-    top: 28px;
-    width: 155px;
+    width: 80px;
     height: 90px;
-    background: linear-gradient(270deg, rgba(254, 240, 138, 0.75) 0%, rgba(250, 204, 21, 0.3) 45%, transparent 100%);
-    clip-path: polygon(100% 40%, 0% 0%, 0% 100%, 100% 60%);
-    pointer-events: none;
-    animation: coneSweeping 3.5s infinite ease-in-out alternate;
-    filter: drop-shadow(0 0 8px rgba(254, 240, 138, 0.4));
   }
 
-  .flashlight-super-spotlight .volumetric-light-cone {
-    background: linear-gradient(270deg, rgba(255, 255, 255, 0.98) 0%, rgba(254, 240, 138, 0.8) 60%, transparent 100%);
-    width: 210px;
-    height: 110px;
-    top: 18px;
+  .cat-svg {
+    width: 80px;
+    height: 90px;
+    overflow: visible;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.38));
+    /* flip is controlled by JS */
   }
 
-  /* 3D Patrol Mascot Animation */
-  .uncle-character-box-3d {
-    position: relative;
-    z-index: 2;
-    animation: unclePatrolLoop 7s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  /* Walking leg swing */
+  .leg-fl {
+    transform-origin: 24px 78px;
+    animation: legSwingA 0.42s ease-in-out infinite alternate;
+  }
+  .leg-fr {
+    transform-origin: 36px 78px;
+    animation: legSwingB 0.42s ease-in-out infinite alternate;
+  }
+  @keyframes legSwingA {
+    from { transform: rotate(-14deg); }
+    to   { transform: rotate(14deg);  }
+  }
+  @keyframes legSwingB {
+    from { transform: rotate(14deg);  }
+    to   { transform: rotate(-14deg); }
   }
 
-  .cat-mascot-img-3d {
-    display: block;
-    width: 90px;
-    height: auto;
-    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
-    transition: transform 0.2s ease;
+  /* Tail wag */
+  .tail-group {
+    transform-origin: 46px 72px;
+    animation: tailWag 0.9s ease-in-out infinite alternate;
+  }
+  @keyframes tailWag {
+    from { transform: rotate(-18deg); }
+    to   { transform: rotate(18deg);  }
   }
 
-  .jingle-keys {
-    transform-origin: 78px 98px;
-    animation: keyJingle 1.5s infinite ease-in-out alternate;
+  /* Blink lids – height animated by JS */
+  .blink-lid {
+    transition: height 0.06s ease;
   }
 
-  @keyframes keyJingle {
-    0% { transform: rotate(-8deg); }
-    100% { transform: rotate(12deg); }
-  }
-
-  @keyframes unclePatrolLoop {
-    0% { transform: translateX(0px) scaleX(1); }
-    45% { transform: translateX(45px) scaleX(1); }
-    50% { transform: translateX(45px) scaleX(-1); }
-    95% { transform: translateX(0px) scaleX(-1); }
-    100% { transform: translateX(0px) scaleX(1); }
-  }
-
-  @keyframes coneSweeping {
-    0% { opacity: 0.85; transform: rotate(-2deg); }
-    50% { opacity: 0.6; transform: rotate(3deg) scaleY(0.9); }
-    100% { opacity: 0.95; transform: rotate(-4deg); }
-  }
-
-  /* 3D Stage Platform Base Deck with Hazard Stripes */
-  .stage-platform-base {
-    width: 100px;
-    height: 12px;
-    background: #18181b;
-    border: 2px solid #ffffff;
-    box-shadow: 4px 4px 0px #000000;
-    margin-top: -6px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hazard-stripes {
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      -45deg,
-      #d92626,
-      #d92626 8px,
-      #18181b 8px,
-      #18181b 16px
-    );
-    opacity: 0.9;
-  }
-
-  /* 3D Speech Bubble & Stamp Dialog */
-  .uncle-speech-bubble {
-    background: #121214;
-    color: #ffffff;
-    border: 2.5px solid #ffffff;
-    box-shadow: 6px 6px 0px var(--accent-red);
-    padding: 1rem 1.1rem;
-    width: 300px;
-    margin-bottom: 1rem;
-    position: relative;
-    border-radius: 6px;
-    z-index: 10000;
-    animation: popIn3D 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .uncle-speech-bubble.hidden {
-    display: none;
-  }
-
-  .bubble-3d-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1.5px dashed #44444c;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .header-tag {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .status-dot-green {
-    width: 8px;
+  /* ── SHADOW ── */
+  .cat-shadow {
+    width: 52px;
     height: 8px;
     border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 6px #22c55e;
+    background: rgba(0,0,0,0.18);
+    margin-top: -4px;
+    filter: blur(3px);
+    animation: shadowPulse 0.42s ease-in-out infinite alternate;
+  }
+  @keyframes shadowPulse {
+    from { transform: scaleX(0.9); opacity: 0.15; }
+    to   { transform: scaleX(1.1); opacity: 0.22; }
   }
 
-  .role-title {
-    color: var(--accent-red);
-    font-weight: 900;
-    font-size: 0.85rem;
-  }
-
-  .bubble-close {
-    background: none;
-    border: none;
-    color: #aaaaaa;
-    font-size: 1.3rem;
-    font-weight: 900;
-    cursor: pointer;
-    line-height: 1;
-  }
-
-  .bubble-close:hover {
-    color: #ffffff;
-  }
-
-  .speech-text {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #f4f4f5;
-  }
-
-  .dialog-stamp-seal {
-    display: inline-block;
-    border: 2px double var(--accent-red);
-    color: var(--accent-red);
-    font-size: 0.72rem;
-    font-weight: 900;
-    padding: 0.15rem 0.5rem;
-    margin-top: 0.6rem;
-    transform: rotate(-4deg);
-    background: rgba(217, 38, 38, 0.08);
-  }
-
-  .bubble-arrow-3d {
+  /* ── SPEECH BUBBLE ── */
+  .cat-bubble {
     position: absolute;
-    bottom: -12px;
-    left: 36px;
+    bottom: calc(100% + 10px);
+    right: 0;
+    background: #121214;
+    color: #f4f4f5;
+    border: 2px solid #ffffff;
+    box-shadow: 4px 4px 0px var(--accent-red, #d92626);
+    border-radius: 8px;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: nowrap;
+    max-width: 240px;
+    white-space: normal;
+    pointer-events: none;
+    z-index: 10001;
+  }
+  .cat-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    right: 24px;
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 12px solid #121214;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid #121214;
+  }
+  .cat-bubble.hidden { display: none; }
+  .cat-bubble.pop-in {
+    animation: catBubbleIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes catBubbleIn {
+    from { opacity: 0; transform: translateY(8px) scale(0.88); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  @keyframes popIn3D {
-    from { opacity: 0; transform: translateY(12px) scale(0.9); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  /* Responsive Mobile Layout */
-  @media (max-width: 600px) {
-    .patrol-uncle-container {
-      bottom: 16px;
-      left: 16px;
-    }
-    .uncle-speech-bubble {
-      width: 240px;
-      padding: 0.8rem;
-    }
-    .speech-text {
-      font-size: 0.82rem;
-    }
-    .uncle-svg-3d {
-      width: 70px;
-      height: 82px;
-    }
-    .stage-platform-base {
-      width: 80px;
-    }
+  /* hide on very small screens */
+  @media (max-width: 400px) {
+    #desktop-pet-cat { display: none; }
   }
 </style>
