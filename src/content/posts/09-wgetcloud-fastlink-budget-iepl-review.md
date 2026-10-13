@@ -3,7 +3,6 @@ title: "【当场抓包】WgetCloud 与 Fastlink：主流性价比 IEPL 专线�
 description: "宿管手操测速仪！对 WgetCloud (微客云) 与 Fastlink 两大热门性价比专线机场进行周度高压抽查。测定 BGP 优化入口与出口节点连通率，分析高峰期抖动表现与流媒体解锁细节。"
 pubDate: 2025-07-29
 category: "zhuabao"
-verdict: "five-star"
 verdictNote: "WgetCloud 与 Fastlink 在性价比区间表现非常出色，全周平均丢包率低于 0.8%，在晚高峰期依然能稳定维持 180Mbps+ 视频码率。"
 testLocation: "华中电信 1000M 宿管抓包终端"
 testIsp: "电信 1000M / 移动 500M"
@@ -50,8 +49,8 @@ keywords: ["WgetCloud", "Fastlink", "性价比机场", "2026最稳定的机场",
 周期: 2026-W40 例行巡检
 ----------------------------------------------------------------------
 服务名称        测试节点        平均延迟(ms)  丢包率(%)  4K视频开播(s)  建议档位
-WgetCloud       HK-IEPL-BGP01      42.1        0.0%       0.8s       五星推荐
-Fastlink        HK-Direct-IEPL     46.5        0.8%       0.9s       五星推荐
+WgetCloud       HK-IEPL-BGP01      42.1        0.0%       0.8s       巡检合格
+Fastlink        HK-Direct-IEPL     46.5        0.8%       0.9s       巡检合格
 ```
 
 ---
@@ -69,4 +68,4 @@ Fastlink        HK-Direct-IEPL     46.5        0.8%       0.9s       五星推�
 
 两家服务在周度抓包考核中均展现了硬核的性价比与稳定性。
 
-**查房结论：🏆 五星推荐**。表现优异，推荐关注。
+**查房结论：✅ 巡检合格**。表现优异，推荐关注。

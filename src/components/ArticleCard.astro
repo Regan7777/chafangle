@@ -14,7 +14,20 @@ interface Props {
 
 const { title, description, slug, date, category, verdict, badge, isPinned = false } = Astro.props;
 
-const effectiveVerdict = verdict || (badge?.includes('五星') || badge?.includes('推荐') ? 'five-star' : undefined);
+const corePromotedSlugs = [
+  '14-shenxing-jiasu-iepl-premium-review',
+  '15-dalaoyun-bgp-high-value-review',
+  '17-liulianyun-native-ip-unlock-review',
+  '19-yunjiexian-pure-iepl-dedicated-review',
+  '18-huanqiuti-global-business-review',
+  '16-shandianshu-fast-latency-review',
+];
+
+const isCorePromoted = corePromotedSlugs.includes(slug);
+// 机场评测及非主推站点不显示五星推荐，仅主推的 6 个站保留五星推荐
+const effectiveVerdict = isCorePromoted
+  ? 'five-star'
+  : (verdict === 'five-star' ? undefined : verdict);
 
 const categoryLabels: Record<string, { name: string; tagClass: string }> = {
   'zhuabao': { name: '机场评测', tagClass: 'badge-zhuabao' },

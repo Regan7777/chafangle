@@ -6,7 +6,6 @@ category: "zhuabao"
 categoryName: "当场抓包"
 author: "宿管大爷"
 badge: "突击抓包"
-verdict: "five-star"
 verdictNote: "老牌稳定长跑型服务商，全节点Trojan伪装协议+IPLC内网专线。晚高峰延迟平如直线，5设备并发年付仅需¥99，省心无套路。"
 officialUrl: "https://wanfengzn.com/go/yizhihongxing"
 pricePlan: "¥99 / 年（折合 ¥8.25/月）起"
@@ -29,7 +28,7 @@ metrics:
 keywords: ["一枝红杏", "Trojan机场", "IPLC专线", "年付特惠机场", "外贸办公代理", "机场推荐", "2026稳定机场"]
 ---
 
-> **巡查鉴定**：五星推荐（老牌安心长跑标杆）  
+> **巡查鉴定**：巡查合格（老牌安心长跑标杆）  
 > **线路类型**：全线 IPLC 国际点对点物理专线 · 低复用率专用节点  
 > **服务协议**：Trojan 原生 HTTPS 伪装协议  
 > **官方入口**：[点击直达一枝红杏官方通道](https://wanfengzn.com/go/yizhihongxing)  

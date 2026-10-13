@@ -3,7 +3,6 @@ title: "【机场评测】Nexitally 与 TAG Internet：老牌标杆 IEPL 专线�
 description: "本周周巡查重点抽查网络圈口碑标杆 Nexitally (奶昔) 与 TAG Internet。采样全周 7×24 小时数据，自研面板与专属 IEPL 物理专线在高峰期表现极为强悍，全周零丢包，ChatGPT 与 Netflix 全流媒体稳定解锁。"
 pubDate: 2025-11-16
 category: "zhuabao"
-verdict: "five-star"
 verdictNote: "Nexitally 与 TAG Internet 在全周 7×24 小时例行抽测中展现了顶级 IEPL 专线的硬实力，握手延迟与抖动极低，ChatGPT / Claude 等 AI 工具风控通过率 100%。"
 testLocation: "华东电信 1000M / 华南联通 1000M 宿管测速点"
 testIsp: "电信 1000M / 联通 1000M / 移动 500M"
@@ -67,4 +66,4 @@ TAG Internet      全球专线中转   41.2        0.0%       0.6s        99.98%
 
 全周数据极其亮眼，经受住了 7×24 小时高压巡查。
 
-**查房结论：🏆 五星推荐**。表现极其亮眼，强烈推荐追求极致体验的用户关注。
+**查房结论：✅ 巡检合格**。表现极其亮眼，适合追求极致稳定体验的高要求用户关注。

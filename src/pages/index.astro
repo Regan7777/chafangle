@@ -40,35 +40,104 @@ const latestPosts = [
   title="2026机场推荐｜每周网络服务巡检与避坑指南"
   description="面向 VPN、机场代理与网络服务用户的中文评测博客。以周为单位巡查，不让断流蒙混过关。提供2026最稳定的 VPN / 机场推荐、性价比服务对比、IEPL专线与BGP中转周巡查报告。"
 >
-  <!-- Hero Section -->
+  <!-- Hero Section with Security Cat Mascot & 4-Panel Comic Strip -->
   <section class="hero-section">
     <div class="container">
-      <div class="hero-card industrial-box-dark">
-        <div class="hero-status-bar">
-          <span class="status-indicator-light blinking"></span>
-          <span class="status-text font-mono">宿管已上线，本周例行巡楼中。</span>
+      <!-- Cat Hero Banner Card (宿管猫主图卡片) -->
+      <div class="hero-cat-banner-card">
+        <!-- Visual Presentation of Mockup Banner -->
+        <div class="hero-cat-visual-wrapper">
+          <img 
+            src="/images/hero-card-perfect.png" 
+            alt="2026机场推荐 - 宿管猫周巡查" 
+            class="hero-cat-banner-image"
+            width="976"
+            height="398"
+            loading="eager"
+            fetchpriority="high"
+          />
+          
+          <!-- Interactive Clickable Hotspots overlaying the 2 buttons in the artwork -->
+          <div class="hero-hotspots-layer">
+            <a 
+              href="/category/mofan" 
+              class="hero-hotspot-btn hotspot-key-btn" 
+              title="🔑 领取查房钥匙串（2026主推机场）"
+              aria-label="领取查房钥匙串"
+            ></a>
+            <a 
+              href="/handbook" 
+              class="hero-hotspot-btn hotspot-handbook-btn" 
+              title="📖 查阅防坑手册"
+              aria-label="查阅防坑手册"
+            ></a>
+          </div>
         </div>
 
-        <div class="hero-main-content">
-          <div class="title-group">
-            <h1 class="hero-title">2026机场推荐</h1>
-            <p class="hero-subtitle">白天全绿不算数，一周 7×24 小时扛得住才算数。</p>
-          </div>
-          <div class="hero-stamp-wrapper">
-            <StampWatermark text="VPN查房了·突击取证专用章" subText="周巡查合格" size="lg" />
-          </div>
+        <!-- Semantic SEO Information (Visually hidden for screen readers & search engines) -->
+        <div class="sr-only">
+          <h1>2026机场推荐</h1>
+          <p>白天全绿不算数，一周 7×24 小时扛得住才算数。</p>
+          <p>
+            记录网络服务在每周例行巡检中的公开测试与体验观察。拒绝虚标与口头承诺，以周为单位巡查，用全周 MTR 丢包率、TCP 延迟与开播速度说话。面向机场代理用户，从小白到大神都能找到需要的实测卷宗。核心主推机场全线不限设备使用数量。
+          </p>
+          <a href="/category/mofan">领取查房钥匙串</a>
+          <a href="/handbook">查阅防坑手册</a>
         </div>
 
-        <p class="hero-intro">
-          记录网络服务在每周例行巡检中的公开测试与体验观察。拒绝虚标与口头承诺，以周为单位巡查，用全周 MTR 丢包率、TCP 延迟与开播速度说话。面向机场代理用户，从小白到大神都能找到需要的实测卷宗。
-        </p>
-
-        <div class="hero-actions">
+        <!-- Responsive Mobile Actions (displays on small mobile screens for convenient tapping) -->
+        <div class="hero-mobile-actions">
           <a href="/category/mofan" class="btn-primary">
             🔑 领取查房钥匙串
           </a>
           <a href="/handbook" class="btn-secondary">
             📖 查阅防坑手册
+          </a>
+        </div>
+      </div>
+
+      <!-- 4-Panel Security Cat Comic Strip (四格宿管猫查房漫画) -->
+      <div class="comic-strip-wrapper">
+        <div class="comic-panels-grid">
+          <a href="/category/zhuabao" class="comic-panel-card" title="日常巡逻：宿管上班，今晚突查！">
+            <img 
+              src="/images/comic-panel-1.png" 
+              alt="日常巡查：宿管上班，今晚突查！" 
+              class="comic-panel-img"
+              width="238" 
+              height="256"
+              loading="lazy" 
+            />
+          </a>
+          <a href="/category/zhuabao" class="comic-panel-card" title="发现异常（抓包）：逮到了！">
+            <img 
+              src="/images/comic-panel-2.png" 
+              alt="发现异常（抓包）：逮到了！" 
+              class="comic-panel-img"
+              width="238" 
+              height="256"
+              loading="lazy" 
+            />
+          </a>
+          <a href="/category/mofan" class="comic-panel-card" title="盖章通过：安全通过！">
+            <img 
+              src="/images/comic-panel-3.png" 
+              alt="盖章通过：安全通过！" 
+              class="comic-panel-img"
+              width="238" 
+              height="256"
+              loading="lazy" 
+            />
+          </a>
+          <a href="/category/mofan" class="comic-panel-card" title="提供钥匙：拿好，门禁卡！全线不限设备使用数量">
+            <img 
+              src="/images/comic-panel-4.png" 
+              alt="提供钥匙：拿好，门禁卡！" 
+              class="comic-panel-img"
+              width="240" 
+              height="256"
+              loading="lazy" 
+            />
           </a>
         </div>
       </div>
@@ -171,83 +240,155 @@ const latestPosts = [
     margin-bottom: 2.5rem;
   }
 
-  .hero-card {
-    border-width: 3px;
-  }
-
-  .hero-status-bar {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    border-bottom: 1.5px dashed #444;
-    padding-bottom: 0.8rem;
-    margin-bottom: 1.25rem;
-    flex-wrap: wrap;
-    font-size: 0.85rem;
-  }
-
-  .status-indicator-light {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 8px #22c55e;
-    display: inline-block;
-  }
-
-  .status-indicator-light.blinking {
-    animation: blink 1.5s infinite ease-in-out;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.85); }
-  }
-
-  .status-text {
-    color: #ffffff;
-    font-weight: 700;
-  }
-
-  .status-time {
-    color: var(--accent-red);
-    margin-left: auto;
-  }
-
-  .hero-main-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-
-  .hero-title {
-    font-size: 3rem;
-    color: #ffffff;
-    letter-spacing: -1px;
-    margin-bottom: 0.4rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--accent-red);
-    font-weight: 800;
-  }
-
-  .hero-intro {
-    font-size: 1.05rem;
-    color: #dddddd;
-    line-height: 1.7;
-    max-width: 800px;
+  /* Cat Hero Banner Card */
+  .hero-cat-banner-card {
+    background: #111113;
+    border: 3px solid #000000;
+    box-shadow: 6px 6px 0px #000000;
+    border-radius: 8px;
+    overflow: hidden;
     margin-bottom: 1.5rem;
   }
 
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  .hero-cat-visual-wrapper {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+  }
+
+  .hero-cat-banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 976 / 398;
+    object-fit: cover;
+  }
+
+  /* Hotspots Overlay for Artwork Buttons */
+  .hero-hotspots-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-hotspot-btn {
+    position: absolute;
+    pointer-events: auto;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, outline 0.15s ease;
+  }
+
+  /* Red Button: 🔑 领取查房钥匙串 */
+  .hotspot-key-btn {
+    left: 3.79%;
+    top: 67.58%;
+    width: 16.18%;
+    height: 10.05%;
+  }
+
+  .hotspot-key-btn:hover {
+    outline: 2.5px solid #ffffff;
+    box-shadow: 0 0 14px rgba(220, 38, 38, 0.9);
+    transform: translateY(-2px);
+  }
+
+  /* Secondary Button: 📖 查阅防坑手册 */
+  .hotspot-handbook-btn {
+    left: 20.49%;
+    top: 66.58%;
+    width: 16.9%;
+    height: 12.3%;
+  }
+
+  .hotspot-handbook-btn:hover {
+    outline: 2.5px solid #ffffff;
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.85);
+    transform: translateY(-2px);
+  }
+
+  /* Screen Reader Utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Responsive Mobile Actions */
+  .hero-mobile-actions {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .hero-mobile-actions {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      background: #18181b;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-top: 2px dashed #333338;
+    }
+    .hero-mobile-actions .btn-primary,
+    .hero-mobile-actions .btn-secondary {
+      font-size: 0.88rem;
+      padding: 0.6rem 1rem;
+    }
+  }
+
+  /* 4-Panel Security Cat Comic Strip (四格宿管猫巡楼漫画) */
+  .comic-strip-wrapper {
+    margin-top: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .comic-panels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .comic-panels-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .comic-panels-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+    }
+  }
+
+  .comic-panel-card {
+    display: block;
+    background: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 3px 3px 0px #000000;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+  }
+
+  .comic-panel-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 5px 0px var(--accent-red);
+    border-color: var(--accent-red);
+  }
+
+  .comic-panel-img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .btn-primary, .btn-secondary {
