@@ -200,9 +200,12 @@ const diagnosticTools = [
                     <h3 class="nav-card-name">{item.name}</h3>
                     <span class="nav-type-tag font-mono">{item.type}</span>
                   </div>
-                  <span class={`nav-badge-pill pill-${item.badgeType} font-mono`}>
-                    {item.tag}
-                  </span>
+                  <div class="nav-badges-row">
+                    <span class="nav-badge-pill pill-green font-mono">📱 不限设备</span>
+                    <span class={`nav-badge-pill pill-${item.badgeType} font-mono`}>
+                      {item.tag}
+                    </span>
+                  </div>
                 </div>
 
                 <p class="nav-card-desc">{item.desc}</p>
@@ -542,6 +545,13 @@ const diagnosticTools = [
     padding: 0.1rem 0.35rem;
     border: 1px solid #777;
     color: #333;
+  }
+
+  .nav-badges-row {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
   .nav-badge-pill {
