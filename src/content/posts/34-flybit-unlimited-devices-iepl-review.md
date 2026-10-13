@@ -6,7 +6,6 @@ category: "zhuabao"
 categoryName: "当场抓包"
 author: "宿管大爷"
 badge: "重点巡查"
-verdict: "five-star"
 verdictNote: "真正做到不限在线客户端数，10+设备并发测试毫不卡顿。IEPL专线保障了晚高峰质量，不限时流量包单价厚道，多设备用户绝佳选择。"
 officialUrl: "https://wanfengzn.com/go/flybit"
 pricePlan: "¥15 / 月起（不限时流量包 ¥36 起）"
@@ -29,7 +28,7 @@ metrics:
 keywords: ["FlyBit", "FlyBit机场", "不限设备机场", "不限时流量包", "IEPL专线", "多设备共享机场", "当场抓包"]
 ---
 
-> **巡查鉴定**：五星表现 · 多设备党与小型工作室救星  
+> **巡查鉴定**：巡查合格 · 多设备党与小型工作室参考  
 > **线路类型**：BGP 智能入口 · 端到端 IEPL 内网专线与高速中转混合  
 > **核心卖点**：**完全不限制在线设备数量**（真正不锁 IP / 设备数）  
 > **官方入口**：[点击直达 FlyBit 官方通道](https://wanfengzn.com/go/flybit)  

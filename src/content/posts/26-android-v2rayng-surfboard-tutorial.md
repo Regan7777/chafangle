@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["安卓翻墙教程", "v2rayNG教程", "Surfboard配置", "Android机场配置", "入住教程"]
 ---
 

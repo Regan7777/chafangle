@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["机场选购指南", "性价比机场推荐", "IEPL专线机场", "机场避坑防跑路", "入住教程"]
 ---
 

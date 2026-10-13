@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["Clash Verge教程", "Clash新手教程", "机场订阅导入", "入住教程", "Clash使用指南"]
 ---
 

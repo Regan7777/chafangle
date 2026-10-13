@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["翻墙教程", "科学上网", "机场是什么", "VPN与机场区别", "入住教程"]
 ---
 

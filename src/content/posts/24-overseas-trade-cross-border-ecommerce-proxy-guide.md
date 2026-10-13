@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["海外贸易", "跨境电商专线", "外贸翻墙", "原生IP机场", "防关联节点"]
 ---
 

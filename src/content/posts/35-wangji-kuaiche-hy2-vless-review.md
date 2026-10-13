@@ -6,7 +6,6 @@ category: "zhuabao"
 categoryName: "当场抓包"
 author: "宿管大爷"
 badge: "重点巡查"
-verdict: "five-star"
 verdictNote: "次世代 Hysteria 2 暴力拥塞控制抗弱网与严管网络，配合 VLESS Reality 伪装防封锁。提供纯净住宅 IP 与反向回国线路，极低门槛 ¥6.8 起永久流量包。"
 officialUrl: "https://wanfengzn.com/go/wangjikuaiche"
 pricePlan: "¥9.9 / 月起（不限时永久包 ¥6.8 起）"
@@ -29,7 +28,7 @@ metrics:
 keywords: ["网际快车", "NetExpress", "Hysteria 2机场", "Hy2协议", "VLESS Reality", "住宅IP机场", "回国机场", "当场抓包"]
 ---
 
-> **巡查鉴定**：五星表现 · 特殊网络突防与多功能双向神器  
+> **巡查鉴定**：巡查合格 · 特殊网络突防与多功能双向工具  
 > **线路类型**：VLESS Reality + Hysteria 2（Hy2）双次世代引擎 · 双 ISP 住宅 IP · 海外回国专用通道  
 > **核心杀招**：在 20%~30% 恶劣公网丢包下依然跑满带宽；新疆、西藏等严管网络突防  
 > **官方入口**：[点击直达网际快车官方通道（NetExpress）](https://wanfengzn.com/go/wangjikuaiche)  

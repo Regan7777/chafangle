@@ -6,7 +6,6 @@ category: "zhuabao"
 categoryName: "当场抓包"
 author: "宿管大爷"
 badge: "重点巡查"
-verdict: "five-star"
 verdictNote: "多入口BGP智能中转配合Shadowsocks协议，兼顾了平民级月付门槛与不限时永久流量包。晚高峰丢包控制在0.5%以内，流媒体解锁全绿，性价比极高。"
 officialUrl: "https://wanfengzn.com/go/feiniocloud"
 pricePlan: "¥15 / 月起（永久流量包 ¥10 起）"
@@ -29,7 +28,7 @@ metrics:
 keywords: ["飞鸟云", "Feinio Cloud", "不限时流量包", "BGP中转机场", "高性价比机场", "机场评测", "当场抓包"]
 ---
 
-> **巡查鉴定**：五星表现 · 重点通报优质性价比平替  
+> **巡查鉴定**：巡检合格 · 性价比平替参考  
 > **线路类型**：BGP 多入口多线智能中转 · 优质低负载出口  
 > **服务协议**：Shadowsocks 高性能低开销  
 > **官方入口**：[点击直达飞鸟云官方通道（Feinio Cloud）](https://wanfengzn.com/go/feiniocloud)  

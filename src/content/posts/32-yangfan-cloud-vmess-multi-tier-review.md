@@ -6,7 +6,6 @@ category: "zhuabao"
 categoryName: "当场抓包"
 author: "宿管大爷"
 badge: "重点巡查"
-verdict: "five-star"
 verdictNote: "采用阶梯化网络架构（LV1-LV4），V2Ray高混淆抗封锁设计在网络严管期表现出色。千兆专线峰值突破 1200Mbps，适合对网络穿透与大带宽有双重诉求的用户。"
 officialUrl: "https://wanfengzn.com/go/yangfanyun"
 pricePlan: "¥12 / 月起（阶梯 LV1 - LV4）"
@@ -29,7 +28,7 @@ metrics:
 keywords: ["扬帆云", "YangFanYun", "V2Ray机场", "Vmess协议", "抗封锁机场", "千兆专线机场", "当场抓包"]
 ---
 
-> **巡查鉴定**：五星表现 · 阶梯式抗封锁大带宽代表  
+> **巡查鉴定**：巡检合格 · 阶梯式抗封锁大带宽代表  
 > **线路类型**：LV1-LV4 阶梯架构 · 优质中转至千兆 IEPL 物理专线  
 > **服务协议**：V2Ray (Vmess) 深度动态混淆  
 > **官方入口**：[点击直达扬帆云官方通道（YangFanYun）](https://wanfengzn.com/go/yangfanyun)  

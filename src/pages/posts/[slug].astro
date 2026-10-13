@@ -36,6 +36,21 @@ const navIdMap: Record<string, string> = {
 };
 
 const currentActiveId = navIdMap[post.slug] || '01';
+
+const corePromotedSlugs = [
+  '14-shenxing-jiasu-iepl-premium-review',
+  '15-dalaoyun-bgp-high-value-review',
+  '17-liulianyun-native-ip-unlock-review',
+  '19-yunjiexian-pure-iepl-dedicated-review',
+  '18-huanqiuti-global-business-review',
+  '16-shandianshu-fast-latency-review',
+];
+
+const isCorePromoted = corePromotedSlugs.includes(post.slug);
+// 严格控制：机场评测与非主推站绝不显示五星推荐，仅 6 个主推站点保留五星推荐
+const effectiveVerdict = isCorePromoted
+  ? 'five-star'
+  : (data.verdict === 'five-star' ? undefined : data.verdict);
 ---
 
 <BaseLayout
@@ -99,9 +114,9 @@ const currentActiveId = navIdMap[post.slug] || '01';
         )}
 
         <!-- Room Inspection Conclusion Component -->
-        {data.verdict && (
+        {effectiveVerdict && (
           <InspectionBadge
-            verdict={data.verdict}
+            verdict={effectiveVerdict}
             customNote={data.verdictNote}
           />
         )}

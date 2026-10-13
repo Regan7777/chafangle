@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["ChatGPT节点解锁", "Netflix流媒体解锁", "机场解锁节点", "翻墙IP风控解决", "入住教程"]
 ---
 

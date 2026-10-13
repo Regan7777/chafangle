@@ -6,7 +6,6 @@ category: "jiaocheng"
 categoryName: "入住教程"
 author: "宿管大爷"
 badge: "入住教程"
-verdict: "five-star"
 keywords: ["Sing-box教程", "Sing-box配置", "新一代代理客户端", "入住教程"]
 ---
 
