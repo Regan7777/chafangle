@@ -10,7 +10,6 @@
   <span class="cat-stamp" id="cat-stamp" aria-hidden="true">合格</span>
   <span class="cat-light" id="cat-light" aria-hidden="true"></span>
   <img src="/images/patrol-cat-3d-cutout.png" alt="手持钥匙和手电的 3D 宿管橘猫" draggable="false" />
-  <span class="cat-hint" aria-hidden="true">点击互动</span>
 </div>
 
 <script>
@@ -49,12 +48,10 @@
   .patrol-cat img { display: block; width: 100%; height: auto; animation: cat-bob .72s ease-in-out infinite alternate; transition: transform .22s ease, filter .22s ease; }
   .patrol-cat:hover img, .patrol-cat:focus-visible img, .patrol-cat.is-active img { transform: scale(1.09) rotate(-2deg); filter: saturate(1.08); }
   .patrol-cat:focus-visible { outline: 3px solid #e32125; outline-offset: 4px; border-radius: 20px; }
-  .cat-speech { position: absolute; right: 0; bottom: calc(100% - 14px); width: 210px; padding: .6rem .75rem; border: 2px solid #f23b35; border-radius: 15px 15px 4px 15px; background: #171719; box-shadow: 4px 4px 0 #f23b35; color: #fff8e9; font-size: .77rem; font-weight: 700; line-height: 1.45; opacity: 0; transform: translateY(9px) scale(.92); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+  .cat-speech { position: absolute; right: -8px; bottom: calc(100% + 8px); width: max-content; max-width: min(250px, calc(100vw - 28px)); padding: .6rem .75rem; border: 2px solid #f23b35; border-radius: 15px 15px 4px 15px; background: #171719; box-shadow: 4px 4px 0 #f23b35; color: #fff8e9; font-size: .8rem; font-weight: 700; line-height: 1.45; opacity: 0; transform: translateY(9px) scale(.92); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
   .cat-speech::after { content: ''; position: absolute; right: 24px; bottom: -9px; border: 9px solid transparent; border-top-color: #171719; border-bottom: 0; }
   .cat-speech__title { display: block; margin-bottom: .18rem; color: #ff6960; font-size: .67rem; letter-spacing: .08em; }
   .patrol-cat.is-active .cat-speech, .patrol-cat:hover .cat-speech, .patrol-cat:focus-visible .cat-speech { opacity: 1; transform: none; }
-  .cat-hint { position: absolute; right: 7%; bottom: 4%; padding: .18rem .38rem; border-radius: 99px; background: rgba(20,20,22,.77); color: #fff; font-size: .61rem; font-weight: 700; opacity: 0; transition: opacity .2s ease; }
-  .patrol-cat:hover .cat-hint, .patrol-cat:focus-visible .cat-hint { opacity: 1; }
   .cat-stamp { position: absolute; left: -8px; top: 35%; z-index: 2; width: 54px; height: 54px; display: grid; place-items: center; border: 3px solid #e32125; border-radius: 50%; color: #e32125; background: rgba(255,255,255,.8); font-size: .91rem; font-weight: 900; opacity: 0; transform: rotate(-18deg) scale(1.8); pointer-events: none; }
   .cat-stamp.is-stamping { animation: stamp .8s ease-out both; }
   .cat-light { position: absolute; left: -58%; bottom: 12%; width: 76%; height: 31%; background: linear-gradient(90deg, rgba(255,238,95,.5), rgba(255,238,95,0)); clip-path: polygon(100% 28%,0 0,0 100%,100% 72%); opacity: 0; transform-origin: right center; pointer-events: none; transition: opacity .2s ease; }
@@ -63,6 +60,6 @@
   @keyframes cat-bob { from { translate: 0 0; } to { translate: 0 -3px; } }
   @keyframes stamp { 0% { opacity: 0; transform: rotate(-18deg) scale(1.8); } 42% { opacity: 1; transform: rotate(-18deg) scale(.92); } 100% { opacity: 0; transform: rotate(-18deg) scale(1); } }
   @keyframes torch { from { opacity: .54; } to { opacity: .92; } }
-  @media (max-width: 600px) { .patrol-cat { --patrol-distance: 48px; right: 7px; bottom: 4px; width: 132px; } .cat-speech { width: 170px; font-size: .68rem; } }
+  @media (max-width: 600px) { .patrol-cat { --patrol-distance: 48px; right: 7px; bottom: 4px; width: 132px; } .cat-speech { right: -4px; max-width: min(230px, calc(100vw - 20px)); font-size: .74rem; } }
   @media (prefers-reduced-motion: reduce) { .patrol-cat, .patrol-cat img, .cat-stamp.is-stamping, .patrol-cat.is-light-on .cat-light { animation: none; } }
 </style>
