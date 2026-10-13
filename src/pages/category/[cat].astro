@@ -9,7 +9,7 @@ import RecommendAirportCard, { type RecommendAirportData } from '../../component
 export async function getStaticPaths() {
   const categoryMap = [
     { cat: 'zhuabao', title: '机场评测', desc: '每周例行巡查，数据不说谎。实抓连通率、丢包率与网络抖动。' },
-    { cat: 'mofan', title: '机场推荐', desc: '宿管7×24小时连续高压巡查认证。精选2026年度6大五星推荐主力机场，拒绝断流与虚标，全线支持新客专属7折。' },
+    { cat: 'mofan', title: '机场推荐', desc: '宿管7×24小时连续高压巡查认证。精选2026年度稳定主力机场，全线不限设备使用数量，全线支持新客专属7折。' },
     { cat: 'meishou', title: '跑路机场', desc: '异常断流、夸大宣传与跑路避坑档案。直接拉闸，严防踩坑。' },
     { cat: 'tongbao', title: '宿管通报', desc: '宿舍管理处官方通报、巡楼纪要与重要公示。' },
     { cat: 'jiaocheng', title: '入住教程', desc: '新手租客必读教程与客户端配置全攻略。包含 Clash、Shadowrocket、Sing-box 等配置使用教程。' },
@@ -259,15 +259,15 @@ const filteredPosts = allPosts
         </div>
 
         {cat === 'mofan' ? (
-          <!-- 机场推荐专用：6大核心主推机场专属卡片展示 -->
+          <!-- 机场推荐专用：核心推荐机场专属卡片展示 -->
           <div class="mofan-recommend-showcase">
             <div class="recommend-showcase-intro industrial-box-dark font-mono">
               <div class="showcase-status-bar">
                 <span class="status-dot blinking"></span>
-                <span class="showcase-title">🏆 2026机场推荐</span>
+                <span class="showcase-title">2026机场推荐</span>
               </div>
               <p class="showcase-desc">
-                以下 6 家机场经宿管 7×24 小时例行突击巡查与晚高峰全周 MTR 压测核准。均支持全平台客户端，全线不限设备使用数量，全线支持专属新客 7 折优惠码，各具特色、拒绝虚标！
+                经宿管 7×24 小时例行突击巡查与晚高峰全周 MTR 压测核准。全线不限设备使用数量，支持全平台主流客户端一键配置，支持专属新客 7 折优惠码，拒绝断流与虚标！
               </p>
             </div>
 
@@ -281,7 +281,7 @@ const filteredPosts = allPosts
               <section class="historical-posts-section">
                 <div class="historical-section-header">
                   <h3 class="section-title font-mono">
-                    <span class="title-icon">📖</span> 6 大核心主推机场实测长文卷宗
+                    <span class="title-icon">📖</span> 2026机场推荐实测长文卷宗
                   </h3>
                   <span class="text-muted font-mono" style="font-size: 0.85rem;">严格按主推优先级排序</span>
                 </div>
