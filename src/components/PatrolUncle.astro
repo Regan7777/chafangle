@@ -1,99 +1,23 @@
 ---
 ---
 
-<!-- Desktop Pet Cat: Pure CSS animated walking cat, fixed bottom-right, click to meow -->
-<div id="desktop-pet-cat" aria-label="宿管巡查猫 - 点击互动" role="button" tabindex="0">
-  <!-- Speech bubble (click to show) -->
+<!-- Desktop Pet Cat: real mascot image, walks only in bottom-right corner -->
+<div id="desktop-pet-cat" role="button" tabindex="0" aria-label="宿管猫巡查 - 点击互动">
+  <!-- Speech bubble -->
   <div id="cat-bubble" class="cat-bubble hidden">
     <span id="cat-bubble-text">喵～今晚查房！白天全绿不算数 🔦</span>
   </div>
 
-  <!-- The cat (pure SVG animation, crisp at any DPI) -->
-  <div id="cat-scene" class="cat-scene">
-    <svg
-      id="cat-svg"
-      class="cat-svg"
-      viewBox="0 0 80 90"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <!-- ── TAIL ── -->
-      <g class="tail-group">
-        <path
-          d="M 46 72 Q 62 56 66 44 Q 70 32 58 28"
-          stroke="#E8894A"
-          stroke-width="5"
-          stroke-linecap="round"
-          fill="none"
-          class="tail-path"
-        />
-        <!-- tail tip -->
-        <circle cx="58" cy="28" r="4.5" fill="#CC5500"/>
-      </g>
-
-      <!-- ── BODY ── -->
-      <ellipse cx="36" cy="64" rx="22" ry="18" fill="#F5A55A"/>
-      <!-- tummy -->
-      <ellipse cx="34" cy="67" rx="12" ry="11" fill="#FDDBA8"/>
-
-      <!-- ── HEAD ── -->
-      <circle cx="35" cy="38" r="22" fill="#F5A55A"/>
-
-      <!-- ── EARS ── -->
-      <polygon points="18,22 12,5 28,16" fill="#F5A55A"/>
-      <polygon points="20,20 14,8 26,17" fill="#E87070"/>
-      <polygon points="52,22 58,5 42,16" fill="#F5A55A"/>
-      <polygon points="50,20 56,8 44,17" fill="#E87070"/>
-
-      <!-- ── FACE ── -->
-      <!-- eyes -->
-      <ellipse cx="27" cy="37" rx="5" ry="5.5" fill="#1a1a2e" class="eye-left"/>
-      <ellipse cx="43" cy="37" rx="5" ry="5.5" fill="#1a1a2e" class="eye-right"/>
-      <!-- eye shine -->
-      <circle cx="29" cy="35" r="1.8" fill="white"/>
-      <circle cx="45" cy="35" r="1.8" fill="white"/>
-      <!-- blink overlay -->
-      <rect id="blink-left"  x="22" y="34" width="10" height="6" rx="3" fill="#F5A55A" class="blink-lid"/>
-      <rect id="blink-right" x="38" y="34" width="10" height="6" rx="3" fill="#F5A55A" class="blink-lid"/>
-      <!-- nose -->
-      <ellipse cx="35" cy="44" rx="3" ry="2" fill="#E87070"/>
-      <!-- mouth -->
-      <path d="M 32 46 Q 35 50 38 46" stroke="#CC4444" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-      <!-- whiskers left -->
-      <line x1="8"  y1="42" x2="27" y2="44" stroke="#555" stroke-width="1.2" opacity="0.7"/>
-      <line x1="6"  y1="46" x2="27" y2="46" stroke="#555" stroke-width="1.2" opacity="0.7"/>
-      <line x1="8"  y1="50" x2="27" y2="48" stroke="#555" stroke-width="1.2" opacity="0.7"/>
-      <!-- whiskers right -->
-      <line x1="62" y1="42" x2="43" y2="44" stroke="#555" stroke-width="1.2" opacity="0.7"/>
-      <line x1="64" y1="46" x2="43" y2="46" stroke="#555" stroke-width="1.2" opacity="0.7"/>
-      <line x1="62" y1="50" x2="43" y2="48" stroke="#555" stroke-width="1.2" opacity="0.7"/>
-
-      <!-- ── PATROL CAP ── -->
-      <ellipse cx="35" cy="20" rx="20" ry="5" fill="#1a2340"/>
-      <rect x="16" y="12" width="38" height="10" rx="5" fill="#1a2340"/>
-      <!-- cap badge -->
-      <rect x="30" y="9" width="10" height="6" rx="2" fill="#D92626"/>
-      <text x="35" y="15" text-anchor="middle" font-size="4" fill="white" font-weight="bold">查</text>
-      <!-- cap peak brim -->
-      <ellipse cx="35" cy="22" rx="22" ry="4" fill="#0f1628"/>
-
-      <!-- ── VEST / BADGE ── -->
-      <!-- red armband on left arm -->
-      <rect x="12" y="62" width="9" height="6" rx="2" fill="#D92626"/>
-      <text x="16.5" y="67" text-anchor="middle" font-size="3.5" fill="white" font-weight="bold">查</text>
-
-      <!-- ── LEGS (animated) ── -->
-      <!-- front-left leg -->
-      <g class="leg-fl">
-        <rect x="20" y="78" width="9" height="11" rx="4" fill="#E8894A"/>
-        <ellipse cx="24.5" cy="89" rx="6" ry="3" fill="#CC5500"/>
-      </g>
-      <!-- front-right leg -->
-      <g class="leg-fr">
-        <rect x="32" y="78" width="9" height="11" rx="4" fill="#E8894A"/>
-        <ellipse cx="36.5" cy="89" rx="6" ry="3" fill="#CC5500"/>
-      </g>
-    </svg>
+  <!-- Real mascot image -->
+  <div class="cat-img-wrapper">
+    <img
+      id="cat-mascot-img"
+      src="/images/cat-mascot-hd-transparent.png"
+      alt="宿管巡查猫"
+      width="96"
+      height="96"
+      draggable="false"
+    />
   </div>
 
   <!-- Shadow -->
@@ -102,16 +26,14 @@
 
 <script>
   (function () {
-    const pet       = document.getElementById('desktop-pet-cat') as HTMLElement;
-    const catSvg    = document.getElementById('cat-svg') as SVGSVGElement;
+    const pet    = document.getElementById('desktop-pet-cat') as HTMLElement;
+    const catImg = document.getElementById('cat-mascot-img') as HTMLImageElement;
     const bubble    = document.getElementById('cat-bubble') as HTMLElement;
     const bubbleText = document.getElementById('cat-bubble-text') as HTMLElement;
-    const blinkLeft  = document.getElementById('blink-left')  as SVGRectElement;
-    const blinkRight = document.getElementById('blink-right') as SVGRectElement;
 
-    if (!pet || !catSvg) return;
+    if (!pet || !catImg) return;
 
-    /* ── MEOW QUOTES ── */
+    /* ── QUOTES ── */
     const meows = [
       '喵～今晚查房！白天全绿不算数 🔦',
       '🐾 抓包现场！谁在偷懒断流？',
@@ -122,7 +44,6 @@
       '🐱 防坑手册必看，月付最安全！',
     ];
     let lastMeow = -1;
-
     function randomMeow() {
       let i;
       do { i = Math.floor(Math.random() * meows.length); } while (i === lastMeow);
@@ -130,71 +51,49 @@
       return meows[i];
     }
 
-    /* ── WALK ANIMATION ── */
-    const walkZoneRight = window.innerWidth - 120;
-    const walkZoneLeft  = 20;
-    let posX     = walkZoneRight;       // start right
-    let targetX  = walkZoneLeft;
-    let speed    = 0.55;                // px per frame
-    let facing   = -1;                  // -1 = left, 1 = right
-    let bouncing = 0;                   // vertical bob counter
+    /* ── WALK in bottom-right zone only ──
+       The cat patrols a short range (120 px) anchored at right edge.
+       posX = 0 means cat is at its rightmost resting position;
+       posX = maxTravel means it has walked `maxTravel` px to the left of that.
+    */
+    const CAT_W     = 96;   // px
+    const maxTravel = 130;  // px total patrol distance
+    const speed     = 0.4;  // px per frame
+
+    let posX    = 0;         // 0..maxTravel (left offset from right anchor)
+    let dir     = 1;         // 1 = moving left (increasing posX), -1 = moving right
+    let bob     = 0;         // frame counter for bounce
     let bubbleTimer: ReturnType<typeof setTimeout> | null = null;
 
-    pet.style.right  = '24px';
-    pet.style.bottom = '24px';
-    pet.style.left   = 'auto';
-    pet.style.transform = 'translateX(0)';
+    function applyTransform() {
+      bob++;
+      const bobY = Math.sin(bob * 0.22) * 2.2;
+      // right anchor: fixed right = 24px, move left by posX
+      pet.style.right  = (24 + posX) + 'px';
+      pet.style.bottom = (24 + bobY) + 'px';
 
-    // Disable CSS classes that move the element - we control position via JS
-    pet.style.position = 'fixed';
-    pet.style.zIndex   = '9999';
-
-    function applyPos() {
-      pet.style.right = (window.innerWidth - posX - 80) + 'px';
-    }
-
-    function reverseDir() {
-      facing   = facing === -1 ? 1 : -1;
-      targetX  = facing === 1 ? walkZoneRight : walkZoneLeft;
-      catSvg.style.transform = facing === 1 ? 'scaleX(-1)' : 'scaleX(1)';
+      // Flip image to face walking direction
+      // dir 1 = walking left → face left (normal, the image naturally faces left)
+      // dir -1 = walking right → face right (mirror)
+      catImg.style.transform = dir === -1 ? 'scaleX(-1)' : 'scaleX(1)';
     }
 
     function tick() {
-      bouncing++;
-      const bob = Math.sin(bouncing * 0.25) * 1.8;
-      pet.style.bottom = (24 + bob) + 'px';
-
-      if (facing === -1) {
-        posX -= speed;
-        if (posX <= walkZoneLeft) reverseDir();
-      } else {
-        posX += speed;
-        if (posX >= walkZoneRight) reverseDir();
-      }
-      applyPos();
+      posX += speed * dir;
+      if (posX >= maxTravel) { posX = maxTravel; dir = -1; }
+      if (posX <= 0)         { posX = 0;          dir =  1; }
+      applyTransform();
       requestAnimationFrame(tick);
     }
 
-    applyPos();
-    catSvg.style.transform = 'scaleX(1)'; // facing left initially
+    // Reset any CSS positioning that may conflict
+    pet.style.position = 'fixed';
+    pet.style.left     = 'auto';
+    pet.style.zIndex   = '9999';
+    applyTransform();
     requestAnimationFrame(tick);
 
-    /* ── BLINK ── */
-    function doBlink() {
-      if (!blinkLeft || !blinkRight) return;
-      blinkLeft.setAttribute('height', '7');
-      blinkRight.setAttribute('height', '7');
-      setTimeout(() => {
-        blinkLeft.setAttribute('height', '6');
-        blinkRight.setAttribute('height', '6');
-      }, 120);
-      // schedule next blink
-      const next = 2500 + Math.random() * 3500;
-      setTimeout(doBlink, next);
-    }
-    setTimeout(doBlink, 2000);
-
-    /* ── CLICK: SHOW BUBBLE ── */
+    /* ── BUBBLE ── */
     function showBubble() {
       if (!bubble || !bubbleText) return;
       bubbleText.textContent = randomMeow();
@@ -204,7 +103,7 @@
       bubbleTimer = setTimeout(() => {
         bubble.classList.add('hidden');
         bubble.classList.remove('pop-in');
-      }, 3500);
+      }, 3800);
     }
 
     pet.addEventListener('click', showBubble);
@@ -212,12 +111,11 @@
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showBubble(); }
     });
 
-    // Occasional random meow
-    function randomMeowTrigger() {
-      showBubble();
-      setTimeout(randomMeowTrigger, 18000 + Math.random() * 22000);
+    // Occasional random auto-meow
+    function scheduleAutoMeow() {
+      setTimeout(() => { showBubble(); scheduleAutoMeow(); }, 15000 + Math.random() * 20000);
     }
-    setTimeout(randomMeowTrigger, 12000);
+    scheduleAutoMeow();
   })();
 </script>
 
@@ -226,76 +124,46 @@
     position: fixed;
     bottom: 24px;
     right: 24px;
+    left: auto;
     z-index: 9999;
     cursor: pointer;
     user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80px;
+    width: 96px;
   }
 
-  /* ── CAT SVG ── */
-  .cat-scene {
+  /* ── MASCOT IMAGE ── */
+  .cat-img-wrapper {
+    width: 96px;
+    height: 96px;
     position: relative;
-    width: 80px;
-    height: 90px;
   }
 
-  .cat-svg {
-    width: 80px;
-    height: 90px;
-    overflow: visible;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.38));
-    /* flip is controlled by JS */
-  }
-
-  /* Walking leg swing */
-  .leg-fl {
-    transform-origin: 24px 78px;
-    animation: legSwingA 0.42s ease-in-out infinite alternate;
-  }
-  .leg-fr {
-    transform-origin: 36px 78px;
-    animation: legSwingB 0.42s ease-in-out infinite alternate;
-  }
-  @keyframes legSwingA {
-    from { transform: rotate(-14deg); }
-    to   { transform: rotate(14deg);  }
-  }
-  @keyframes legSwingB {
-    from { transform: rotate(14deg);  }
-    to   { transform: rotate(-14deg); }
-  }
-
-  /* Tail wag */
-  .tail-group {
-    transform-origin: 46px 72px;
-    animation: tailWag 0.9s ease-in-out infinite alternate;
-  }
-  @keyframes tailWag {
-    from { transform: rotate(-18deg); }
-    to   { transform: rotate(18deg);  }
-  }
-
-  /* Blink lids – height animated by JS */
-  .blink-lid {
-    transition: height 0.06s ease;
+  #cat-mascot-img {
+    width: 96px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,0.45));
+    /* walking bob via JS bottom; flip via JS transform */
+    transition: transform 0.12s ease;
+    image-rendering: crisp-edges;
   }
 
   /* ── SHADOW ── */
   .cat-shadow {
-    width: 52px;
+    width: 60px;
     height: 8px;
     border-radius: 50%;
     background: rgba(0,0,0,0.18);
+    filter: blur(4px);
     margin-top: -4px;
-    filter: blur(3px);
-    animation: shadowPulse 0.42s ease-in-out infinite alternate;
+    animation: shadowPulse 0.44s ease-in-out infinite alternate;
   }
   @keyframes shadowPulse {
-    from { transform: scaleX(0.9); opacity: 0.15; }
-    to   { transform: scaleX(1.1); opacity: 0.22; }
+    from { transform: scaleX(0.85); opacity: 0.14; }
+    to   { transform: scaleX(1.15); opacity: 0.22; }
   }
 
   /* ── SPEECH BUBBLE ── */
@@ -308,12 +176,11 @@
     border: 2px solid #ffffff;
     box-shadow: 4px 4px 0px var(--accent-red, #d92626);
     border-radius: 8px;
-    padding: 0.55rem 0.8rem;
+    padding: 0.55rem 0.85rem;
     font-size: 0.82rem;
     font-weight: 700;
     line-height: 1.5;
-    white-space: nowrap;
-    max-width: 240px;
+    width: 200px;
     white-space: normal;
     pointer-events: none;
     z-index: 10001;
@@ -322,9 +189,7 @@
     content: '';
     position: absolute;
     bottom: -9px;
-    right: 24px;
-    width: 0;
-    height: 0;
+    right: 20px;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
     border-top: 9px solid #121214;
@@ -338,7 +203,6 @@
     to   { opacity: 1; transform: translateY(0) scale(1); }
   }
 
-  /* hide on very small screens */
   @media (max-width: 400px) {
     #desktop-pet-cat { display: none; }
   }

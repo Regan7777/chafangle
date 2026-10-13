@@ -84,8 +84,8 @@ const effectiveVerdict = isCorePromoted
           <h1 class="article-heading">{data.title}</h1>
           <p class="article-desc-lead">{data.description}</p>
 
-          <!-- Prominent Official Affiliate Link & Coupon Box (if officialUrl provided) -->
-          {data.officialUrl && (
+          <!-- Prominent Official Affiliate Link & Coupon Box (核心主推站才显示) -->
+          {isCorePromoted && data.officialUrl && (
             <div class="official-access-banner">
               <div class="access-info font-mono">
                 {data.pricePlan && <div class="access-item"><strong>套餐价格：</strong><span>{data.pricePlan}</span></div>}
@@ -125,8 +125,8 @@ const effectiveVerdict = isCorePromoted
         <div class="post-prose-content industrial-box">
           <Content />
 
-          <!-- Bottom Direct Link Button -->
-          {data.officialUrl && (
+          <!-- Bottom Direct Link Button (核心主推站才显示，其他评测纯测评不带链接) -->
+          {isCorePromoted && data.officialUrl && (
             <div class="bottom-direct-link-box">
               <h3>⚡ 专属官方入口与特惠通道</h3>
               <p>点击下方按钮直接跳转至官方注册页面，结账时填入优惠码 <code>{data.promoCode || '专属折扣'}</code> 即可享限时特惠：</p>
