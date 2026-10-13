@@ -10,23 +10,23 @@ const { verdict, customNote } = Astro.props;
 
 const verdictData = {
   'five-star': {
-    title: '🏆 五星寝室（免检通报）',
-    badgeText: '免检通报',
+    title: '🏆 五星推荐（强烈推荐）',
+    badgeText: '五星推荐',
     badgeClass: 'badge-gold',
     desc: '全周巡查周期内播放、加载与连接表现稳定，低丢包。',
     borderClass: 'border-gold',
     bgClass: 'bg-gold-tint'
   },
   'warning': {
-    title: '⚠️ 通报批评（留校察看）',
-    badgeText: '留校察看',
+    title: '⚠️ 谨慎观察（偶有波动）',
+    badgeText: '谨慎观察',
     badgeClass: 'badge-amber',
     desc: '平峰表现良好，周巡查期间偶有波动，建议谨慎观察。',
     borderClass: 'border-amber',
     bgClass: 'bg-amber-tint'
   },
   'confiscated': {
-    title: '🚨 没收违规电器（直接拉闸）',
+    title: '🚨 性能较差（拉闸避坑）',
     badgeText: '直接拉闸',
     badgeClass: 'badge-red',
     desc: '周巡查周期内延迟明显升高、稳定性差或售后响应不佳。',
@@ -34,7 +34,7 @@ const verdictData = {
     bgClass: 'bg-red-tint'
   },
   'ghost': {
-    title: '👻 失联空房（已提桶）',
+    title: '👻 跑路失联（已提桶跑路）',
     badgeText: '已提桶',
     badgeClass: 'badge-gray',
     desc: '服务域名、公告或支持渠道长期无法访问。',

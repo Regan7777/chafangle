@@ -26,10 +26,10 @@ metrics:
   - name: "晚高峰 SLA 连通可用性"
     result: "99.99%"
     status: "good"
-keywords: ["花云", "FlowerCloud", "IEPL专线", "0.2倍率节点", "星链落地", "机场评测", "模范寝室", "2026稳定机场"]
+keywords: ["花云", "FlowerCloud", "IEPL专线", "0.2倍率节点", "星链落地", "机场评测", "机场推荐", "2026稳定机场"]
 ---
 
-> **巡查鉴定**：五星免检（模范寝室标杆）  
+> **巡查鉴定**：五星推荐（高品质专线标杆）  
 > **线路类型**：上海双线 BGP 入口 · 端到端 IEPL 物理专线 · 特色星链/住宅 IP  
 > **服务协议**：Shadowsocks（低延迟超低握手开销）  
 > **官方入口**：[点击直达花云官方通道（FlowerCloud）](https://wanfengzn.com/go/flowercloud)  

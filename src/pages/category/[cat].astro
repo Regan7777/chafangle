@@ -9,7 +9,7 @@ import RecommendAirportCard, { type RecommendAirportData } from '../../component
 export async function getStaticPaths() {
   const categoryMap = [
     { cat: 'zhuabao', title: '机场评测', desc: '每周例行巡查，数据不说谎。实抓连通率、丢包率与网络抖动。' },
-    { cat: 'mofan', title: '机场推荐', desc: '宿管7×24小时连续高压巡查认证。精选2026年度6大模范主力机场，拒绝断流与虚标，全线支持新客专属7折。' },
+    { cat: 'mofan', title: '机场推荐', desc: '宿管7×24小时连续高压巡查认证。精选2026年度6大五星推荐主力机场，拒绝断流与虚标，全线支持新客专属7折。' },
     { cat: 'meishou', title: '跑路机场', desc: '异常断流、夸大宣传与跑路避坑档案。直接拉闸，严防踩坑。' },
     { cat: 'tongbao', title: '宿管通报', desc: '宿舍管理处官方通报、巡楼纪要与重要公示。' },
     { cat: 'jiaocheng', title: '入住教程', desc: '新手租客必读教程与客户端配置全攻略。包含 Clash、Shadowrocket、Sing-box 等配置使用教程。' },
@@ -258,7 +258,7 @@ const filteredPosts = allPosts
             <div class="recommend-showcase-intro industrial-box-dark font-mono">
               <div class="showcase-status-bar">
                 <span class="status-dot blinking"></span>
-                <span class="showcase-title">🏆 宿管核准 · 2026年度 6 大模范免检机场推荐</span>
+                <span class="showcase-title">🏆 宿管核准 · 2026年度 6 大五星推荐机场</span>
               </div>
               <p class="showcase-desc">
                 以下 6 家机场经宿管大爷 7×24 小时例行突击巡查与晚高峰全周 MTR 压测核准。按用户体验与综合实力严格排序（1神行 2大佬云 3榴莲 4云界线 5环球梯 6闪电鼠）。全线支持专属新客 7 折优惠码，各具特色、拒绝虚标！
