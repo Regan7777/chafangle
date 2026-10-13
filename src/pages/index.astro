@@ -44,7 +44,7 @@ const latestPosts = [
   <section class="hero-section">
     <div class="container">
       <div class="hero-card industrial-box-dark hero-card-layout">
-        <!-- Left Text & Actions Column (100% Crisp Native HTML) -->
+        <!-- Left Text & Actions Column (100% Crisp Native Vector HTML) -->
         <div class="hero-text-content">
           <div class="hero-status-bar">
             <span class="status-indicator-light blinking"></span>
@@ -57,7 +57,7 @@ const latestPosts = [
           </div>
 
           <p class="hero-intro">
-            记录网络服务在每周例行巡检中的公开测试与体验观察。拒绝虚标与口头承诺，以周为单位巡查，用全周 MTR 丢包率、TCP 延迟与开播速度说话。面向机场代理用户，从小白到大神都能找到需要的实测卷宗。
+            记录网络服务在每周例行巡检中的公开测试与体验观察，提供去水份的实测数据、网络应急避坑指南与自救工具箱。
           </p>
 
           <div class="hero-actions">
@@ -69,17 +69,37 @@ const latestPosts = [
             </a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Right Side: Security Cat Mascot Model (只增加猫的模型) -->
-        <div class="hero-mascot-wrapper">
-          <img 
-            src="/images/cat-mascot-hd-transparent.png" 
-            alt="宿管巡查猫模型" 
-            class="hero-cat-model-img"
-            width="406"
-            height="404"
-            loading="eager"
-          />
+  <!-- Comic Strip Section (4-Panel Dorm Patrol Comics 1:1 Matching Design) -->
+  <section class="comic-strip-section">
+    <div class="container">
+      <div class="comic-strip-wrapper">
+        <!-- Desktop High-Res Single Strip -->
+        <img 
+          src="/images/comic-strip-hd.png" 
+          alt="宿管日常巡检四格漫画：日常巡逻、发现异常 (抓包)、盖章通过、提供钥匙" 
+          class="comic-strip-desktop-img"
+          width="2260"
+          height="635"
+          loading="eager"
+        />
+        <!-- Mobile Responsive 2x2 Grid -->
+        <div class="comic-strip-mobile-grid">
+          <div class="comic-panel-box">
+            <img src="/images/comic-panel-1-hd.png" alt="日常巡逻" width="560" height="635" loading="lazy" />
+          </div>
+          <div class="comic-panel-box">
+            <img src="/images/comic-panel-2-hd.png" alt="发现异常 (抓包)" width="560" height="635" loading="lazy" />
+          </div>
+          <div class="comic-panel-box">
+            <img src="/images/comic-panel-3-hd.png" alt="盖章通过" width="560" height="635" loading="lazy" />
+          </div>
+          <div class="comic-panel-box">
+            <img src="/images/comic-panel-4-hd.png" alt="提供钥匙" width="560" height="635" loading="lazy" />
+          </div>
         </div>
       </div>
     </div>
@@ -178,25 +198,31 @@ const latestPosts = [
 
 <style>
   .hero-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .hero-card {
-    border-width: 3px;
+    background: #111113 url('/images/hero-card-clean-backdrop.png') no-repeat right center;
+    background-size: cover;
+    border: 3px solid #000000;
+    box-shadow: 4px 4px 0px var(--accent-red);
+    position: relative;
+    overflow: hidden;
+    min-height: 440px;
+    padding: 2.8rem 2.4rem;
+    display: flex;
+    align-items: center;
   }
 
   .hero-card-layout {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 2.5rem;
-    position: relative;
-    overflow: hidden;
+    width: 100%;
   }
 
   .hero-text-content {
     flex: 1;
-    max-width: 650px;
+    max-width: 530px;
     z-index: 2;
   }
 
@@ -204,7 +230,7 @@ const latestPosts = [
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    border-bottom: 1.5px dashed #444;
+    border-bottom: 1.5px dashed #44444a;
     padding-bottom: 0.8rem;
     margin-bottom: 1.25rem;
     flex-wrap: wrap;
@@ -239,80 +265,45 @@ const latestPosts = [
   }
 
   .hero-title {
-    font-size: 3rem;
+    font-size: 3.1rem;
     color: #ffffff;
     letter-spacing: -1px;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.45rem;
     font-weight: 900;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   }
 
   .hero-subtitle {
     font-size: 1.25rem;
     color: var(--accent-red);
     font-weight: 800;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   }
 
   .hero-intro {
     font-size: 1.05rem;
-    color: #dddddd;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    color: #e5e7eb;
+    line-height: 1.75;
+    margin-bottom: 1.8rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   }
 
   .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.1rem;
     flex-wrap: wrap;
-  }
-
-  /* Cat Mascot Model (只增加猫的模型) */
-  .hero-mascot-wrapper {
-    flex-shrink: 0;
-    width: 320px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
-
-  .hero-cat-model-img {
-    width: 100%;
-    max-width: 320px;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.65));
-    transition: transform 0.25s ease;
-  }
-
-  .hero-card-layout:hover .hero-cat-model-img {
-    transform: translateY(-4px) scale(1.02);
-  }
-
-  @media (max-width: 860px) {
-    .hero-card-layout {
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .hero-mascot-wrapper {
-      width: 220px;
-    }
-
-    .hero-title {
-      font-size: 2.2rem;
-    }
   }
 
   .btn-primary, .btn-secondary {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.6rem;
     font-weight: 800;
     font-size: 1rem;
     text-decoration: none;
-    transition: all 0.15s ease;
+    border-radius: 2px;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .btn-primary {
@@ -330,14 +321,112 @@ const latestPosts = [
   }
 
   .btn-secondary {
-    background: transparent;
+    background: #111113;
     color: #ffffff;
     border: 2px solid #ffffff;
+    box-shadow: 3px 3px 0px rgba(255, 255, 255, 0.35);
   }
 
   .btn-secondary:hover {
     background: #ffffff;
     color: var(--text-main);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--border-thick);
+  }
+
+  /* 4-Panel Dorm Patrol Comic Strip Section */
+  .comic-strip-section {
+    margin-bottom: 2.8rem;
+  }
+
+  .comic-strip-wrapper {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .comic-strip-desktop-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    transition: transform 0.2s ease;
+  }
+
+  .comic-strip-desktop-img:hover {
+    transform: translateY(-2px);
+  }
+
+  .comic-strip-mobile-grid {
+    display: none;
+  }
+
+  @media (max-width: 860px) {
+    .hero-card {
+      background-position: top right;
+      padding: 2rem 1.25rem;
+      min-height: auto;
+    }
+
+    .hero-text-content {
+      max-width: 100%;
+      background: rgba(17, 17, 19, 0.88);
+      backdrop-filter: blur(6px);
+      padding: 1.5rem 1.25rem;
+      border: 1.5px solid #333338;
+      border-radius: 4px;
+    }
+
+    .hero-title {
+      font-size: 2.3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .comic-strip-desktop-img {
+      display: none;
+    }
+
+    .comic-strip-mobile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+    }
+
+    .comic-panel-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 2px solid var(--border-thick);
+      box-shadow: 2px 2px 0px var(--border-thick);
+      background: #f4f2eb;
+      border-radius: 2px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.85rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .comic-strip-mobile-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
   }
 
   .index-body-grid {

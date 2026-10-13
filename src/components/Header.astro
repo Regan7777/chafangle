@@ -21,7 +21,7 @@ const navItems = [
       <span id="header-brand-tagline" class="brand-tagline font-mono" title="点击切换宿管梗句！">
         <span class="tagline-siren">🚨</span>
         <span class="tagline-text">每周例行巡检</span>
-        <span class="tagline-meme-badge font-mono">梗</span>
+        <span class="tagline-meme-badge font-mono">查</span>
       </span>
     </a>
 
@@ -235,12 +235,17 @@ const navItems = [
     transition: all 0.15s ease;
   }
 
-  .desktop-nav a:hover,
   .desktop-nav a.active {
+    background: #ffffff;
+    border: 2px solid var(--border-thick);
+    color: var(--accent-red);
+    font-weight: 800;
+  }
+
+  .desktop-nav a:hover:not(.active) {
     background: #e2dfd5;
     border-color: var(--border-thick);
-    box-shadow: 2px 2px 0px var(--border-thick);
-    color: var(--accent-red);
+    color: var(--text-main);
   }
 
   .mobile-toggle {
