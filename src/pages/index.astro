@@ -69,6 +69,10 @@ const latestPosts = [
             </a>
           </div>
         </div>
+        <div class="hero-patrol-art" aria-hidden="true">
+          <span class="hero-flashlight-beam"></span>
+          <img src="/images/hero-patrol-cat-cutout.png" alt="" />
+        </div>
       </div>
     </div>
   </section>
@@ -202,8 +206,7 @@ const latestPosts = [
   }
 
   .hero-card {
-    background: #111113 url('/images/hero-card-clean-backdrop.png') no-repeat right center;
-    background-size: cover;
+    background: #111113;
     border: 3px solid #000000;
     box-shadow: 4px 4px 0px var(--accent-red);
     position: relative;
@@ -212,6 +215,7 @@ const latestPosts = [
     padding: 2.8rem 2.4rem;
     display: flex;
     align-items: center;
+    isolation: isolate;
   }
 
   .hero-card-layout {
@@ -222,8 +226,38 @@ const latestPosts = [
 
   .hero-text-content {
     flex: 1;
-    max-width: 530px;
+    max-width: min(530px, 54%);
     z-index: 2;
+  }
+
+  .hero-patrol-art {
+    position: absolute;
+    right: clamp(-18px, -1vw, 0px);
+    bottom: -21px;
+    z-index: 1;
+    width: min(465px, 43%);
+    pointer-events: none;
+  }
+
+  .hero-patrol-art img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-flashlight-beam {
+    position: absolute;
+    z-index: 0;
+    left: -58%;
+    bottom: 16%;
+    width: 78%;
+    height: 34%;
+    opacity: 0.9;
+    background: linear-gradient(90deg, rgba(255, 239, 77, 0.94), rgba(255, 230, 52, 0.23), transparent);
+    clip-path: polygon(100% 24%, 0 0, 0 100%, 100% 76%);
+    filter: blur(1px);
   }
 
   .hero-status-bar {
@@ -363,7 +397,6 @@ const latestPosts = [
 
   @media (max-width: 860px) {
     .hero-card {
-      background-position: top right;
       padding: 2rem 1.25rem;
       min-height: auto;
     }
@@ -375,6 +408,11 @@ const latestPosts = [
       padding: 1.5rem 1.25rem;
       border: 1.5px solid #333338;
       border-radius: 4px;
+    }
+
+    .hero-patrol-art {
+      width: 265px;
+      opacity: 0.18;
     }
 
     .hero-title {
@@ -405,6 +443,9 @@ const latestPosts = [
   }
 
   @media (max-width: 480px) {
+    .hero-patrol-art {
+      display: none;
+    }
     .hero-title {
       font-size: 1.85rem;
     }
