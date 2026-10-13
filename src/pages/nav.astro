@@ -3,67 +3,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import StampWatermark from '../components/StampWatermark.astro';
 import RightNav from '../components/RightNav.astro';
 
-// Recommended Featured Airports (仅推荐这 6 个核心核准机场)
+// Recommended Featured Airports (仅推荐这 6 个核心核准机场：1神行 2大佬云 3榴莲 4云界线 5环球梯 6闪电鼠)
 const featuredAirports = [
   {
     name: '神行加速',
-    tag: '纯IEPL专线 · 7折',
+    tag: 'BGP多线 · 7折',
     badgeType: 'red',
-    desc: '全内网专线不过墙，晚高峰0丢包。4K极速秒开，支持全球流媒体与ChatGPT解锁。宿管首推主力。',
+    desc: '全网多线BGP汇聚入口，轻量VLESS协议，折后仅¥16.1/月。原生家宽IP广播，晚高峰8K极速秒开，全站首推主力。',
     reviewUrl: '/posts/14-shenxing-jiasu-iepl-premium-review',
-    officialUrl: 'https://chafangle.com/go/shenxing',
+    officialUrl: 'https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8',
     rating: '5.0',
-    type: '专线高端'
+    type: '旗舰主力'
   },
   {
     name: '大佬云',
-    tag: 'BGP多线中转 · 7折',
+    tag: 'BGP中转 · 7折',
     badgeType: 'red',
-    desc: '国内多入口BGP智能中转，线路负载冗余高。大带宽低延迟，性价比出海首选。',
+    desc: '老牌大厂运营，多核心机房Anycast智能就近分流，折后¥14/月起。大带宽低延迟，数十万老客信赖首选。',
     reviewUrl: '/posts/15-dalaoyun-bgp-high-value-review',
-    officialUrl: 'https://chafangle.com/go/dalaoyun',
+    officialUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL',
     rating: '4.9',
-    type: '优质中转'
+    type: '老牌高性比'
   },
   {
     name: '榴莲云',
-    tag: '原生IP · 流媒体',
+    tag: '超大流量 · 7折',
     badgeType: 'green',
-    desc: '独享原生IP广播，专为Netflix、Disney+、TikTok及AI深度用户打造，超高抗风控能力。',
+    desc: '“吃着榴莲翻着墙”，主打超大流量配额与超低单GB成本。全线Trojan深度伪装，折后¥16.8/月，大文件满载68MB/s。',
     reviewUrl: '/posts/17-liulianyun-native-ip-unlock-review',
-    officialUrl: 'https://chafangle.com/go/liulianyun',
+    officialUrl: 'https://fugui0077.liulianyunaff.com/#/?code=Y6A1M1MN',
     rating: '4.8',
-    type: '流媒体专用'
-  },
-  {
-    name: '环球梯',
-    tag: '全球商务 · 抗封锁',
-    badgeType: 'dark',
-    desc: '外贸跨境外企定制方案，多国企业IP覆盖，协议抗封锁能力极强，支持企业多团队授权。',
-    reviewUrl: '/posts/18-huanqiuti-global-business-review',
-    officialUrl: 'https://chafangle.com/go/huanqiuti',
-    rating: '4.8',
-    type: '外贸商务'
+    type: '大流量影音'
   },
   {
     name: '云界线',
-    tag: '纯内网专线 · 7折',
+    tag: 'Hy2双擎 · 首单7折',
     badgeType: 'red',
-    desc: '全天候端到端低抖动，周巡查丢包率稳定<0.5%，专为实时游戏与高频交易设计。',
+    desc: '全面搭载次世代Hysteria 2 (Hy2) 协议，UDP端口跳跃抗QoS掐断。在校园网/移动弱网高丢包下逆势跑满500Mbps。',
     reviewUrl: '/posts/19-yunjiexian-pure-iepl-dedicated-review',
-    officialUrl: 'https://chafangle.com/go/yunjiexian',
+    officialUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW',
     rating: '4.9',
-    type: '极速低迟'
+    type: '弱网暴力吞吐'
+  },
+  {
+    name: '环球梯',
+    tag: '全球60+国 · 7折',
+    badgeType: 'dark',
+    desc: 'BGP双线冗余中转+全球60+国家和地区超级节点池，轻量VLESS协议，多设备并发宽松，折后¥15.4/月，跨国电商商务必备。',
+    reviewUrl: '/posts/18-huanqiuti-global-business-review',
+    officialUrl: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG',
+    rating: '4.8',
+    type: '全球多地域'
   },
   {
     name: '闪电鼠',
-    tag: '超低延迟 · 极速轻量',
+    tag: '物理超低迟 · 7折',
     badgeType: 'orange',
-    desc: '轻量化套餐设计，价格亲民，平时浏览网页查资料的理想平替。超低延迟，稳定巡查免检。',
+    desc: '近场物理路由直达优化+轻量低功耗Shadowsocks协议，香港节点延迟低至28ms，折后¥15.4/月，外服电竞联机与语音首选。',
     reviewUrl: '/posts/16-shandianshu-fast-latency-review',
-    officialUrl: 'https://chafangle.com/go/shandianshu',
+    officialUrl: 'https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK',
     rating: '4.8',
-    type: '低迟平替'
+    type: '低延迟电竞'
   }
 ];
 

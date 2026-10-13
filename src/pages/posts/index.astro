@@ -4,8 +4,22 @@ import ArticleCard from '../../components/ArticleCard.astro';
 import RightNav from '../../components/RightNav.astro';
 import { getCollection } from 'astro:content';
 
+const coreSlugs = [
+  '14-shenxing-jiasu-iepl-premium-review',
+  '15-dalaoyun-bgp-high-value-review',
+  '17-liulianyun-native-ip-unlock-review',
+  '19-yunjiexian-pure-iepl-dedicated-review',
+  '18-huanqiuti-global-business-review',
+  '16-shandianshu-fast-latency-review',
+];
+
 const allPosts = await getCollection('posts');
 const sortedPosts = allPosts.sort((a, b) => {
+  const aCoreIdx = coreSlugs.indexOf(a.slug);
+  const bCoreIdx = coreSlugs.indexOf(b.slug);
+  if (aCoreIdx !== -1 && bCoreIdx !== -1) return aCoreIdx - bCoreIdx;
+  if (aCoreIdx !== -1) return -1;
+  if (bCoreIdx !== -1) return 1;
   if (a.data.isPinned && !b.data.isPinned) return -1;
   if (!a.data.isPinned && b.data.isPinned) return 1;
   return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();

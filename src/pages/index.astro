@@ -9,42 +9,31 @@ import { getCollection } from 'astro:content';
 // Fetch all posts
 const allPosts = await getCollection('posts');
 
-// 1. Pinned posts first
-const pinnedPosts = allPosts.filter(p => p.data.isPinned);
+// 6 Core Featured Airport Reviews in strict priority order:
+// 1. 神行加速 -> 2. 大佬云 -> 3. 榴莲云 -> 4. 云界线 -> 5. 环球梯 -> 6. 闪电鼠
+const coreSlugs = [
+  '14-shenxing-jiasu-iepl-premium-review',
+  '15-dalaoyun-bgp-high-value-review',
+  '17-liulianyun-native-ip-unlock-review',
+  '19-yunjiexian-pure-iepl-dedicated-review',
+  '18-huanqiuti-global-business-review',
+  '16-shandianshu-fast-latency-review',
+];
 
-// 2. ShenXing Speed post (神行加速) as #1 non-pinned post
-const shenxingPost = allPosts.find(p => p.slug === '14-shenxing-jiasu-iepl-premium-review');
+const corePosts = coreSlugs
+  .map(slug => allPosts.find(p => p.slug === slug))
+  .filter((p): p is (typeof allPosts)[0] => Boolean(p));
 
-// Pool of remaining candidates excluding pinned and Shenxing
-const pool = allPosts.filter(p => !p.data.isPinned && p.slug !== '14-shenxing-jiasu-iepl-premium-review');
+// Other posts sorted by pubDate
+const otherPosts = allPosts
+  .filter(p => !coreSlugs.includes(p.slug))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-// Ensure EVERY category (zhuabao, meishou, mofan, tongbao) has representation
-const categories = ['zhuabao', 'meishou', 'mofan', 'tongbao'];
-const guaranteedPosts: typeof pool = [];
-
-categories.forEach(cat => {
-  const isCoveredInTop = pinnedPosts.some(p => p.data.category === cat) || (shenxingPost && shenxingPost.data.category === cat);
-  if (!isCoveredInTop) {
-    const catCandidates = pool.filter(p => p.data.category === cat && !guaranteedPosts.includes(p));
-    if (catCandidates.length > 0) {
-      // Pick one randomly
-      const picked = catCandidates[Math.floor(Math.random() * catCandidates.length)];
-      guaranteedPosts.push(picked);
-    }
-  }
-});
-
-// Randomly shuffle remaining candidates
-const remainingPool = pool.filter(p => !guaranteedPosts.includes(p));
-const shuffledRemaining = [...remainingPool].sort(() => 0.5 - Math.random());
-
-// Assemble final homepage list: [Pinned...] -> [ShenXing Speed] -> [Category Guaranteed...] -> [Shuffled Rest]
+// Assemble final homepage list: 6 Core Featured Airports first, followed by others
 const latestPosts = [
-  ...pinnedPosts,
-  ...(shenxingPost ? [shenxingPost] : []),
-  ...guaranteedPosts,
-  ...shuffledRemaining
-].slice(0, 8);
+  ...corePosts,
+  ...otherPosts,
+].slice(0, 10);
 ---
 
 <BaseLayout
