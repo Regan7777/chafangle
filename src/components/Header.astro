@@ -3,11 +3,11 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.replace(/\/$/, '');
 
 const navItems = [
-  { name: 'VPN查房', href: '/' },
-  { name: '当场抓包', href: '/category/zhuabao' },
-  { name: '模范寝室', href: '/category/mofan' },
-  { name: '没收作案工具', href: '/category/meishou' },
-  { name: '查房手册', href: '/handbook' },
+  { name: '首页', href: '/' },
+  { name: '机场评测', href: '/category/zhuabao' },
+  { name: '机场推荐', href: '/category/mofan' },
+  { name: '跑路机场', href: '/category/meishou' },
+  { name: '导航页', href: '/nav' },
   { name: '入住教程', href: '/category/jiaocheng' },
   { name: '关于', href: '/about' },
 ];

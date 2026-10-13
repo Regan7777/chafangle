@@ -6,6 +6,7 @@ export async function GET(context: any) {
 
   const staticPages = [
     '',
+    '/nav',
     '/about',
     '/handbook',
     '/posts',

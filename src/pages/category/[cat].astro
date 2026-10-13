@@ -6,10 +6,10 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const categoryMap = [
+    { cat: 'zhuabao', title: '机场评测', desc: '每周例行巡查，数据不说谎。实抓连通率、丢包率与网络抖动。' },
+    { cat: 'mofan', title: '机场推荐', desc: '长期稳定、表现优异的服务记录。免检通报，推荐关注。' },
+    { cat: 'meishou', title: '跑路机场', desc: '异常断流、夸大宣传与跑路避坑档案。直接拉闸，严防踩坑。' },
     { cat: 'tongbao', title: '宿管通报', desc: '宿舍管理处官方通报、巡楼纪要与重要公示。' },
-    { cat: 'zhuabao', title: '当场抓包', desc: '每周例行巡查，数据不说谎。实抓连通率、丢包率与网络抖动。' },
-    { cat: 'mofan', title: '模范寝室', desc: '长期稳定、表现优异的服务记录。免检通报，推荐关注。' },
-    { cat: 'meishou', title: '没收作案工具', desc: '异常断流、夸大宣传与避坑档案。直接拉闸，严防踩坑。' },
     { cat: 'jiaocheng', title: '入住教程', desc: '新手租客必读教程与客户端配置全攻略。包含 Clash、Shadowrocket、Sing-box 等配置使用教程。' },
   ];
 
@@ -52,10 +52,10 @@ const filteredPosts = allPosts
 
           <div class="cat-filter-tabs font-mono">
             <a href="/posts" class="tab-link">全部</a>
-            <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>模范寝室</a>
+            <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>机场评测</a>
+            <a href="/category/mofan" class={`tab-link ${cat === 'mofan' ? 'active' : ''}`}>机场推荐</a>
+            <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>跑路机场</a>
             <a href="/category/tongbao" class={`tab-link ${cat === 'tongbao' ? 'active' : ''}`}>宿管通报</a>
-            <a href="/category/zhuabao" class={`tab-link ${cat === 'zhuabao' ? 'active' : ''}`}>当场抓包</a>
-            <a href="/category/meishou" class={`tab-link ${cat === 'meishou' ? 'active' : ''}`}>没收作案工具</a>
             <a href="/category/jiaocheng" class={`tab-link ${cat === 'jiaocheng' ? 'active' : ''}`}>入住教程</a>
           </div>
         </div>

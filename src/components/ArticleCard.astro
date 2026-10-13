@@ -17,9 +17,9 @@ const { title, description, slug, date, category, verdict, badge, isPinned = fal
 const effectiveVerdict = verdict || (badge === '五星免检' || badge?.includes('五星') || badge?.includes('免检') ? 'five-star' : undefined);
 
 const categoryLabels: Record<string, { name: string; tagClass: string }> = {
-  'zhuabao': { name: '当场抓包', tagClass: 'badge-zhuabao' },
-  'mofan': { name: '模范寝室', tagClass: 'badge-mofan' },
-  'meishou': { name: '没收作案工具', tagClass: 'badge-meishou' },
+  'zhuabao': { name: '机场评测', tagClass: 'badge-zhuabao' },
+  'mofan': { name: '机场推荐', tagClass: 'badge-mofan' },
+  'meishou': { name: '跑路机场', tagClass: 'badge-meishou' },
   'tongbao': { name: '宿管通报', tagClass: 'badge-tongbao' },
   'jiaocheng': { name: '入住教程', tagClass: 'badge-jiaocheng' },
 };
