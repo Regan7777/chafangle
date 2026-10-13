@@ -1,11 +1,11 @@
 ---
-title: "【模范寝室】快连 VPN (LetsVPN)：全自动双通道打洞与极速连接周巡查实测"
+title: "【机场评测】快连 VPN (LetsVPN)：全自动双通道打洞与极速连接周巡查实测"
 description: "本周周巡查重点抽查知名客户端 VPN 服务——快连 VPN (LetsVPN)。全周 7×24 小时实测智能化节点匹配、独家双通道抗封锁协议与全流媒体无感解锁。"
 pubDate: 2025-12-11
-category: "mofan"
-categoryName: "模范寝室"
+category: "zhuabao"
+categoryName: "当场抓包"
 author: "晚风"
-badge: "五星免检"
+badge: "突击抓包"
 verdict: "five-star"
 verdictNote: "全周 7×24 小时监测期间，快连 VPN 智能路由引擎反应敏捷，连接成功率高达 100%，4K 视频开播缓冲耗时低于 0.5 秒。"
 testLocation: "华东/华南多地例行测速终端"

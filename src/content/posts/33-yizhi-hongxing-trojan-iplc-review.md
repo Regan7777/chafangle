@@ -1,11 +1,11 @@
 ---
-title: "【模范寝室】一枝红杏：老牌全线Trojan协议与IPLC物理专线·¥99极简年付长效巡查"
+title: "【机场评测】一枝红杏：老牌全线Trojan协议与IPLC物理专线·¥99极简年付长效巡查"
 description: "深度实测老牌出海标杆一枝红杏。全线采用轻量高性能Trojan协议搭配IPLC物理专线，杜绝过度超售，主打¥99/年（每月100GB、5设备并发）极简高性价比，专为科研学者、外贸与稳定办公群体打造。"
 pubDate: 2026-04-09
-category: "mofan"
-categoryName: "模范寝室"
+category: "zhuabao"
+categoryName: "当场抓包"
 author: "宿管大爷"
-badge: "五星免检"
+badge: "突击抓包"
 verdict: "five-star"
 verdictNote: "老牌稳定长跑型服务商，全节点Trojan伪装协议+IPLC内网专线。晚高峰延迟平如直线，5设备并发年付仅需¥99，省心无套路。"
 officialUrl: "https://wanfengzn.com/go/yizhihongxing"

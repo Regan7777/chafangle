@@ -1,11 +1,11 @@
 ---
-title: "【模范寝室】库洛米 (Kuluomi)：100%端到端纯IEPL专线·晚高峰零抖动硬核巡查实测"
+title: "【机场评测】库洛米 (Kuluomi)：100%端到端纯IEPL专线·晚高峰零抖动硬核巡查实测"
 description: "深度评测硬核专线机场库洛米（Kuluomi）。坚持全节点100%纯IEPL端到端物理专线，拒绝公网隧道掺水，华东与华南双BGP入口智能调度，专为对外贸商务、游戏加速与4K视频低抖动严苛要求的用户打造。"
 pubDate: 2026-04-07
-category: "mofan"
-categoryName: "模范寝室"
+category: "zhuabao"
+categoryName: "当场抓包"
 author: "宿管大爷"
-badge: "五星免检"
+badge: "突击抓包"
 verdict: "five-star"
 verdictNote: "纯度极高的IEPL端到端专线，晚高峰丢包率低于0.1%，握手抖动<2ms。没有任何降速与掺水杂质，外贸商务与高频操作极品线路。"
 officialUrl: "https://wanfengzn.com/go/kuluomi"

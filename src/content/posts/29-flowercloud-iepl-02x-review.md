@@ -1,11 +1,11 @@
 ---
-title: "【模范寝室】花云 (FlowerCloud)：上海双BGP入口·端到端IEPL专线与0.2倍率流媒体大流量深度巡查"
+title: "【机场评测】花云 (FlowerCloud)：上海双BGP入口·端到端IEPL专线与0.2倍率流媒体大流量深度巡查"
 description: "深度实测老牌旗舰花云（FlowerCloud）。上海双线BGP入口直连端到端IEPL物理专线，支持0.2倍率节点大流量下载、纯净住宅IP与星链（Starlink）落地节点，ChatGPT与全流媒体原生解锁。"
 pubDate: 2026-04-05
-category: "mofan"
-categoryName: "模范寝室"
+category: "zhuabao"
+categoryName: "当场抓包"
 author: "宿管大爷"
-badge: "五星免检"
+badge: "突击抓包"
 verdict: "five-star"
 verdictNote: "老牌旗舰专线代表，上海双BGP入口+端到端IEPL专线，晚高峰全线0丢包。0.2倍率节点搭配星链与住宅IP落地，兼顾极致流畅与极高防风控能力。"
 officialUrl: "https://wanfengzn.com/go/flowercloud"
