@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import StampWatermark from '../components/StampWatermark.astro';
 import RightNav from '../components/RightNav.astro';
 
-// Recommended Featured Airports
+// Recommended Featured Airports (仅推荐这 6 个核心核准机场)
 const featuredAirports = [
   {
     name: '神行加速',
@@ -16,26 +16,6 @@ const featuredAirports = [
     type: '专线高端'
   },
   {
-    name: '花云 (FlowerCloud)',
-    tag: '双BGP · 0.2X倍率',
-    badgeType: 'red',
-    desc: '上海双BGP入口直连端到端IEPL物理专线，支持0.2倍率节点大流量下载、纯净住宅IP与星链落地。',
-    reviewUrl: '/posts/29-flowercloud-iepl-02x-review',
-    officialUrl: 'https://wanfengzn.com/go/flowercloud',
-    rating: '5.0',
-    type: '旗舰专线'
-  },
-  {
-    name: '库洛米 (Kuluomi)',
-    tag: '100%纯IEPL · 零抖动',
-    badgeType: 'red',
-    desc: '坚持全节点100%纯IEPL端到端物理专线，拒绝公网隧道掺水，晚高峰丢包<0.1%，商务游戏极品。',
-    reviewUrl: '/posts/31-kuluomi-pure-iepl-review',
-    officialUrl: 'https://wanfengzn.com/go/kuluomi',
-    rating: '4.9',
-    type: '硬核纯专线'
-  },
-  {
     name: '大佬云',
     tag: 'BGP多线中转 · 7折',
     badgeType: 'red',
@@ -44,16 +24,6 @@ const featuredAirports = [
     officialUrl: 'https://chafangle.com/go/dalaoyun',
     rating: '4.9',
     type: '优质中转'
-  },
-  {
-    name: '一枝红杏',
-    tag: '全线Trojan · IPLC专线',
-    badgeType: 'green',
-    desc: '老牌标杆，全节点Trojan高伪装协议+IPLC物理专线，低复用率节点池，¥99/年极简高性价比。',
-    reviewUrl: '/posts/33-yizhi-hongxing-trojan-iplc-review',
-    officialUrl: 'https://wanfengzn.com/go/yizhihongxing',
-    rating: '4.9',
-    type: '长跑老牌'
   },
   {
     name: '榴莲云',
@@ -86,87 +56,14 @@ const featuredAirports = [
     type: '极速低迟'
   },
   {
-    name: 'Just My Socks',
-    tag: '搬瓦工官方 · CN2 GIA',
-    badgeType: 'dark',
-    desc: '搬瓦工官方运营，CN2 GIA 与 CMIN2 顶级高贵线路，被墙自动换 IP，永不失联。',
-    reviewUrl: '/posts/10-just-my-socks-bws-cn2gia-cmin2-review',
-    officialUrl: 'https://chafangle.com/go/jms',
-    rating: '4.9',
-    type: '官方直营'
-  },
-  {
-    name: 'WgetCloud',
-    tag: '老牌专线 · 华为云IEPL',
-    badgeType: 'orange',
-    desc: '多年老牌高端梯队，华为云专线入口，独立带宽保证，管理规范，技术团队靠谱。',
-    reviewUrl: '/posts/09-wgetcloud-fastlink-budget-iepl-review',
-    officialUrl: 'https://chafangle.com/go/wgetcloud',
-    rating: '4.8',
-    type: '老牌高端'
-  },
-  {
-    name: '快连 VPN',
-    tag: '一键极速 · 双重保障',
-    badgeType: 'dark',
-    desc: '老牌经典客户端工具，新手零配置即装即用，智能线路分流，出差差旅必备应急。',
-    reviewUrl: '/posts/05-custom-bgp-iepl-hybrid-airport-review',
-    officialUrl: 'https://chafangle.com/go/letsvpn',
-    rating: '4.7',
-    type: '开箱即用'
-  }
-];
-
-// Budget / Alternative Airports
-const budgetAirports = [
-  {
-    name: '飞鸟云',
-    tag: 'BGP中转 · 永久包',
-    desc: '¥15/月高性价比BGP多入口中转，独创¥10起不限时永久流量包，多备用与轻度出海神器。',
-    reviewUrl: '/posts/30-feinio-cloud-bgp-unlimited-time-review',
-    officialUrl: 'https://wanfengzn.com/go/feiniocloud',
-  },
-  {
-    name: 'FlyBit 机场',
-    tag: '完全不限设备',
-    desc: '端到端IEPL专线，业内罕见完全不限在线客户端数，10+设备并发无压力，支持不限时包。',
-    reviewUrl: '/posts/34-flybit-unlimited-devices-iepl-review',
-    officialUrl: 'https://wanfengzn.com/go/flybit',
-  },
-  {
-    name: '扬帆云',
-    tag: '千兆专线 · 抗封锁',
-    desc: 'V2Ray阶梯式架构，高混淆抗封锁能力出众，峰值带宽最高可达2000Mbps，LV1-LV4丰俭由人。',
-    reviewUrl: '/posts/32-yangfan-cloud-vmess-multi-tier-review',
-    officialUrl: 'https://wanfengzn.com/go/yangfanyun',
-  },
-  {
-    name: '网际快车',
-    tag: 'Hy2双引擎 · 住宅IP',
-    desc: 'VLESS+Hysteria 2次世代双引擎，恶劣弱网与严管网络突防强悍，提供住宅IP与回国节点。',
-    reviewUrl: '/posts/35-wangji-kuaiche-hy2-vless-review',
-    officialUrl: 'https://wanfengzn.com/go/wangjikuaiche',
-  },
-  {
     name: '闪电鼠',
-    tag: '超低延迟',
-    desc: '轻量化套餐设计，价格亲民，平时浏览网页查资料的理想平替。',
+    tag: '超低延迟 · 极速轻量',
+    badgeType: 'orange',
+    desc: '轻量化套餐设计，价格亲民，平时浏览网页查资料的理想平替。超低延迟，稳定巡查免检。',
     reviewUrl: '/posts/16-shandianshu-fast-latency-review',
     officialUrl: 'https://chafangle.com/go/shandianshu',
-  },
-  {
-    name: 'Fastlink',
-    tag: '性价比专线',
-    desc: '兼顾成本与专线体验，套餐灵活多样，支持多设备同时在线。',
-    reviewUrl: '/posts/09-wgetcloud-fastlink-budget-iepl-review',
-    officialUrl: 'https://chafangle.com/go/fastlink',
-  },
-  {
-    name: '一元机场',
-    tag: '月抛测试',
-    desc: '极限低价月抛型备选，适合学生党轻度翻查资料或突发备用。不建议大额年付。',
-    reviewUrl: '/posts/12-one-yuan-airport-cheap-proxy-review',
-    officialUrl: 'https://chafangle.com/go/1yuan',
+    rating: '4.8',
+    type: '低迟平替'
   }
 ];
 
@@ -273,7 +170,6 @@ const diagnosticTools = [
           <div class="nav-jump-bar font-mono">
             <span class="jump-label">快速跳转:</span>
             <a href="#featured" class="jump-pill">⭐ 免检精选机场</a>
-            <a href="#budget" class="jump-pill">🚀 性价比推荐</a>
             <a href="#clients" class="jump-pill">💻 客户端下载</a>
             <a href="#diagnostics" class="jump-pill">📊 测速与诊断</a>
             <a href="#blacklist" class="jump-pill">🚨 跑路避坑专栏</a>
@@ -323,41 +219,6 @@ const diagnosticTools = [
                       直达官网 ➔
                     </a>
                   </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <!-- Section 2: Budget / Alternative Airports -->
-        <section id="budget" class="nav-section">
-          <div class="section-banner industrial-box">
-            <div class="section-badge-bar">
-              <span class="cat-pill orange font-mono">🚀 性价比备选</span>
-              <h2 class="section-heading">⚡ 高性价比与轻量备用机场</h2>
-            </div>
-            <p class="section-subtext">
-              价格亲民、门槛低，适合学生党查阅文献、平时轻度出海或作为第二条备用防断流线路。
-            </p>
-          </div>
-
-          <div class="nav-cards-grid budget-grid">
-            {budgetAirports.map((item) => (
-              <div class="nav-card industrial-box">
-                <div class="nav-card-header">
-                  <h3 class="nav-card-name">{item.name}</h3>
-                  <span class="nav-badge-pill pill-orange font-mono">{item.tag}</span>
-                </div>
-
-                <p class="nav-card-desc">{item.desc}</p>
-
-                <div class="nav-card-footer">
-                  <a href={item.reviewUrl} class="btn-review">
-                    实测卷宗
-                  </a>
-                  <a href={item.officialUrl} target="_blank" rel="noopener sponsored" class="btn-visit">
-                    前往访问 ➔
-                  </a>
                 </div>
               </div>
             ))}
