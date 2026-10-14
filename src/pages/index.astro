@@ -74,63 +74,22 @@ const latestPosts = [
     </div>
   </section>
 
-  <!-- Comic Strip Section (4-Panel Dorm Patrol Comics with Interactive Links) -->
+  <!-- Comic Strip Section (4-Panel Dorm Patrol Interactive Comics) -->
   <section class="comic-strip-section" aria-label="宿管日常巡检四格漫画">
     <div class="container">
-      <div class="comic-strip-wrapper">
-        <!-- Desktop High-Res Single Strip with 4 Interactive Hotspots -->
-        <div class="comic-strip-desktop-container">
-          <img 
-            src="/images/comic-strip-hd.png" 
-            alt="宿管日常巡检四格漫画：日常巡逻、发现异常 (抓包)、盖章通过、提供钥匙" 
-            class="comic-strip-desktop-img"
-            width="2260"
-            height="635"
-            loading="eager"
-          />
-          <div class="comic-strip-hotspots">
-            <a href="/category/zhuabao" class="comic-hotspot" title="格1【日常巡逻】➔ 查看「机场评测」每周例行巡检" aria-label="日常巡逻：跳转至机场评测">
-              <span class="hotspot-pill">进入「机场评测」 ➔</span>
-            </a>
-            <a href="/category/meishou" class="comic-hotspot" title="格2【发现异常 (抓包)】➔ 查看「跑路机场」避坑档案" aria-label="发现异常：跳转至跑路避坑档案">
-              <span class="hotspot-pill">查看「跑路避坑」 ➔</span>
-            </a>
-            <a href="/category/mofan" class="comic-hotspot" title="格3【盖章通过】➔ 查看「机场推荐」五星推荐名单" aria-label="盖章通过：跳转至五星推荐机场">
-              <span class="hotspot-pill">查看「机场推荐」 ➔</span>
-            </a>
-            <a href="/category/jiaocheng" class="comic-hotspot" title="格4【提供钥匙】➔ 查看「入住教程」新手全攻略" aria-label="提供钥匙：跳转至入住教程">
-              <span class="hotspot-pill">查看「入住教程」 ➔</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Mobile Responsive 2x2 Grid with Direct Links -->
-        <div class="comic-strip-mobile-grid">
-          <a href="/category/zhuabao" class="comic-panel-link" title="日常巡逻 - 机场评测" aria-label="日常巡逻：跳转至机场评测">
-            <div class="comic-panel-box">
-              <img src="/images/comic-panel-1-hd.png" alt="日常巡逻" width="560" height="635" loading="lazy" />
-              <span class="mobile-panel-tag">评测 ➔</span>
-            </div>
-          </a>
-          <a href="/category/meishou" class="comic-panel-link" title="发现异常 (抓包) - 跑路避坑" aria-label="发现异常：跳转至跑路避坑档案">
-            <div class="comic-panel-box">
-              <img src="/images/comic-panel-2-hd.png" alt="发现异常 (抓包)" width="560" height="635" loading="lazy" />
-              <span class="mobile-panel-tag">避坑 ➔</span>
-            </div>
-          </a>
-          <a href="/category/mofan" class="comic-panel-link" title="盖章通过 - 机场推荐" aria-label="盖章通过：跳转至五星推荐机场">
-            <div class="comic-panel-box">
-              <img src="/images/comic-panel-3-hd.png" alt="盖章通过" width="560" height="635" loading="lazy" />
-              <span class="mobile-panel-tag">推荐 ➔</span>
-            </div>
-          </a>
-          <a href="/category/jiaocheng" class="comic-panel-link" title="提供钥匙 - 入住教程" aria-label="提供钥匙：跳转至入住教程">
-            <div class="comic-panel-box">
-              <img src="/images/comic-panel-4-hd.png" alt="提供钥匙" width="560" height="635" loading="lazy" />
-              <span class="mobile-panel-tag">教程 ➔</span>
-            </div>
-          </a>
-        </div>
+      <div class="comic-cards-grid">
+        <a href="/category/zhuabao" class="comic-card" title="日常巡逻 - 机场评测" aria-label="日常巡逻：跳转至机场评测">
+          <img src="/images/comic-panel-1-hd.png" alt="日常巡逻" width="540" height="655" loading="eager" />
+        </a>
+        <a href="/category/meishou" class="comic-card" title="发现异常 (抓包) - 跑路避坑" aria-label="发现异常：跳转至跑路避坑档案">
+          <img src="/images/comic-panel-2-hd.png" alt="发现异常 (抓包)" width="540" height="655" loading="eager" />
+        </a>
+        <a href="/category/mofan" class="comic-card" title="盖章通过 - 机场推荐" aria-label="盖章通过：跳转至五星推荐机场">
+          <img src="/images/comic-panel-3-hd.png" alt="盖章通过" width="540" height="655" loading="eager" />
+        </a>
+        <a href="/category/jiaocheng" class="comic-card" title="提供钥匙 - 入住教程" aria-label="提供钥匙：跳转至入住教程">
+          <img src="/images/comic-panel-4-hd.png" alt="提供钥匙" width="540" height="655" loading="eager" />
+        </a>
       </div>
     </div>
   </section>
@@ -241,17 +200,17 @@ const latestPosts = [
     position: relative;
     overflow: visible;
     border-radius: 0;
-    aspect-ratio: 2155 / 896;
-    min-height: 480px;
-    padding: 2.6rem 3.2rem 4.5rem 3.2rem;
+    aspect-ratio: 2160 / 1085;
+    min-height: 520px;
+    padding: 2.8rem 3.2rem 8.5rem 3.2rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
   }
 
   .hero-card-layout {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
   }
@@ -307,15 +266,17 @@ const latestPosts = [
   }
 
   .hero-intro {
-    font-size: clamp(0.85rem, 1.15vw, 0.95rem);
-    color: #d1d5db;
-    line-height: 1.65;
-    margin-bottom: 1.4rem;
+    font-size: clamp(0.88rem, 1.15vw, 0.98rem);
+    color: #ffffff;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
     max-width: 510px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
   }
 
   .hero-intro p {
-    margin-bottom: 0.35rem;
+    color: #ffffff;
+    margin-bottom: 0.45rem;
   }
 
   .hero-actions {
@@ -372,124 +333,47 @@ const latestPosts = [
     color: #ffffff;
   }
 
-  /* 4-Panel Dorm Patrol Comic Strip Section */
+  /* 4-Panel Dorm Patrol Interactive Comic Cards Section */
   .comic-strip-section {
-    margin-top: -0.5rem;
+    margin-top: 0.8rem;
     margin-bottom: 2.8rem;
     position: relative;
     z-index: 3;
   }
 
-  .comic-strip-wrapper {
-    width: 100%;
-    border-radius: 0;
-    overflow: visible;
-  }
-
-  .comic-strip-desktop-container {
-    position: relative;
-    width: 100%;
-    border-radius: 0;
-    overflow: visible;
-  }
-
-  .comic-strip-desktop-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.22s ease;
-  }
-
-  .comic-strip-hotspots {
-    position: absolute;
-    inset: 0;
+  .comic-cards-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    z-index: 5;
+    gap: 0.75rem;
+    width: 100%;
   }
 
-  .comic-hotspot {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom: 1.5rem;
+  .comic-card {
+    display: block;
     text-decoration: none;
     cursor: pointer;
     position: relative;
-    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .comic-hotspot:hover,
-  .comic-hotspot:focus-visible {
-    background: rgba(227, 33, 37, 0.045);
-    box-shadow: inset 0 0 0 3px var(--accent-red);
-  }
-
-  .hotspot-pill {
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
-    background: #111113;
-    color: #ffffff;
-    border: 2px solid var(--accent-red);
-    padding: 0.38rem 0.95rem;
-    border-radius: 20px;
-    font-size: 0.88rem;
-    font-weight: 800;
-    box-shadow: 2px 2px 0px var(--accent-red);
-    pointer-events: none;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-  }
-
-  .comic-hotspot:hover .hotspot-pill,
-  .comic-hotspot:focus-visible .hotspot-pill {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .comic-strip-mobile-grid {
-    display: none;
-  }
-
-  .comic-panel-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    position: relative;
-    transition: transform 0.2s ease;
-  }
-
-  .comic-panel-link:hover,
-  .comic-panel-link:active {
-    transform: translateY(-3px);
-  }
-
-  .comic-panel-box {
-    position: relative;
-    border-radius: 2px;
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease, filter 0.2s ease;
+    border-radius: 4px;
     overflow: hidden;
   }
 
-  .mobile-panel-tag {
-    position: absolute;
-    right: 8px;
-    bottom: 8px;
-    background: #111113;
-    color: #ffffff;
-    font-size: 0.76rem;
-    font-weight: 800;
-    padding: 0.22rem 0.6rem;
-    border-radius: 12px;
-    border: 1.5px solid var(--accent-red);
-    box-shadow: 1px 1px 0px var(--accent-red);
-    letter-spacing: 0.02em;
+  .comic-card:hover {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.14));
+  }
+
+  .comic-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 2px;
   }
 
   @media (max-width: 1120px) {
     .hero-card {
-      padding: 2.2rem 2.4rem 4rem 2.4rem;
+      padding: 2.2rem 2.4rem 6rem 2.4rem;
     }
 
     .hero-text-content {
@@ -505,8 +389,8 @@ const latestPosts = [
     .hero-card {
       background-size: cover;
       background-position: 70% top;
-      padding: 2.2rem 1.5rem 3rem 1.5rem;
-      min-height: 440px;
+      padding: 2.2rem 1.5rem 4rem 1.5rem;
+      min-height: 460px;
     }
 
     .hero-text-content {
@@ -519,26 +403,10 @@ const latestPosts = [
   }
 
   @media (max-width: 768px) {
-    .comic-strip-desktop-container {
-      display: none;
+    .comic-cards-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
     }
-
-    .comic-strip-mobile-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.85rem;
-    }
-
-    .comic-panel-box img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 2px solid var(--border-thick);
-      box-shadow: 2px 2px 0px var(--border-thick);
-      background: #f4f2eb;
-      border-radius: 2px;
-    }
-  }
 
   @media (max-width: 480px) {
     .hero-title {
