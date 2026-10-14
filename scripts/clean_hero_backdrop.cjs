@@ -1,10 +1,11 @@
 const sharp = require('sharp');
 
-async function buildPerfectHeroBackdrop() {
+async function buildBreakoutHeroBackdrop() {
   const p = 'C:\\Users\\78432\\.gemini\\antigravity-ide\\brain\\0bafeef0-9093-4ca6-a65f-2f336cfed779\\scratch\\user_ref_image.jpg';
   
-  // Hero card coordinates: left: 77, top: 194, width: 2160, height: 821
-  const img = sharp(p).extract({ left: 77, top: 194, width: 2160, height: 821 });
+  // Crop full hero including breakout feet and beam:
+  // left: 77, top: 194, width: 2160, height: 896
+  const img = sharp(p).extract({ left: 77, top: 194, width: 2160, height: 896 });
   const { data, info } = await img.raw().toBuffer({ resolveWithObject: true });
   const w = info.width, h = info.height, ch = info.channels;
   
@@ -15,8 +16,6 @@ async function buildPerfectHeroBackdrop() {
       const idx = (y * w + x) * ch;
 
       // 1. Top text area (Title, Subtitle, Status, dashed line)
-      // Paper plane is at x >= 1050, y >= 130
-      // VPN lock is at x >= 1040, y >= 300
       if (y < 445 && x < 1030) {
         data[idx] = bgR;
         data[idx+1] = bgG;
@@ -33,7 +32,7 @@ async function buildPerfectHeroBackdrop() {
         continue;
       }
 
-      // Transition between Line 1 and Line 2: y in [530, 555]. Cat arm is at x >= 1475.
+      // Transition: y in [530, 555]. Cat arm outline is at x >= 1475.
       if (y >= 530 && y < 555 && x < 1460) {
         data[idx] = bgR;
         data[idx+1] = bgG;
@@ -41,20 +40,20 @@ async function buildPerfectHeroBackdrop() {
         continue;
       }
 
-      // Line 2: y in [555, 590]. Cat hand/flashlight starts at x >= 1410.
-      if (y >= 555 && y < 590 && x < 1405) {
-        data[idx] = bgR;
-        data[idx+1] = bgG;
-        data[idx+2] = bgB;
-        continue;
+      // Line 2: y in [555, 625]. Cat hand/flashlight handle is at x >= 1410 down to x >= 1305.
+      if (y >= 555 && y <= 625) {
+        const maxX = Math.round(1435 - (y - 560) * 2.15);
+        if (x < maxX) {
+          data[idx] = bgR;
+          data[idx+1] = bgG;
+          data[idx+2] = bgB;
+          continue;
+        }
       }
 
-      // 3. Bottom left buttons area: y >= 590
-      // Flashlight beam starts at (x=1360, y=590) and angles down to (x=930, y=820)
-      // The beam left edge equation: x_beam(y) ≈ 1360 - (y - 590) * (1360 - 930) / (820 - 590)
-      // ≈ 1360 - (y - 590) * 1.869
-      // Buttons were at x < 900, y <= 770.
-      if (y >= 590 && y <= 775) {
+      // 3. Bottom left buttons area: y > 625 and y <= 805
+      // Old buttons were at x < 900.
+      if (y > 625 && y <= 805) {
         const beamSafeX = Math.round(1360 - (y - 590) * 1.85) - 25;
         if (x < Math.min(920, beamSafeX)) {
           data[idx] = bgR;
@@ -71,7 +70,7 @@ async function buildPerfectHeroBackdrop() {
     .png({ quality: 100 })
     .toFile(outPath);
 
-  console.log('Saved perfect clean hero backdrop to', outPath);
+  console.log('Saved breakout clean hero backdrop to', outPath);
 }
 
-buildPerfectHeroBackdrop().catch(console.error);
+buildBreakoutHeroBackdrop().catch(console.error);

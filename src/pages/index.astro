@@ -43,7 +43,7 @@ const latestPosts = [
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <div class="hero-card industrial-box-dark hero-card-layout">
+      <div class="hero-card hero-card-layout">
         <!-- Left Text & Actions Column (100% Crisp Native Vector HTML) -->
         <div class="hero-text-content">
           <div class="hero-status-bar">
@@ -227,18 +227,18 @@ const latestPosts = [
 
 <style>
   .hero-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-card {
-    background: #111113 url('/images/hero-card-clean-backdrop.png') no-repeat right center;
+    background: transparent url('/images/hero-card-clean-backdrop.png') no-repeat right top;
     background-size: cover;
-    border: 3px solid #000000;
-    box-shadow: 4px 4px 0px var(--accent-red);
+    border: none;
+    box-shadow: none;
     position: relative;
-    overflow: hidden;
-    min-height: 440px;
-    padding: 2.8rem 2.8rem;
+    border-radius: 4px;
+    min-height: 460px;
+    padding: 2.8rem 2.8rem 4rem 2.8rem;
     display: flex;
     align-items: center;
   }
