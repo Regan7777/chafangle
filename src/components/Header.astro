@@ -15,13 +15,13 @@ const navItems = [
 
 <header class="site-header">
   <div class="container header-inner">
-    <!-- Brand Logo with Funny Meme Elements -->
+    <!-- Brand Logo strictly matching user reference image -->
     <a href="/" class="brand-logo" aria-label="VPN查房 首页">
       <span class="brand-stamp">VPN查房</span>
-      <span id="header-brand-tagline" class="brand-tagline font-mono" title="点击切换宿管梗句！">
-        <span class="tagline-siren">🚨</span>
+      <span class="brand-tagline font-mono">
+        <span class="tagline-triangle">▲</span>
         <span class="tagline-text">每周例行巡检</span>
-        <span class="tagline-meme-badge font-mono">查</span>
+        <span class="tagline-badge">查</span>
       </span>
     </a>
 
@@ -82,36 +82,6 @@ const navItems = [
       menuDrawer.classList.toggle('hidden');
     });
   }
-
-  // Funny Dorm Patrol Memes for Logo Tagline
-  const funnyTaglines = [
-    "🔦 宿管手电强光搜查",
-    "🚨 抓包! 谁又在偷偷断流?",
-    "🔑 咔哒! 802寝室开门!",
-    "⚡ 白天全绿? 晚上突击!",
-    "💥 提桶跑路预警系统",
-    "🍵 宿管大爷正在看戏",
-    "🛡️ 绝无虚标·强效防坑",
-    "💮 啪! 盖个五星大印",
-    "👻 404号房黑灯瞎火"
-  ];
-
-  const taglineEl = document.getElementById('header-brand-tagline');
-  const taglineText = taglineEl?.querySelector('.tagline-text');
-  let taglineIndex = 0;
-
-  if (taglineEl && taglineText) {
-    taglineEl.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      taglineIndex = (taglineIndex + 1) % funnyTaglines.length;
-      taglineText.textContent = funnyTaglines[taglineIndex];
-
-      // Shake visual effect on click
-      taglineEl.classList.add('tagline-bounce');
-      setTimeout(() => taglineEl.classList.remove('tagline-bounce'), 400);
-    });
-  }
 </script>
 
 <style>
@@ -141,111 +111,78 @@ const navItems = [
   }
 
   .brand-stamp {
-    background: var(--border-thick);
-    color: var(--bg-primary);
+    background: #000000;
+    color: #ffffff;
     font-weight: 900;
-    font-size: 1.4rem;
-    padding: 0.2rem 0.6rem;
-    letter-spacing: 2px;
-    border: 2px solid var(--border-thick);
-    box-shadow: 2px 2px 0px var(--accent-red);
-    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    font-size: 1.25rem;
+    padding: 0.25rem 0.65rem;
+    letter-spacing: 1px;
+    border: 2px solid #000000;
+    box-shadow: none;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
   }
 
-  .brand-logo:hover .brand-stamp {
-    transform: rotate(-3deg) scale(1.05);
-  }
-
-  /* Funny Meme Tagline Style */
+  /* Tagline badge strictly matching reference image */
   .brand-tagline {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 800;
-    color: var(--accent-red);
-    background: #fee2e2;
-    border: 1.5px solid var(--accent-red);
-    box-shadow: 2px 2px 0px var(--border-thick);
-    padding: 0.15rem 0.5rem;
-    cursor: pointer;
-    user-select: none;
-    position: relative;
-    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: #b91c1c;
+    background: #fae8e6;
+    border: 1.5px solid #b91c1c;
+    padding: 0.2rem 0.45rem;
+    line-height: 1.2;
   }
 
-  .brand-tagline:hover {
-    background: var(--accent-red);
-    color: #ffffff;
-    border-color: var(--border-thick);
-    transform: translateY(-2px) rotate(1.5deg);
+  .tagline-triangle {
+    color: #b91c1c;
+    font-size: 0.65rem;
+    line-height: 1;
   }
 
-  .tagline-siren {
-    font-size: 0.9rem;
-    animation: sirenBlink 1.2s infinite ease-in-out alternate;
-  }
-
-  @keyframes sirenBlink {
-    0% { transform: scale(1) rotate(0deg); opacity: 1; }
-    50% { transform: scale(1.25) rotate(-10deg); opacity: 0.8; }
-    100% { transform: scale(1) rotate(10deg); opacity: 1; }
-  }
-
-  .tagline-meme-badge {
-    background: var(--border-thick);
-    color: #ffffff;
+  .tagline-badge {
+    border: 1px solid #b91c1c;
+    color: #b91c1c;
     font-size: 0.65rem;
     font-weight: 900;
-    padding: 0 0.25rem;
-    border-radius: 2px;
-    letter-spacing: 0;
-  }
-
-  .brand-tagline:hover .tagline-meme-badge {
-    background: #ffffff;
-    color: var(--accent-red);
-  }
-
-  .tagline-bounce {
-    animation: taglineBounce 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  @keyframes taglineBounce {
-    0% { transform: scale(0.85) rotate(-6deg); }
-    50% { transform: scale(1.15) rotate(4deg); }
-    100% { transform: scale(1) rotate(0deg); }
+    padding: 0 0.15rem;
+    line-height: 1;
+    display: inline-block;
   }
 
   .desktop-nav ul {
     display: flex;
     list-style: none;
-    gap: 0.5rem;
+    gap: 0.75rem;
     margin: 0;
     padding: 0;
+    align-items: center;
   }
 
   .desktop-nav a {
     text-decoration: none;
     font-weight: 700;
     font-size: 0.95rem;
-    padding: 0.4rem 0.8rem;
-    border: 1.5px solid transparent;
-    color: var(--text-main);
+    padding: 0.35rem 0.7rem;
+    color: #111111;
     transition: all 0.15s ease;
   }
 
+  /* Active item has warm beige background, black border and 2px hard black shadow */
   .desktop-nav a.active {
-    background: #ffffff;
-    border: 2px solid var(--border-thick);
-    color: var(--accent-red);
+    background: #eae5d7;
+    border: 1.5px solid #000000;
+    box-shadow: 2px 2px 0px #000000;
+    color: #b91c1c;
     font-weight: 800;
   }
 
   .desktop-nav a:hover:not(.active) {
-    background: #e2dfd5;
-    border-color: var(--border-thick);
-    color: var(--text-main);
+    color: #b91c1c;
   }
 
   .mobile-toggle {
