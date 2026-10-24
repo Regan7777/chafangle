@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 
 const HOST = 'chafangle.com';
-const KEY = '430e938732164fc8941282f09765e3f7';
+const KEY = '7ec54bed5e684bee9e50ea059b0e5538';
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const SITEMAP_PATH = path.resolve(ROOT_DIR, 'dist/sitemap.xml');
 
