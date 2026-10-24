@@ -3,9 +3,6 @@ name = "chafangle-blog"
 compatibility_date = "2026-04-01"
 pages_build_output_dir = "dist"
 
-# KV 数据库绑定（用于全网统一记录真实浏览量与点赞数）
-# 在 Cloudflare Pages 后台 -> Settings -> Functions -> KV namespace bindings
-# 添加变量名：CHAFANGLE_KV，选择您创建的 KV 命名空间即可
-[[kv_namespaces]]
-binding = "CHAFANGLE_KV"
-id = "YOUR_KV_NAMESPACE_ID"
+# KV 数据库绑定说明（如需全网统一记录真实浏览量与点赞数）：
+# 请直接在 Cloudflare Pages 控制台 -> Settings -> Functions -> KV namespace bindings
+# 添加变量名：CHAFANGLE_KV，选择您创建的 KV 命名空间即可（无需在 toml 中写死占位符）
