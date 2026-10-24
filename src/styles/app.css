@@ -1,0 +1,366 @@
+@import "tailwindcss";
+
+@theme {
+  --color-apple-bg: #fbfbfd;
+  --color-apple-surface: #ffffff;
+  --color-apple-surface-hover: #f5f5f7;
+  --color-apple-border: rgba(0, 0, 0, 0.08);
+  --color-apple-border-hover: rgba(0, 0, 0, 0.16);
+  --color-apple-text: #1d1d1f;
+  --color-apple-secondary: #6e6e73;
+  --color-apple-muted: #86868b;
+  --color-apple-blue: #0071e3;
+  --color-apple-blue-hover: #0077ed;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Fira Code", Consolas, monospace;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background-color: #fbfbfd;
+  color: #1d1d1f;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Apple Smooth Transitions */
+* {
+  transition-property: color, background-color, border-color, opacity;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fbfbfd;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 113, 227, 0.15);
+  color: #0071e3;
+}
+
+/* Clean Editorial Markdown Prose Styles (Light Theme) */
+.prose-apple {
+  color: #333336;
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.prose-apple h1,
+.prose-apple h2,
+.prose-apple h3,
+.prose-apple h4 {
+  color: #1d1d1f;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-apple h2 {
+  font-size: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 0.4rem;
+}
+
+.prose-apple h3 {
+  font-size: 1.1rem;
+}
+
+.prose-apple p {
+  margin-bottom: 1.25rem;
+  color: #333336;
+}
+
+.prose-apple a {
+  color: #0071e3;
+  text-decoration: none;
+}
+
+.prose-apple a:hover {
+  text-decoration: underline;
+}
+
+.prose-apple strong {
+  color: #1d1d1f;
+  font-weight: 600;
+}
+
+.prose-apple ul,
+.prose-apple ol {
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.25rem;
+  color: #333336;
+}
+
+.prose-apple ul {
+  list-style-type: disc;
+}
+
+.prose-apple ol {
+  list-style-type: decimal;
+}
+
+.prose-apple li {
+  margin-bottom: 0.35rem;
+}
+
+.prose-apple blockquote {
+  border-left: 2px solid #0071e3;
+  background: #f5f5f7;
+  padding: 0.75rem 1rem;
+  margin: 1.25rem 0;
+  color: #6e6e73;
+  font-style: normal;
+}
+
+.prose-apple blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.prose-apple table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 13px;
+}
+
+.prose-apple th {
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-weight: 600;
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.prose-apple th:last-child {
+  border-right: none;
+}
+
+.prose-apple td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.04);
+  color: #515154;
+}
+
+.prose-apple td:last-child {
+  border-right: none;
+}
+
+.prose-apple tr:last-child td {
+  border-bottom: none;
+}
+
+.prose-apple tr:hover td {
+  background: #fbfbfd;
+}
+
+.prose-apple code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  padding: 0.15rem 0.35rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.prose-apple pre {
+  background: #1d1d1f;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+
+.prose-apple pre code {
+  background: transparent;
+  padding: 0;
+  border: none;
+  color: #f5f5f7;
+}
+
+.prose-apple hr {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
+}
+
+/* ==========================================================================
+   Apple Pro Dark Publishing Theme (白天/黑夜模式支持)
+   ========================================================================== */
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0b0b0c;
+  color: #f5f5f7;
+}
+
+/* Surfaces */
+html.dark .bg-white {
+  background-color: #141416 !important;
+}
+
+html.dark .bg-\[\#fbfbfd\] {
+  background-color: #0b0b0c !important;
+}
+
+html.dark .bg-\[\#f5f5f7\] {
+  background-color: #1c1c1f !important;
+}
+
+html.dark .bg-\[\#fafafc\] {
+  background-color: #18181b !important;
+}
+
+/* Header & Floating UI */
+html.dark header {
+  background-color: rgba(11, 11, 12, 0.85) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark header.bg-white\/85,
+html.dark header.bg-white\/90 {
+  background-color: rgba(11, 11, 12, 0.85) !important;
+}
+
+html.dark .text-\[\#4b4b50\] {
+  color: #c7c7cc !important;
+}
+
+/* Text Colors */
+html.dark .text-\[\#1d1d1f\] {
+  color: #f5f5f7 !important;
+}
+
+html.dark .text-\[\#6e6e73\] {
+  color: #98989d !important;
+}
+
+html.dark .text-\[\#86868b\] {
+  color: #7c7c82 !important;
+}
+
+/* Hairline Borders */
+html.dark .border-black\/\[0\.08\],
+html.dark .border-black\/\[0\.06\],
+html.dark .border-black\/\[0\.05\],
+html.dark .border-black\/\[0\.04\] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .border-black\/\[0\.15\],
+html.dark .border-black\/\[0\.2\],
+html.dark .border-black\/\[0\.25\] {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+html.dark .hover\:border-black\/\[0\.2\]:hover,
+html.dark .hover\:border-black\/\[0\.25\]:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+html.dark .hover\:bg-\[\#fafafc\]:hover,
+html.dark .hover\:bg-\[\#f5f5f7\]:hover {
+  background-color: #1e1e22 !important;
+}
+
+/* Prose Apple for Dark Mode */
+html.dark .prose-apple h2,
+html.dark .prose-apple h3,
+html.dark .prose-apple h4 {
+  color: #f5f5f7;
+}
+
+html.dark .prose-apple p,
+html.dark .prose-apple li {
+  color: #c7c7cc;
+}
+
+html.dark .prose-apple strong {
+  color: #ffffff;
+}
+
+html.dark .prose-apple blockquote {
+  background: #141416;
+  border-left-color: rgba(255, 255, 255, 0.2);
+  color: #98989d;
+}
+
+html.dark .prose-apple table {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .prose-apple th {
+  background: #1a1a1d;
+  color: #f5f5f7;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-right-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .prose-apple td {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  border-right-color: rgba(255, 255, 255, 0.08);
+  color: #b0b0b5;
+}
+
+html.dark .prose-apple tr:hover td {
+  background: #18181b;
+}
+
+html.dark .prose-apple code {
+  background: #1e1e22;
+  color: #f5f5f7;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .prose-apple pre {
+  background: #0f0f11;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark .prose-apple hr {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Custom Scrollbar for Dark Mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #0b0b0c;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}

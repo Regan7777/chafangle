@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="generator" content="React 19 + Vite 8 SSG" />
+
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.getItem('v_theme');
+          var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (theme === 'dark' || (!theme && supportDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Primary Meta Tags -->
+    <title><!--title--></title>
+    <meta name="title" content="<!--title-->" />
+    <meta name="description" content="<!--description-->" />
+    <meta name="keywords" content="<!--keywords-->" />
+    <link rel="canonical" href="<!--canonical-->" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Bing & GEO Search Engine Optimization Tags -->
+    <meta name="geo.region" content="CN" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<!--canonical-->" />
+    <meta property="og:title" content="<!--title-->" />
+    <meta property="og:description" content="<!--description-->" />
+    <meta property="og:site_name" content="VPN查房" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="VPN查房 - 网络服务文章 RSS" href="/rss.xml" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <!--schema-json-->
+  </head>
+  <body class="bg-[#fbfbfd] text-[#1d1d1f] antialiased min-h-screen">
+    <div id="root"><!--app-html--></div>
+    <script><!--initial-state--></script>
+    <script type="module" src="/src/entry-client.tsx"></script>
+  </body>
+</html>
