@@ -299,6 +299,52 @@ async function runSSG() {
     .replace('<!--initial-state-->', `window.__INITIAL_DATA__ = { route: '/404', data: {} };`);
   fs.writeFileSync(path.resolve(DIST_DIR, '404.html'), notFoundPage, 'utf8');
 
+  // 7.5 Generate physical HTML redirect pages and Cloudflare _redirects for AFF links
+  console.log('🔗 [SSG] Generating 301 redirect pages for affiliate links...');
+  const AFFILIATE_REDIRECTS = [
+    { slug: 'shenxing', name: '神行加速', targetUrl: 'https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8' },
+    { slug: 'dalaoyun', name: '大佬云', targetUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL' },
+    { slug: 'shandianshu', name: '闪电鼠', targetUrl: 'https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK' },
+    { slug: 'liulianyun', name: '榴莲云', targetUrl: 'https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN' },
+    { slug: 'huanqiuti', name: '环球梯', targetUrl: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG' },
+    { slug: 'yunjiexian', name: '云界线', targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW' },
+  ];
+
+  const redirectRules = [];
+
+  for (const aff of AFFILIATE_REDIRECTS) {
+    const redirectHtml = `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="refresh" content="0; url=${aff.targetUrl}">
+  <link rel="canonical" href="${aff.targetUrl}">
+  <title>正在跳转至 ${aff.name} 官网 - VPN查房</title>
+  <script>window.location.replace("${aff.targetUrl}");</script>
+</head>
+<body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #fbfbfd; color: #1d1d1f;">
+  <div style="text-align: center; padding: 32px 24px; border: 1px solid rgba(0,0,0,0.08); background: #ffffff; max-width: 400px; width: 90%;">
+    <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 500;">正在前往 ${aff.name} 官方页面...</p>
+    <p style="margin: 0 0 16px 0; font-size: 12px; color: #6e6e73;">若浏览器未自动跳转，请点击下方直达链接：</p>
+    <a href="${aff.targetUrl}" rel="nofollow sponsored" style="display: inline-block; font-size: 12px; color: #0071e3; text-decoration: none; padding: 6px 16px; border: 1px solid rgba(0, 113, 227, 0.3);">点击直达官网 &rarr;</a>
+  </div>
+</body>
+</html>`;
+
+    const affDir = path.resolve(DIST_DIR, 'go', aff.slug);
+    fs.mkdirSync(affDir, { recursive: true });
+    fs.writeFileSync(path.resolve(affDir, 'index.html'), redirectHtml, 'utf8');
+
+    const directAffHtml = path.resolve(DIST_DIR, 'go', `${aff.slug}.html`);
+    fs.writeFileSync(directAffHtml, redirectHtml, 'utf8');
+
+    redirectRules.push(`/go/${aff.slug} ${aff.targetUrl} 301`);
+  }
+
+  const redirectsContent = `# Cloudflare Pages 301 Redirects for AFF Links\n${redirectRules.join('\n')}\n`;
+  fs.writeFileSync(path.resolve(DIST_DIR, '_redirects'), redirectsContent, 'utf8');
+
   // 8. Generate sitemap.xml & sitemap-index.xml
   console.log('🗺️ [SSG] Generating sitemap.xml and sitemap-index.xml...');
   const sitemapUrls = routes.map(r => {
@@ -358,6 +404,7 @@ ${rssItems}
   // 10. Generate robots.txt
   const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /go/
 
 Sitemap: ${SITE_URL}/sitemap.xml
 Sitemap: ${SITE_URL}/sitemap-index.xml

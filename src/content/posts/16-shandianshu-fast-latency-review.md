@@ -8,7 +8,7 @@ categoryName: "机场推荐"
 author: "V"
 badge: "资料核验"
 verdictNote: "近场物理路由直达优化+轻量低功耗Shadowsocks协议。折后仅¥15.4/月起，声明不限制同时在线设备，适合注重低延迟与实时交互场景。"
-officialUrl: "https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK"
+officialUrl: "/go/shandianshu"
 promoCode: "sd88"
 pricePlan: "¥15.40 / 月起（原价 ¥22，7折）"
 keywords: ["闪电鼠", "闪电鼠机场", "低延迟机场", "游戏加速", "Shadowsocks机场", "机场推荐", "2026稳定机场"]
@@ -16,7 +16,7 @@ keywords: ["闪电鼠", "闪电鼠机场", "低延迟机场", "游戏加速", "S
 
 > **服务类型**：近场网络优化 · 轻量 Shadowsocks 协议 · 声明不限制同时在线设备  
 > **传输协议**：Shadowsocks (SS) 经典低功耗协议通用适配  
-> **官方入口**：[点击直达闪电鼠官网（享专属新客优惠）](https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK)  
+> **官方入口**：[点击直达闪电鼠官网（享专属新客优惠）](/go/shandianshu)  
 > **官方专属优惠码**：`sd88`（新客下单输入立享 **7 折优惠**，折后仅需 **¥15.40 / 月**）  
 > **iOS 客户端应用识别码**：`sd88`  
 

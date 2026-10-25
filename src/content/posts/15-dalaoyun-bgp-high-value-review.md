@@ -8,7 +8,7 @@ categoryName: "机场推荐"
 author: "V"
 badge: "资料核验"
 verdictNote: "老牌大厂运营，四端自研客户端兼备通用订阅。初云福利版折后仅需¥13.99/月，提供99元起不限时备用包，老牌稳定与低门槛兼备。"
-officialUrl: "https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL"
+officialUrl: "/go/dalaoyun"
 promoCode: "dly88"
 pricePlan: "¥13.99 / 月起（原价 ¥19.99，7折）"
 keywords: ["大佬云", "大佬云机场", "BGP中转", "性价比机场", "Anycast分流", "机场推荐", "2026稳定机场"]
@@ -16,7 +16,7 @@ keywords: ["大佬云", "大佬云机场", "BGP中转", "性价比机场", "Anyc
 
 > **服务类型**：老牌 BGP 多线中转 · Anycast 就近智能调度 · 声明不限制同时在线设备  
 > **传输协议**：Shadowsocks & Trojan 经典成熟协议通用适配  
-> **官方入口**：[点击直达大佬云官网（享专属新客优惠）](https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL)  
+> **官方入口**：[点击直达大佬云官网（享专属新客优惠）](/go/dalaoyun)  
 > **官方专属优惠码**：`dly88`（新客下单输入立享 **7 折优惠**，折后仅约 **¥13.99 / 月**，年付与不限时除外）  
 > **iOS 客户端应用识别码**：`dly`  
 

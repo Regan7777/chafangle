@@ -7,7 +7,7 @@ const FEATURED_AIRPORTS = [
     tag: 'BGP多线 · 7折',
     desc: '全网多线BGP汇聚入口，支持轻量VLESS协议，折后仅¥16.10/月起，声明不限设备连接，通用订阅需联系客服领取。',
     reviewUrl: '/posts/14-shenxing-jiasu-iepl-premium-review',
-    officialUrl: 'https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8',
+    officialUrl: '/go/shenxing',
     type: 'BGP中转',
   },
   {
@@ -15,7 +15,7 @@ const FEATURED_AIRPORTS = [
     tag: 'BGP中转 · 7折',
     desc: '老牌运营，多核心机房Anycast智能调度，折后¥13.99/月起，声明不限同时登录设备，通用订阅需联系客服领取。',
     reviewUrl: '/posts/15-dalaoyun-bgp-high-value-review',
-    officialUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL',
+    officialUrl: '/go/dalaoyun',
     type: 'BGP中转',
   },
   {
@@ -23,7 +23,7 @@ const FEATURED_AIRPORTS = [
     tag: '超大流量 · 7折',
     desc: '主打充裕流量配额与Trojan传输协议，折后¥16.80/月起，声明不限设备连接，通用订阅需联系客服领取。',
     reviewUrl: '/posts/17-liulianyun-native-ip-unlock-review',
-    officialUrl: 'https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN',
+    officialUrl: '/go/liulianyun',
     type: 'Trojan中转',
   },
   {
@@ -31,7 +31,7 @@ const FEATURED_AIRPORTS = [
     tag: 'Hy2双擎 · 首单7折',
     desc: '搭载次世代Hysteria 2协议与自适应拥塞控制，折后¥15.40/月起，声明不限设备连接，通用订阅需联系客服领取。',
     reviewUrl: '/posts/19-yunjiexian-pure-iepl-dedicated-review',
-    officialUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW',
+    officialUrl: '/go/yunjiexian',
     type: 'Hy2协议',
   },
   {
@@ -39,7 +39,7 @@ const FEATURED_AIRPORTS = [
     tag: '全球60+国 · 7折',
     desc: 'BGP双线冗余中转与全球多地区节点覆盖，折后¥16.10/月起，声明不限设备登录，提供365天按量包。',
     reviewUrl: '/posts/18-huanqiuti-global-business-review',
-    officialUrl: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG',
+    officialUrl: '/go/huanqiuti',
     type: '多节点覆盖',
   },
   {
@@ -47,7 +47,7 @@ const FEATURED_AIRPORTS = [
     tag: '物理超低迟 · 7折',
     desc: '近场网络直连优化与轻量低功耗Shadowsocks协议，折后¥15.40/月起，声明不限设备登录，通用订阅需联系客服领取。',
     reviewUrl: '/posts/16-shandianshu-fast-latency-review',
-    officialUrl: 'https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK',
+    officialUrl: '/go/shandianshu',
     type: '低延迟优化',
   },
 ];

@@ -8,7 +8,7 @@ categoryName: "机场推荐"
 author: "V"
 badge: "资料核验"
 verdictNote: "多线 BGP 中转与轻量 VLESS 协议支持，折后 ¥16.10/月起，声明不限制同时在线设备。商家标称支持常用流媒体与 AI 工具，本站不作可用性背书，建议新购优先月付验证。"
-officialUrl: "https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8"
+officialUrl: "/go/shenxing"
 promoCode: "sx0077"
 pricePlan: "¥16.10 / 月起（原价 ¥23，7折）"
 keywords: ["神行加速", "神行加速器", "BGP中转", "VLESS机场", "ChatGPT机场", "机场推荐", "2026稳定机场"]
@@ -16,7 +16,7 @@ keywords: ["神行加速", "神行加速器", "BGP中转", "VLESS机场", "ChatG
 
 > **服务类型**：多线 BGP 中转 · 轻量传输协议 · 声明不限制同时在线设备  
 > **传输协议**：轻量 VLESS / Trojan / Shadowsocks 通用适配  
-> **官方入口**：[点击直达神行加速官网（享新客专属7折）](https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8)  
+> **官方入口**：[点击直达神行加速官网（享新客专属7折）](/go/shenxing)  
 > **官方专属 7 折优惠码**：`sx0077`（结账输入立享 7 折立减，折后仅需 **¥16.10/月**）  
 > **iOS 客户端应用识别码**：`sxjs`  
 

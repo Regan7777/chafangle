@@ -8,7 +8,7 @@ categoryName: "机场推荐"
 author: "V"
 badge: "资料核验"
 verdictNote: "BGP双线冗余中转+全球60+国家地区节点。折后¥16.1/月起，声明不限设备登录，提供365天按量包，适合多地域轻量业务与跨境外贸参考。"
-officialUrl: "https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG"
+officialUrl: "/go/huanqiuti"
 promoCode: "HQ66"
 pricePlan: "¥16.10 / 月起（原价 ¥23，7折）"
 keywords: ["环球梯", "环球梯机场", "多节点机场", "外贸机场", "VLESS机场", "机场推荐", "2026稳定机场"]
@@ -16,7 +16,7 @@ keywords: ["环球梯", "环球梯机场", "多节点机场", "外贸机场", "V
 
 > **服务类型**：双核心 BGP 接入机房 · 全球多地区节点池 · 声明不限制同时在线设备  
 > **传输协议**：现代化轻量 VLESS 协议通用适配  
-> **官方入口**：[点击直达环球梯官网（享专属新客优惠）](https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG)  
+> **官方入口**：[点击直达环球梯官网（享专属新客优惠）](/go/huanqiuti)  
 > **官方专属优惠码**：`HQ66`（限量 7 折优惠码，折后仅需 **¥16.10 / 月**）  
 > **iOS 客户端应用识别码**：`HQ66`  
 

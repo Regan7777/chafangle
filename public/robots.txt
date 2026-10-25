@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /go/
 
 Sitemap: https://chafangle.com/sitemap.xml
 Sitemap: https://chafangle.com/sitemap-index.xml

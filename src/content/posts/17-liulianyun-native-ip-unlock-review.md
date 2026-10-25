@@ -8,7 +8,7 @@ categoryName: "机场推荐"
 author: "V"
 badge: "资料核验"
 verdictNote: "主打充裕流量配额与低单GB成本。全线搭载 Trojan 传输协议，折后仅需¥16.8/月起，声明不限制同时在线设备，适合大流量影音与日常多端挂载。"
-officialUrl: "https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN"
+officialUrl: "/go/liulianyun"
 promoCode: "ll88"
 pricePlan: "¥16.80 / 月起（原价 ¥24，7折）"
 keywords: ["榴莲云", "榴莲云机场", "大流量机场", "Trojan机场", "流媒体解锁", "机场推荐", "2026稳定机场"]
@@ -16,7 +16,7 @@ keywords: ["榴莲云", "榴莲云机场", "大流量机场", "Trojan机场", "�
 
 > **服务类型**：专属大带宽 BGP 多入口汇聚 · Trojan 协议 · 声明不限制同时在线设备  
 > **传输协议**：全线纯正 Trojan 标准 TLS 1.3 协议通用适配  
-> **官方入口**：[点击直达榴莲云官网（享专属新客优惠）](https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN)  
+> **官方入口**：[点击直达榴莲云官网（享专属新客优惠）](/go/liulianyun)  
 > **官方专属优惠码**：`ll88`（新客下单输入立享 **7 折优惠**，折后仅需 **¥16.80 / 月**）  
 > **iOS 客户端应用识别码**：`lly`  
 

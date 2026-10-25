@@ -6,8 +6,9 @@ dist-temp/
 # dependencies
 node_modules/
 
-# logs
+# logs & reports
 *.log
+link-audit-report.json
 
 # environment
 .env

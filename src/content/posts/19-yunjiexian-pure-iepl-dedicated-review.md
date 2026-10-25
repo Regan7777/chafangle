@@ -8,7 +8,7 @@ categoryName: "机场推荐"
 author: "V"
 badge: "资料核验"
 verdictNote: "搭载次世代 Hysteria 2 (Hy2) 协议与自适应拥塞控制机制。折后仅¥15.4/月起，声明不限制同时在线设备，适合移动弱网与高丢包环境连接参考。"
-officialUrl: "https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW"
+officialUrl: "/go/yunjiexian"
 promoCode: "yjx888"
 pricePlan: "¥15.40 / 月起（原价 ¥22，7折）"
 keywords: ["云界线", "云界限", "Hysteria 2", "Hy2机场", "抗弱网机场", "端口跳跃", "机场推荐", "2026稳定机场"]
@@ -16,7 +16,7 @@ keywords: ["云界线", "云界限", "Hysteria 2", "Hy2机场", "抗弱网机场
 
 > **服务类型**：Hysteria 2 拥塞控制协议 · 直连优化网络 · 声明不限制同时在线设备  
 > **传输协议**：次世代 Hysteria 2 (Hy2) / QUIC 高速协议通用适配  
-> **官方入口**：[点击直达云界线官网（享专属新客优惠）](https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW)  
+> **官方入口**：[点击直达云界线官网（享专属新客优惠）](/go/yunjiexian)  
 > **官方专属优惠码**：`yjx888`（新客首购输入立享 **首单 7 折优惠**，折后仅需 **¥15.40 / 月**）  
 > **iOS 客户端应用识别码**：`yjx`  
 
