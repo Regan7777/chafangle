@@ -10,6 +10,11 @@ badge: "配置教程"
 keywords: ["Shadowrocket 教程", "小火箭下载", "iOS 订阅导入", "iPhone 网络诊断", "规则模式"]
 ---
 
+> **核心速览 (TL;DR)**  
+> 1. **软件定位**：Shadowrocket（小火箭）是专为 iOS (iPhone / iPad) 设计的规则分流代理客户端，本身不包含任何节点或订阅服务。  
+> 2. **三步上手**：在 App Store 登录非国区账户购买官方版本 ➔ 首页右上角「+」选择「Subscribe」导入合规订阅链接 ➔ 全局路由选择「配置」并开启主开关完成 VPN 授权。  
+> 3. **避坑重点**：严禁在系统「设置-iCloud」登录陌生共享账号（仅可在 App Store 登录）；更新订阅若遇 HTTP 404/429 错误应稍后只更新一次，避免被后台频控限制。  
+
 适用于 iPhone 与 iPad。完成后可以从 App Store 获取 Shadowrocket、导入订阅、建立 VPN 连接，并知道常见错误如何处理。Shadowrocket 是客户端，购买应用不包含节点或订阅。
 
 ## 一、从官方 App Store 获取
