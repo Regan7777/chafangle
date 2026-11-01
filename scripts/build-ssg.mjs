@@ -17,9 +17,9 @@ const TEMP_DIR = path.resolve(OUTPUT_ROOT, 'dist-temp');
 const SITE_URL = 'https://chafangle.com';
 
 const CATEGORY_MAP = {
-  zhuabao: { name: '机场评测', desc: '收录站内机场评测文章，整理服务的线路、套餐、使用限制与文章中的观察记录，供你结合自身网络环境参考。' },
-  mofan: { name: '机场推荐', desc: '按预算、流量、低延迟、弱网和多地区使用等需求，整理站内推荐服务与对应说明，帮助你先判断适用方向。' },
-  jiaocheng: { name: '配置教程', desc: 'Clash Verge Rev、小火箭与 sing-box 客户端使用教程。' },
+  zhuabao: { name: '机场评测', desc: '收录VPN查房站内全量机场评测专栏文章。基于长期实测与晚高峰网络监控数据，系统剖析各服务商的BGP入口、IEPL专线架构、流媒体与AI工具解锁能力、资费套餐及客户端兼容性，提供无过滤的客观体验记录与测速报告，帮助用户避开虚标带宽与断流陷阱。' },
+  mofan: { name: '机场推荐', desc: '按预算梯队、流量配额、低延迟游戏、弱网抗抖动与跨境商务等多样化需求，系统整理站内经过验证的优质机场推荐清单。提供详尽的资费解析、节点覆盖范围与适用场景选型建议，帮助新手与专业用户在购买前明确自身需求方向，科学规避跑路风险。' },
+  jiaocheng: { name: '配置教程', desc: '汇集Windows、macOS、iOS与Android各平台主流代理客户端的完整配置指南。详细讲解Clash Verge Rev、Shadowrocket小火箭、sing-box等工具的官方下载、订阅导入、TUN虚拟网卡模式、分流规则配置及常见连接报错排查流程，助你快速搞定网络配置。' },
 };
 
 // 1. Load All Posts from Markdown
@@ -124,7 +124,7 @@ async function runSSG() {
     {
       path: '/',
       title: '2026机场推荐｜网络服务测试与选购指南 - VPN查房',
-      description: '面向 VPN、代理与网络服务用户的公开测试与体验观察博客，提供稳定性、线路与套餐信息的客观记录。',
+      description: 'VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的2026机场推荐选型指南、客户端配置教程与防断流避坑方案，帮助网络用户与跨境工作者做出理性决策。',
       keywords: '2026机场推荐, VPN推荐, 机场代理, 机场导航, 性价比VPN, 节点稳定性测试, 断流避坑指南',
       data: { posts },
       schema: {
@@ -132,21 +132,21 @@ async function runSSG() {
         '@type': 'WebSite',
         name: 'VPN查房',
         url: SITE_URL,
-        description: '记录网络服务在真实环境下的连通性、延迟与稳定性。',
+        description: 'VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的2026机场推荐选型指南、客户端配置教程与防断流避坑方案，帮助网络用户与跨境工作者做出理性决策。',
         inLanguage: 'zh-CN',
       },
     },
     {
       path: '/posts',
       title: '全部文章 - VPN查房',
-      description: '收录网络服务评测、机场推荐与客户端配置实战教程。',
+      description: 'VPN查房全部文章归档列表，收录包含BGP中转、IPLC与IEPL专线在内的全量机场评测、高性价比VPN推荐选型指南以及涵盖Clash Verge Rev、Shadowrocket小火箭、sing-box等多端主流代理客户端的保姆级配置教程，支持按发布时间与更新动态持续查阅真实网络测试记录。',
       keywords: '机场评测总库, 机场推荐归档, 节点测速报告',
       data: { posts },
     },
     {
       path: '/categories',
       title: '全部分类 - VPN查房',
-      description: '按机场推荐、机场评测和配置教程浏览站内文章。',
+      description: 'VPN查房内容分类导航页，系统整理机场评测、机场推荐与配置教程三大技术专题。用户可快速直达多线路网络服务深度测试、高可用翻墙服务选购分析，以及适用于Windows、Mac、iOS和Android平台的客户端分流规则与疑难排错指南，便于按场景与实际需求针对性阅读。',
       keywords: '机场推荐, 机场评测, 配置教程',
       data: {},
       schema: {
@@ -160,21 +160,21 @@ async function runSSG() {
     {
       path: '/nav',
       title: '机场导航与服务速览 - VPN查房',
-      description: '集中展示本站主推机场的套餐、适用方向与相关说明，方便你按预算、流量、延迟和使用场景初步筛选。',
+      description: 'VPN查房机场导航精选汇总页面，集中罗列经过站内实际测试验证的主流机场服务商。全面整理各服务商的线路架构类型、月付年付资费方案、多设备并发限制、流媒体解锁支持度及专属折扣优惠码，提供客观透明的横向参数对比，方便网络用户按预算与应用场景快速筛选适合的节点网络。',
       keywords: '机场导航, 机场直达, 机场优惠码, 2026机场评测',
       data: {},
     },
     {
       path: '/tools',
       title: '实用工具：测速、DNS 诊断、规则资源与客户端 - VPN查房',
-      description: '汇集网络测速、DNS 诊断、订阅格式转换、规则资源和各平台客户端的官方入口，并提供站内技术指南。',
+      description: 'VPN查房实用工具箱为网络用户提供一站式权威检测与配置辅助资源。页面聚合Speedtest测速、Cloudflare DNS诊断与防泄漏测试、开源订阅转换（Subconverter/Sub-Store）安全指引，并收录主流代理客户端官方下载渠道，配套提供站内分流规则与排错教程。',
       keywords: '网络测速, DNS诊断, 订阅转换, Mihomo规则, sing-box规则, 客户端下载',
       data: {},
     },
     {
       path: '/about',
       title: '关于本站与评测准则 - VPN查房',
-      description: '了解「VPN查房」博客的建立初衷、评测标准、联系方式与免责原则。',
+      description: '了解VPN查房独立技术博客的创立背景、评测原则与技术准则。本站坚持100%纯净出版物风格与中立客观测试立场，专注于各类网络代理协议、专线中转架构的连通性、稳定性与晚高峰抗封锁表现，明确拒绝虚假推广与商业利益捆绑，并提供官方读者交流渠道与合规免责声明。',
       keywords: '关于VPN查房, 联系 V Telegram, 独立评测原则',
       data: {},
     },
@@ -391,7 +391,7 @@ ${sitemapUrls}
   <channel>
     <title>VPN查房</title>
     <link>${SITE_URL}</link>
-    <description>面向 VPN、代理与网络服务用户的公开测试与体验观察博客。</description>
+    <description>VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的选型指南、客户端配置教程与防断流避坑方案。</description>
     <language>zh-CN</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${SITE_URL}/rss.xml" rel="self" type="application/rss+xml"/>
