@@ -404,7 +404,6 @@ ${rssItems}
   // 10. Generate robots.txt
   const robotsTxt = `User-agent: *
 Allow: /
-Disallow: /go/
 
 Sitemap: ${SITE_URL}/sitemap.xml
 Sitemap: ${SITE_URL}/sitemap-index.xml
