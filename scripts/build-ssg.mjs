@@ -303,8 +303,8 @@ async function runSSG() {
   console.log('🔗 [SSG] Generating 301 redirect pages for affiliate links...');
   const AFFILIATE_REDIRECTS = [
     { slug: 'shenxing', name: '神行加速', targetUrl: 'https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8' },
-    { slug: 'dalaoyun', name: '大佬云', targetUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL' },
-    { slug: 'shandianshu', name: '闪电鼠', targetUrl: 'https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK' },
+    { slug: 'dalaoyun', name: '大佬云', targetUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=Wpfk4XD5' },
+    { slug: 'shandianshu', name: '闪电鼠', targetUrl: 'https://fugui0077.shandianshuaff.com/#/?code=KSByEAn9' },
     { slug: 'liulianyun', name: '榴莲云', targetUrl: 'https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN' },
     { slug: 'huanqiuti', name: '环球梯', targetUrl: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG' },
     { slug: 'yunjiexian', name: '云界线', targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW' },

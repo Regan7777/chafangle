@@ -15,13 +15,13 @@ export const AFFILIATE_LINKS: Record<string, AffiliateItem> = {
   dalaoyun: {
     slug: 'dalaoyun',
     name: '大佬云',
-    targetUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=1o7gYhTL',
+    targetUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=Wpfk4XD5',
     redirectPath: '/go/dalaoyun',
   },
   shandianshu: {
     slug: 'shandianshu',
     name: '闪电鼠',
-    targetUrl: 'https://fugui0077.shandianshuaff.com/#/?code=I2yK9PfK',
+    targetUrl: 'https://fugui0077.shandianshuaff.com/#/?code=KSByEAn9',
     redirectPath: '/go/shandianshu',
   },
   liulianyun: {
