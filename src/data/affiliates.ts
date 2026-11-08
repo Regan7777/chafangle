@@ -39,7 +39,13 @@ export const AFFILIATE_LINKS: Record<string, AffiliateItem> = {
   yunjiexian: {
     slug: 'yunjiexian',
     name: '云界线',
-    targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW',
+    targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=FVkiFyAx',
     redirectPath: '/go/yunjiexian',
+  },
+  guangshuyun: {
+    slug: 'guangshuyun',
+    name: '光速云',
+    targetUrl: 'https://j98j.gsyvipaff.com/#/?code=9506F5Sq',
+    redirectPath: '/go/guangshuyun',
   },
 };

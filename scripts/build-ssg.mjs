@@ -300,14 +300,15 @@ async function runSSG() {
   fs.writeFileSync(path.resolve(DIST_DIR, '404.html'), notFoundPage, 'utf8');
 
   // 7.5 Generate physical HTML redirect pages and Cloudflare _redirects for AFF links
-  console.log('🔗 [SSG] Generating 301 redirect pages for affiliate links...');
+  console.log('🔗 [SSG] Generating 302 redirect pages for affiliate links...');
   const AFFILIATE_REDIRECTS = [
     { slug: 'shenxing', name: '神行加速', targetUrl: 'https://wuhan01.shenxingaff.com/#/?code=WUQMrgI8' },
     { slug: 'dalaoyun', name: '大佬云', targetUrl: 'https://fugui0077.dalaoyunaff.com/#/?code=Wpfk4XD5' },
     { slug: 'shandianshu', name: '闪电鼠', targetUrl: 'https://fugui0077.shandianshuaff.com/#/?code=KSByEAn9' },
     { slug: 'liulianyun', name: '榴莲云', targetUrl: 'https://zyrrz.liulianyunaff.com/#/?code=Y6A1M1MN' },
     { slug: 'huanqiuti', name: '环球梯', targetUrl: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG' },
-    { slug: 'yunjiexian', name: '云界线', targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=qA3LF6hW' },
+    { slug: 'yunjiexian', name: '云界线', targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=FVkiFyAx' },
+    { slug: 'guangshuyun', name: '光速云', targetUrl: 'https://j98j.gsyvipaff.com/#/?code=9506F5Sq' },
   ];
 
   const redirectRules = [];
@@ -339,10 +340,10 @@ async function runSSG() {
     const directAffHtml = path.resolve(DIST_DIR, 'go', `${aff.slug}.html`);
     fs.writeFileSync(directAffHtml, redirectHtml, 'utf8');
 
-    redirectRules.push(`/go/${aff.slug} ${aff.targetUrl} 301`);
+    redirectRules.push(`/go/${aff.slug} ${aff.targetUrl} 302`);
   }
 
-  const redirectsContent = `# Cloudflare Pages 301 Redirects for AFF Links\n${redirectRules.join('\n')}\n`;
+  const redirectsContent = `# Cloudflare Pages 302 Redirects for AFF Links\n${redirectRules.join('\n')}\n`;
   fs.writeFileSync(path.resolve(DIST_DIR, '_redirects'), redirectsContent, 'utf8');
 
   // 8. Generate sitemap.xml & sitemap-index.xml

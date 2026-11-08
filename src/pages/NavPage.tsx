@@ -50,6 +50,14 @@ const FEATURED_AIRPORTS = [
     officialUrl: '/go/shandianshu',
     type: '低延迟优化',
   },
+  {
+    name: '光速云',
+    tag: '专线中转 · 高性价比',
+    desc: 'IPLC/IEPL混合专线与高速隧道中转架构，覆盖13+核心国家地区，声明不限制同时在线设备，支持4K流媒体与主流AI工具解锁。',
+    reviewUrl: '/posts/43-guangshuyun-iplc-hybrid-review',
+    officialUrl: '/go/guangshuyun',
+    type: '专线中转',
+  },
 ];
 
 const CLIENT_TOOLS = [
