@@ -1,6 +1,6 @@
 ---
 title: "Android 网络客户端教程：v2rayNG 与 Surfboard 下载、订阅导入和错误排查"
-description: "Android 上 v2rayNG 与 Surfboard 的官方获取、订阅导入、VPN 授权、规则模式和错误代码排查指南。"
+description: "Android 平台 v2rayNG 与 Surfboard 客户端完整上手教程：涵盖 GitHub 官方安全下载、服务商订阅链接导入、系统 VPN 权限配置、分流规则选择以及常见报错代码与断流排查方案。"
 pubDate: 2025-10-06
 updatedDate: 2026-10-24
 category: "jiaocheng"

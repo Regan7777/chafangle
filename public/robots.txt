@@ -1,6 +1,23 @@
 User-agent: *
 Allow: /
+Disallow: /go/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
 
 Sitemap: https://chafangle.com/sitemap.xml
+Sitemap: https://chafangle.com/sitemap-0.xml
 Sitemap: https://chafangle.com/sitemap-index.xml
 Sitemap: https://chafangle.com/rss.xml

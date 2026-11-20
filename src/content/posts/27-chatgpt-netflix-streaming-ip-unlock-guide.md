@@ -1,6 +1,6 @@
 ---
 title: "Netflix、YouTube、X、Instagram、TikTok 与 Emby：登录、播放和网络排查指南"
-description: "面向合法账户和媒体库使用者的流媒体、社交平台与 Emby 排查指南：区分账户、应用、网络、版权和服务器配置问题。"
+description: "Netflix、YouTube、X、Instagram、TikTok 与 Emby 播放及登录排查全指南：精准区分账号风控、应用版本、原生住宅 IP 解锁、版权分流及服务器配置问题，提供系统化诊断排错方案。"
 pubDate: 2025-12-21
 updatedDate: 2026-10-24
 category: "jiaocheng"

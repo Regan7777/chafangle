@@ -17,9 +17,21 @@ const TEMP_DIR = path.resolve(OUTPUT_ROOT, 'dist-temp');
 const SITE_URL = 'https://chafangle.com';
 
 const CATEGORY_MAP = {
-  zhuabao: { name: '机场评测', desc: '收录VPN查房站内全量机场评测专栏文章。基于长期实测与晚高峰网络监控数据，系统剖析各服务商的BGP入口、IEPL专线架构、流媒体与AI工具解锁能力、资费套餐及客户端兼容性，提供无过滤的客观体验记录与测速报告，帮助用户避开虚标带宽与断流陷阱。' },
-  mofan: { name: '机场推荐', desc: '按预算梯队、流量配额、低延迟游戏、弱网抗抖动与跨境商务等多样化需求，系统整理站内经过验证的优质机场推荐清单。提供详尽的资费解析、节点覆盖范围与适用场景选型建议，帮助新手与专业用户在购买前明确自身需求方向，科学规避跑路风险。' },
-  jiaocheng: { name: '配置教程', desc: '汇集Windows、macOS、iOS与Android各平台主流代理客户端的完整配置指南。详细讲解Clash Verge Rev、Shadowrocket小火箭、sing-box等工具的官方下载、订阅导入、TUN虚拟网卡模式、分流规则配置及常见连接报错排查流程，助你快速搞定网络配置。' },
+  zhuabao: {
+    name: '机场评测',
+    title: '2026全网机场评测与晚高峰压测榜单 - VPN查房',
+    desc: '收录VPN查房站内全量机场评测专栏文章。基于长期实测与晚高峰网络监控数据，系统剖析各服务商的BGP入口、IEPL专线架构、流媒体与AI工具解锁能力、资费套餐及客户端兼容性，提供无过滤的客观体验记录与测速报告，帮助用户避开虚标带宽与断流陷阱。',
+  },
+  mofan: {
+    name: '机场推荐',
+    title: '2026精选高性价比科学上网机场推荐指南 - VPN查房',
+    desc: '按预算梯队、流量配额、低延迟游戏、弱网抗抖动与跨境商务等多样化需求，系统整理站内经过验证的优质机场推荐清单。提供详尽的资费解析、节点覆盖范围与适用场景选型建议，帮助新手与专业用户在购买前明确自身需求方向，科学规避跑路风险。',
+  },
+  jiaocheng: {
+    name: '配置教程',
+    title: 'Clash、Sing-box与小火箭多端客户端配置实战教程 - VPN查房',
+    desc: '汇集Windows、macOS、iOS与Android各平台主流代理客户端的完整配置指南。详细讲解Clash Verge Rev、Shadowrocket小火箭、sing-box等工具的官方下载、订阅导入、TUN虚拟网卡模式、分流规则配置及常见连接报错排查流程，助你快速搞定网络配置。',
+  },
 };
 
 // 1. Load All Posts from Markdown
@@ -138,14 +150,14 @@ async function runSSG() {
     },
     {
       path: '/posts',
-      title: '全部文章 - VPN查房',
+      title: '全部文章归档：全量网络节点测评与翻墙指南 - VPN查房',
       description: 'VPN查房全部文章归档列表，收录包含BGP中转、IPLC与IEPL专线在内的全量机场评测、高性价比VPN推荐选型指南以及涵盖Clash Verge Rev、Shadowrocket小火箭、sing-box等多端主流代理客户端的保姆级配置教程，支持按发布时间与更新动态持续查阅真实网络测试记录。',
       keywords: '机场评测总库, 机场推荐归档, 节点测速报告',
       data: { posts },
     },
     {
       path: '/categories',
-      title: '全部分类 - VPN查房',
+      title: '全部分类导航：机场评测、选购推荐与客户端教程 - VPN查房',
       description: 'VPN查房内容分类导航页，系统整理机场评测、机场推荐与配置教程三大技术专题。用户可快速直达多线路网络服务深度测试、高可用翻墙服务选购分析，以及适用于Windows、Mac、iOS和Android平台的客户端分流规则与疑难排错指南，便于按场景与实际需求针对性阅读。',
       keywords: '机场推荐, 机场评测, 配置教程',
       data: {},
@@ -159,7 +171,7 @@ async function runSSG() {
     },
     {
       path: '/nav',
-      title: '机场导航与服务速览 - VPN查房',
+      title: '精选机场导航与服务速览：2026高可用网络节点选型 - VPN查房',
       description: 'VPN查房机场导航精选汇总页面，集中罗列经过站内实际测试验证的主流机场服务商。全面整理各服务商的线路架构类型、月付年付资费方案、多设备并发限制、流媒体解锁支持度及专属折扣优惠码，提供客观透明的横向参数对比，方便网络用户按预算与应用场景快速筛选适合的节点网络。',
       keywords: '机场导航, 机场直达, 机场优惠码, 2026机场评测',
       data: {},
@@ -173,7 +185,7 @@ async function runSSG() {
     },
     {
       path: '/about',
-      title: '关于本站与评测准则 - VPN查房',
+      title: '关于本站与独立评测准则：坚持真实客观压测 - VPN查房',
       description: '了解VPN查房独立技术博客的创立背景、评测原则与技术准则。本站坚持100%纯净出版物风格与中立客观测试立场，专注于各类网络代理协议、专线中转架构的连通性、稳定性与晚高峰抗封锁表现，明确拒绝虚假推广与商业利益捆绑，并提供官方读者交流渠道与合规免责声明。',
       keywords: '关于VPN查房, 联系 V Telegram, 独立评测原则',
       data: {},
@@ -187,7 +199,7 @@ async function runSSG() {
       : posts.filter(p => p.category === catKey);
     routes.push({
       path: `/category/${catKey}`,
-      title: `${catInfo.name} - VPN查房`,
+      title: catInfo.title || `${catInfo.name} - 2026节点与网络服务实测 - VPN查房`,
       description: catInfo.desc,
       keywords: `${catInfo.name}, 机场评测, 节点测速, 2026推荐`,
       data: {
@@ -209,10 +221,14 @@ async function runSSG() {
   // Article routes (all 35 posts)
   for (const post of posts) {
     const relatedPosts = posts.filter(p => p.category === post.category && p.slug !== post.slug);
+    let desc = post.description || '';
+    if (desc.length < 85) {
+      desc = `${desc} 本文由VPN查房独立技术博客实测整理，深度涵盖2026网络节点连通性压测、分流配置规则与报错排查指南。`;
+    }
     routes.push({
       path: `/posts/${post.slug}`,
       title: `${post.title} - VPN查房`,
-      description: post.description,
+      description: desc,
       keywords: (post.keywords || []).join(', '),
       data: { post, relatedPosts },
       schema: {
@@ -291,8 +307,8 @@ async function runSSG() {
   const { appHtml: notFoundHtml } = render('/404', {});
   const notFoundPage = templateHtml
     .replace('<!--app-html-->', notFoundHtml)
-    .replace(/<!--title-->/g, '404 - 页面未找到')
-    .replace(/<!--description-->/g, '页面不存在')
+    .replace(/<!--title-->/g, '404 - 页面未找到 - VPN查房')
+    .replace(/<!--description-->/g, '抱歉，您访问的页面不存在或已被移除。请访问VPN查房博客首页获取最新2026机场推荐、节点评测与客户端配置实战教程。')
     .replace(/<!--keywords-->/g, '')
     .replace(/<!--canonical-->/g, `${SITE_URL}/404`)
     .replace('<!--schema-json-->', '')
@@ -366,6 +382,9 @@ ${sitemapUrls}
 </urlset>`;
 
   fs.writeFileSync(path.resolve(DIST_DIR, 'sitemap.xml'), sitemapXml, 'utf8');
+  fs.writeFileSync(path.resolve(DIST_DIR, 'sitemap-0.xml'), sitemapXml, 'utf8');
+  fs.writeFileSync(path.resolve(ROOT_DIR, 'public/sitemap.xml'), sitemapXml, 'utf8');
+  fs.writeFileSync(path.resolve(ROOT_DIR, 'public/sitemap-0.xml'), sitemapXml, 'utf8');
 
   const sitemapIndexXml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -373,9 +392,14 @@ ${sitemapUrls}
     <loc>${SITE_URL}/sitemap.xml</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
   </sitemap>
+  <sitemap>
+    <loc>${SITE_URL}/sitemap-0.xml</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+  </sitemap>
 </sitemapindex>`;
 
   fs.writeFileSync(path.resolve(DIST_DIR, 'sitemap-index.xml'), sitemapIndexXml, 'utf8');
+  fs.writeFileSync(path.resolve(ROOT_DIR, 'public/sitemap-index.xml'), sitemapIndexXml, 'utf8');
 
   // 9. Generate rss.xml
   console.log('📡 [SSG] Generating rss.xml...');

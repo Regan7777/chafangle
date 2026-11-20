@@ -1,6 +1,6 @@
 ---
 title: "sing-box 使用教程：配置导入、规则选择、TUN 与日志错误排查"
-description: "sing-box 的配置导入、规则选择、TUN 模式与日志排错指南，覆盖 JSON 兼容、权限、DNS、TLS 和端口错误。"
+description: "sing-box 下一代通用代理客户端深度配置教程：详述跨平台安装、服务商订阅导入、分流规则选择、TUN 虚拟网卡模式及详细运行日志排错指南，覆盖 JSON 语法、DNS 污染与 TLS 握手故障修复。"
 pubDate: 2025-10-11
 updatedDate: 2026-10-24
 category: "jiaocheng"
