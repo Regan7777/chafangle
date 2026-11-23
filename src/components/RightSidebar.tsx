@@ -54,7 +54,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({ posts }) => {
         {/* 社交矢量图标栏 */}
         <div className="flex items-center justify-center text-[#6e6e73]">
           <a
-            href="https://t.me/wanfengzn"
+            href="https://t.me/wanfengzn7"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-colors hover:text-[#0071e3]"

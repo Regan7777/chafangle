@@ -4,7 +4,7 @@ const CATEGORIES = [
   {
     title: '机场推荐',
     desc: '按不同使用需求归纳的站内服务推荐文章。',
-    href: '/category/mofan',
+    href: '/nav',
   },
   {
     title: '机场评测',

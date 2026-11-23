@@ -68,13 +68,13 @@ export const AboutPage: React.FC = () => {
           </p>
           <div className="pt-2">
             <a
-              href="https://t.me/wanfengzn"
+              href="https://t.me/wanfengzn7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 border border-black bg-black px-4 py-2 font-mono text-xs font-medium text-white hover:bg-neutral-800 transition-colors"
             >
               <Send size={12} strokeWidth={1.25} />
-              <span>Telegram: @wanfengzn</span>
+              <span>Telegram: @wanfengzn7</span>
             </a>
           </div>
         </section>

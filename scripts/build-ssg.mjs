@@ -325,6 +325,7 @@ async function runSSG() {
     { slug: 'huanqiuti', name: '环球梯', targetUrl: 'https://fugui0077.huanqiutiaff.com/#/?code=rJyQn4xG' },
     { slug: 'yunjiexian', name: '云界线', targetUrl: 'https://fugui0077.yunjiexianaff.com/#/?code=FVkiFyAx' },
     { slug: 'guangshuyun', name: '光速云', targetUrl: 'https://j98j.gsyvipaff.com/#/?code=9506F5Sq' },
+    { slug: 'feiv', name: '飞V', targetUrl: 'https://cola.flyvaff.com/#/register/?code=gxmUajhy' },
   ];
 
   const redirectRules = [];

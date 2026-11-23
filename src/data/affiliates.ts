@@ -48,4 +48,10 @@ export const AFFILIATE_LINKS: Record<string, AffiliateItem> = {
     targetUrl: 'https://j98j.gsyvipaff.com/#/?code=9506F5Sq',
     redirectPath: '/go/guangshuyun',
   },
+  feiv: {
+    slug: 'feiv',
+    name: '飞V',
+    targetUrl: 'https://cola.flyvaff.com/#/register/?code=gxmUajhy',
+    redirectPath: '/go/feiv',
+  },
 };

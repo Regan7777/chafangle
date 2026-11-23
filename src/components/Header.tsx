@@ -179,7 +179,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath = '/' }) => {
         {/* Right Actions: Telegram Airplane Icon + Theme Toggle */}
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="https://t.me/wanfengzn"
+            href="https://t.me/wanfengzn7"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 text-[#6e6e73] hover:text-[#0071e3] transition-colors"
@@ -202,7 +202,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPath = '/' }) => {
         {/* Mobile Right Actions */}
         <div className="flex items-center gap-2 md:hidden">
           <a
-            href="https://t.me/wanfengzn"
+            href="https://t.me/wanfengzn7"
             target="_blank"
             rel="noopener noreferrer"
             className="p-1 text-[#6e6e73] hover:text-[#0071e3] transition-colors"
@@ -272,12 +272,12 @@ export const Header: React.FC<HeaderProps> = ({ currentPath = '/' }) => {
               );
             })}
             <a
-              href="https://t.me/wanfengzn"
+              href="https://t.me/wanfengzn7"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 flex items-center justify-between border-t border-black/[0.06] pt-2 text-xs text-[#6e6e73]"
             >
-              <span>联系 Telegram (@wanfengzn)</span>
+              <span>联系 Telegram (@wanfengzn7)</span>
               <ArrowUpRight size={13} strokeWidth={1.25} />
             </a>
           </div>

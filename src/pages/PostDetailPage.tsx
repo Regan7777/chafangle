@@ -60,7 +60,7 @@ export const PostDetailPage: React.FC<PostDetailPageProps> = ({ post, relatedPos
     },
     {
       q: '优惠码在结账时提示无效怎么处理？',
-      a: '部分限时优惠码仅适用于特定周期套餐（如半年付或年付）。如遇折扣失效，可进入后台工单系统或联系 Telegram (@wanfengzn) 协助反馈。',
+      a: '部分限时优惠码仅适用于特定周期套餐（如半年付或年付）。如遇折扣失效，可进入后台工单系统或联系 Telegram (@wanfengzn7) 协助反馈。',
     },
     {
       q: 'iOS 苹果端无法下载客户端如何解决？',
