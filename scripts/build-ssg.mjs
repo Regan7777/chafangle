@@ -19,18 +19,18 @@ const SITE_URL = 'https://chafangle.com';
 const CATEGORY_MAP = {
   zhuabao: {
     name: '机场评测',
-    title: '2026全网机场评测与晚高峰压测榜单 - VPN查房',
-    desc: '收录VPN查房站内全量机场评测专栏文章。基于长期实测与晚高峰网络监控数据，系统剖析各服务商的BGP入口、IEPL专线架构、流媒体与AI工具解锁能力、资费套餐及客户端兼容性，提供无过滤的客观体验记录与测速报告，帮助用户避开虚标带宽与断流陷阱。',
+    title: '2026全网优质翻墙机场评测中心：晚高峰测速、线路架构与解锁榜单 - VPN查房',
+    desc: '收录VPN查房站内全量机场评测专栏文章：基于长期实测与晚高峰网络监控数据，深度剖析各服务商的BGP入口、IPLC与IEPL专线架构、4K流媒体与AI工具原生解锁能力、月付年付资费、设备限制及多端客户端兼容性，提供无商业过滤的客观体验记录、真实抓包测速报告、官网直达入口与按月防坑试错实用指南。',
   },
   mofan: {
     name: '机场推荐',
-    title: '2026精选高性价比科学上网机场推荐指南 - VPN查房',
-    desc: '按预算梯队、流量配额、低延迟游戏、弱网抗抖动与跨境商务等多样化需求，系统整理站内经过验证的优质机场推荐清单。提供详尽的资费解析、节点覆盖范围与适用场景选型建议，帮助新手与专业用户在购买前明确自身需求方向，科学规避跑路风险。',
+    title: '2026精选高性价比科学上网机场推荐榜单：专线中转与按月选购指南 - VPN查房',
+    desc: '按预算梯队、月度流量配额、低延迟游戏加速、弱网抗抖动与跨境商务办公等多样化需求，系统整理站内经过实际抓包测速验证的优质科学上网翻墙机场推荐清单。提供详尽的套餐资费解析、全球节点地区覆盖范围、专属7折优惠码核验、多场景选型建议、客户端配置入口以及防跑路断流预警提醒，助您轻松选出主力节点。',
   },
   jiaocheng: {
     name: '配置教程',
-    title: 'Clash、Sing-box与小火箭多端客户端配置实战教程 - VPN查房',
-    desc: '汇集Windows、macOS、iOS与Android各平台主流代理客户端的完整配置指南。详细讲解Clash Verge Rev、Shadowrocket小火箭、sing-box等工具的官方下载、订阅导入、TUN虚拟网卡模式、分流规则配置及常见连接报错排查流程，助你快速搞定网络配置。',
+    title: '2026科学上网客户端配置教程：Clash Verge、Sing-box与小火箭实战指南 - VPN查房',
+    desc: '汇集Windows、macOS、iOS与Android各平台主流代理客户端的完整图文配置指南：详细讲解Clash Verge Rev、Shadowrocket小火箭、sing-box与v2rayNG的官方正版下载、订阅链接导入、TUN虚拟网卡接管、分流规则配置及常见连接报错排查流程，助你快速上手科学上网。',
   },
 };
 
@@ -135,8 +135,8 @@ async function runSSG() {
   const routes = [
     {
       path: '/',
-      title: '2026机场推荐｜网络服务测试与选购指南 - VPN查房',
-      description: 'VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的2026机场推荐选型指南、客户端配置教程与防断流避坑方案，帮助网络用户与跨境工作者做出理性决策。',
+      title: '2026科学上网机场推荐指南：IPLC专线评测、高性价比梯子榜单与Mihomo教程 - VPN查房',
+      description: 'VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的2026机场推荐选型指南、多端客户端配置教程与防断流避坑方案，帮助网络用户与跨境工作者做出理性决策。',
       keywords: '2026机场推荐, VPN推荐, 机场代理, 机场导航, 性价比VPN, 节点稳定性测试, 断流避坑指南',
       data: { posts },
       schema: {
@@ -144,21 +144,21 @@ async function runSSG() {
         '@type': 'WebSite',
         name: 'VPN查房',
         url: SITE_URL,
-        description: 'VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的2026机场推荐选型指南、客户端配置教程与防断流避坑方案，帮助网络用户与跨境工作者做出理性决策。',
+        description: 'VPN查房是一家专注网络代理与翻墙工具客观测评的独立技术博客。我们针对各类常用节点、BGP中转与IPLC/IEPL专线机场进行真实环境下的连通性、延迟、晚高峰抗抖动与流媒体解锁深度测试，提供科学客观的2026机场推荐选型指南、多端客户端配置教程与防断流避坑方案，帮助网络用户与跨境工作者做出理性决策。',
         inLanguage: 'zh-CN',
       },
     },
     {
       path: '/posts',
-      title: '全部文章归档：全量网络节点测评与翻墙指南 - VPN查房',
-      description: 'VPN查房全部文章归档列表，收录包含BGP中转、IPLC与IEPL专线在内的全量机场评测、高性价比VPN推荐选型指南以及涵盖Clash Verge Rev、Shadowrocket小火箭、sing-box等多端主流代理客户端的保姆级配置教程，支持按发布时间与更新动态持续查阅真实网络测试记录。',
+      title: '2026全部文章归档：全量机场评测报告、VPN选购指南与客户端教程合集 - VPN查房',
+      description: 'VPN查房全部文章归档列表：系统收录包含BGP多线中转与IPLC国际专线在内的全量机场深度评测、高性价比VPN选购指南，以及Clash Verge Rev、Shadowrocket小火箭、sing-box与v2rayNG等多端主流代理客户端保姆级配置教程，方便持续查阅真实测试记录与避坑指南。',
       keywords: '机场评测总库, 机场推荐归档, 节点测速报告',
       data: { posts },
     },
     {
       path: '/categories',
-      title: '全部分类导航：机场评测、选购推荐与客户端教程 - VPN查房',
-      description: 'VPN查房内容分类导航页，系统整理机场评测、机场推荐与配置教程三大技术专题。用户可快速直达多线路网络服务深度测试、高可用翻墙服务选购分析，以及适用于Windows、Mac、iOS和Android平台的客户端分流规则与疑难排错指南，便于按场景与实际需求针对性阅读。',
+      title: '全站技术分类导航：机场深度评测、高性价比推荐与客户端配置教程专区 - VPN查房',
+      description: 'VPN查房内容分类导航页：系统整理机场评测、机场推荐与客户端配置教程三大核心技术专题。用户可快速直达多线路网络服务深度测试、高可用翻墙服务选购分析，以及适用于Windows、macOS、iOS和Android多端平台的客户端订阅导入、智能分流规则优化与疑难报错排错实用指南，便于系统精准阅读。',
       keywords: '机场推荐, 机场评测, 配置教程',
       data: {},
       schema: {
@@ -171,22 +171,22 @@ async function runSSG() {
     },
     {
       path: '/nav',
-      title: '精选机场导航与服务速览：2026高可用网络节点选型 - VPN查房',
-      description: 'VPN查房机场导航精选汇总页面，集中罗列经过站内实际测试验证的主流机场服务商。全面整理各服务商的线路架构类型、月付年付资费方案、多设备并发限制、流媒体解锁支持度及专属折扣优惠码，提供客观透明的横向参数对比，方便网络用户按预算与应用场景快速筛选适合的节点网络。',
+      title: '2026精选高可用机场导航与优惠码汇总：主流专线与BGP中转横向速览 - VPN查房',
+      description: 'VPN查房机场导航精选汇总页面：集中罗列经过站内实际测试验证的主流高可用机场服务商。全面整理各服务商的IPLC专线与BGP线路架构类型、月付年付资费方案、多设备并发登录限制、4K流媒体与AI工具解锁支持度及专属7折优惠码，提供客观透明的横向参数对比，方便按预算与场景快速筛选稳定节点网络。',
       keywords: '机场导航, 机场直达, 机场优惠码, 2026机场评测',
       data: {},
     },
     {
       path: '/tools',
-      title: '实用工具：测速、DNS 诊断、规则资源与客户端 - VPN查房',
-      description: 'VPN查房实用工具箱为网络用户提供一站式权威检测与配置辅助资源。页面聚合Speedtest测速、Cloudflare DNS诊断与防泄漏测试、开源订阅转换（Subconverter/Sub-Store）安全指引，并收录主流代理客户端官方下载渠道，配套提供站内分流规则与排错教程。',
+      title: '实用网络诊断工具箱：Speedtest测速、DNS防泄露检测与订阅转换指南 - VPN查房',
+      description: 'VPN查房实用工具箱为网络用户提供一站式权威检测与配置辅助资源：页面全面聚合Speedtest下行测速、Cloudflare DNS诊断与防泄漏验证测试、开源订阅转换（Subconverter与Sub-Store）防泄露安全指引，并收录主流多平台代理客户端官方下载渠道，配套提供站内精细分流规则与故障排错实战教程。',
       keywords: '网络测速, DNS诊断, 订阅转换, Mihomo规则, sing-box规则, 客户端下载',
       data: {},
     },
     {
       path: '/about',
-      title: '关于本站与独立评测准则：坚持真实客观压测 - VPN查房',
-      description: '了解VPN查房独立技术博客的创立背景、评测原则与技术准则。本站坚持100%纯净出版物风格与中立客观测试立场，专注于各类网络代理协议、专线中转架构的连通性、稳定性与晚高峰抗封锁表现，明确拒绝虚假推广与商业利益捆绑，并提供官方读者交流渠道与合规免责声明。',
+      title: '关于VPN查房独立技术博客：真实网络抓包测速立场与评测准则说明 - VPN查房',
+      description: '深入了解VPN查房独立技术博客的创立背景、评测原则与三大技术准则：本站坚持100%纯净出版物风格与中立客观实测立场，长期专注各类网络代理协议、BGP与IPLC专线中转架构的连通性、延迟抖动与晚高峰抗封锁表现，明确拒绝商业充值软文与虚假宣传，并提供官方读者Telegram交流渠道与免责声明。',
       keywords: '关于VPN查房, 联系 V Telegram, 独立评测原则',
       data: {},
     },
@@ -218,16 +218,46 @@ async function runSSG() {
     });
   }
 
-  // Article routes (all 35 posts)
+  // Article routes (all posts)
+  const postTitleOverrides = {
+    '02-2026-stable-airport-proxy-selection-guide': '2026稳定机场服务选购指南：IPLC专线与BGP中转、试用与防跑路检查 - VPN查房',
+    '23-fanqiang-basics-airport-vpn-beginners-guide': '2026科学上网客户端入门全指南：订阅链接、节点协议与代理导入实战 - VPN查房',
+    '24-overseas-trade-cross-border-ecommerce-proxy-guide': '跨境外贸电商网络规划指南：多端账户权限隔离、设备基线与稳定连接排查 - VPN查房',
+    '25-how-to-choose-stable-high-speed-airport': '2026稳定高速机场选购指南：如何评测挑选不跑路的靠谱梯子服务商 - VPN查房',
+    '37-subscription-format-conversion-guide': '2026代理订阅格式与安全转换指南：Clash与Sing-box兼容验证及防泄露 - VPN查房',
+    '38-network-speed-dns-diagnostics-guide': '2026网络测速、DNS防污染与连通性诊断指南：从现象到根因的逐步排查 - VPN查房',
+    '39-direct-rule-global-proxy-modes-guide': '直连、规则分流与全局代理有什么区别：主流客户端模式选择与排错指南 - VPN查房',
+  };
+
+  function normalizePostDesc(rawDesc, title) {
+    let desc = (rawDesc || '').replace(/\s+/g, ' ').trim();
+    if (!desc) desc = `${title}：VPN查房独立技术博客实测与配置解析。`;
+    const padPool = '本文由VPN查房独立技术博客实测整理，深度涵盖2026网络节点晚高峰连通性压测、BGP与IPLC专线架构评估、Clash与sing-box客户端分流规则配置、AI与流媒体原生解锁参考及常见断流报错排查实用指南。';
+    if (desc.length < 149) {
+      const cleanDesc = desc.replace(/[。！？；，、]+$/, '');
+      const need = 155 - cleanDesc.length - 1;
+      if (need > 5) {
+        let extra = padPool.slice(0, need).replace(/[，、；：]$/, '');
+        if (!/[。！？]$/.test(extra)) extra = extra.slice(0, Math.max(1, extra.length - 1)) + '。';
+        desc = `${cleanDesc}，${extra}`;
+      }
+    }
+    if (desc.length > 158) {
+      desc = desc.slice(0, 157).replace(/[，、；：]+$/, '') + '。';
+    }
+    return desc;
+  }
+
   for (const post of posts) {
     const relatedPosts = posts.filter(p => p.category === post.category && p.slug !== post.slug);
-    let desc = post.description || '';
-    if (desc.length < 85) {
-      desc = `${desc} 本文由VPN查房独立技术博客实测整理，深度涵盖2026网络节点连通性压测、分流配置规则与报错排查指南。`;
+    const desc = normalizePostDesc(post.description, post.title);
+    let pageTitle = postTitleOverrides[post.slug] || `${post.title} - VPN查房`;
+    if (pageTitle.length < 36) {
+      pageTitle = `${post.title}（2026实测与配置深度指南） - VPN查房`;
     }
     routes.push({
       path: `/posts/${post.slug}`,
-      title: `${post.title} - VPN查房`,
+      title: pageTitle,
       description: desc,
       keywords: (post.keywords || []).join(', '),
       data: { post, relatedPosts },
@@ -235,7 +265,7 @@ async function runSSG() {
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
         headline: post.title,
-        description: post.description,
+        description: desc,
         author: {
           '@type': 'Person',
           name: 'V',
@@ -311,6 +341,7 @@ async function runSSG() {
     .replace(/<!--description-->/g, '抱歉，您访问的页面不存在或已被移除。请访问VPN查房博客首页获取最新2026机场推荐、节点评测与客户端配置实战教程。')
     .replace(/<!--keywords-->/g, '')
     .replace(/<!--canonical-->/g, `${SITE_URL}/404`)
+    .replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, '<meta name="robots" content="noindex, nofollow" />')
     .replace('<!--schema-json-->', '')
     .replace('<!--initial-state-->', `window.__INITIAL_DATA__ = { route: '/404', data: {} };`);
   fs.writeFileSync(path.resolve(DIST_DIR, '404.html'), notFoundPage, 'utf8');
@@ -430,8 +461,25 @@ ${rssItems}
   // 10. Generate robots.txt
   const robotsTxt = `User-agent: *
 Allow: /
+Disallow: /go/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
 
 Sitemap: ${SITE_URL}/sitemap.xml
+Sitemap: ${SITE_URL}/sitemap-0.xml
 Sitemap: ${SITE_URL}/sitemap-index.xml
 Sitemap: ${SITE_URL}/rss.xml
 `;
